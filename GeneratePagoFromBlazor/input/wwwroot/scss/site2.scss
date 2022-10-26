@@ -1,0 +1,17 @@
+﻿@import 'colors';
+
+h1 {
+    background-color: $background-color;
+}
+
+body {
+    background-color: $main-color;
+}
+
+html, body {
+    height: 100%;
+}
+
+*, *:focus, *:hover {
+    outline: none;
+}

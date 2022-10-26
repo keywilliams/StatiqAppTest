@@ -14,7 +14,8 @@ namespace GeneratePagoFromBlazor
                                            .AddPipeline<PrivacyPipeline>()
                                            .AddPipeline<JavaScriptPipeline>()
                                            .AddPipeline<CssScriptPipeline>()
-                                           .AddPipeline<ResourcesPipeline>();
+                                           .AddPipeline<ResourcesPipeline>()
+                                           .AddPipeline<ScssScriptPipeline>();
 
             AddPipelines(bootstrapper);
 
