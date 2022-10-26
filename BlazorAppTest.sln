@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneratePagoFromBlazor", "GeneratePagoFromBlazor\GeneratePagoFromBlazor.csproj", "{D5B4C8A6-67AC-4D8C-9716-8D9CA030868A}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "output(1)", "GeneratePagoFromBlazor\output\", "{5EED9A45-A321-473C-A95A-DE084C2ADDB6}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_57575"
+		Debug.AspNetCompiler.PhysicalPath = "GeneratePagoFromBlazor\output\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57575\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_57575"
+		Release.AspNetCompiler.PhysicalPath = "GeneratePagoFromBlazor\output\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57575\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57575"
+		SlnRelativePath = "GeneratePagoFromBlazor\output\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5B4C8A6-67AC-4D8C-9716-8D9CA030868A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5B4C8A6-67AC-4D8C-9716-8D9CA030868A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5B4C8A6-67AC-4D8C-9716-8D9CA030868A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5B4C8A6-67AC-4D8C-9716-8D9CA030868A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EED9A45-A321-473C-A95A-DE084C2ADDB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EED9A45-A321-473C-A95A-DE084C2ADDB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EED9A45-A321-473C-A95A-DE084C2ADDB6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EED9A45-A321-473C-A95A-DE084C2ADDB6}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2662B116-B9EC-4E65-AD62-F3EA630B51FF}
+	EndGlobalSection
+EndGlobal
