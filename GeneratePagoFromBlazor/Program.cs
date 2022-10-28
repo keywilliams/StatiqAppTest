@@ -1,5 +1,6 @@
 ﻿using GeneratePagoFromBlazor.Models;
 using GeneratePagoFromBlazor.Pipelines;
+using GeneratePagoFromBlazor.Utils;
 using Statiq.Razor;
 
 namespace GeneratePagoFromBlazor
@@ -8,6 +9,8 @@ namespace GeneratePagoFromBlazor
     {
         public static async Task<int> Main(string[] args)
         {
+            GenerateScssFile();
+
             var bootstrapper = Bootstrapper.Factory
                                            .CreateDefault(args)
                                            .AddPipeline<IndexPipeline>()
@@ -20,6 +23,11 @@ namespace GeneratePagoFromBlazor
             AddPipelines(bootstrapper);
 
             return await bootstrapper.RunAsync();
+        }
+
+        private static void GenerateScssFile()
+        {
+            GenerateScss.Generate();
         }
 
         private static void AddPipelines(Bootstrapper bootstrapper)

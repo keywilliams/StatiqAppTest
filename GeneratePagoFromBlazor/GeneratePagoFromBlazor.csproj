@@ -21,4 +21,10 @@
     <None Remove="input\Privacy.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="input\wwwroot\scss\_template.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
