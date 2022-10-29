@@ -4,34 +4,33 @@ namespace GeneratePagoFromBlazor.Utils
 {
     public static class GenerateScss
     {
-        private static string GetScssTemplate()
+        public static Bootstrapper GenerateScssFiles(this Bootstrapper bootstrapper)
         {
-            string filePath = $"{Directory.GetCurrentDirectory()}\\input\\wwwroot\\scss\\_template.scss";
-            return File.ReadAllText(filePath);
-        }
+            bootstrapper
+                .ConfigureFileSystem(
+                    (fileSystem, settings, serviceCollection) =>
+                    {
+                        var tmcService = new TmcService();
+                        var colors = tmcService.GetSiteColors();
 
-        public static void Generate()
-        {
-            var tmcService = new TmcService();
-            var colors = tmcService.GetSiteColors();
-            var file = GetScssTemplate();
-            foreach (var color in colors)
-            {
-                file = file.Replace($"[{color.Tag}]", color.Color);
-            }
+                        var filePathTemplate = fileSystem.RootPath.Combine("input/wwwroot/scss/_template.scss");
+                        string fileTemplate = File.ReadAllText(filePathTemplate.FullPath);
 
-            SaveScssFile(file);
-        }
+                        foreach (var color in colors)
+                        {
+                            fileTemplate = fileTemplate.Replace($"[{color.Tag}]", color.Color);
+                        }
 
-        private static void SaveScssFile(string scssFile)
-        {
-            string filePath = $"{Directory.GetCurrentDirectory()}\\input\\wwwroot\\scss\\_colors.scss";
+                        var filePath = fileSystem.RootPath.Combine("input/wwwroot/scss/_colors.scss");
 
-            using (var writer = new StreamWriter(filePath, false))
-            {
-                writer.WriteLine(scssFile);
-            }
+                        using (var writer = new StreamWriter(filePath.FullPath, false))
+                        {
+                            writer.WriteLine(fileTemplate);
+                        }
+                    }
+                );
 
+            return bootstrapper;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -38,7 +38,14 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody()
+            
+<div class="col-2 portfolio-item">
+    <div class="portfolio-wrap">
+        <a class="display-4 nav-link text-dark" href="Titanic.html">Titanic</a>
+        <img src="/wwwroot/img/Titanic.jpg" class="img-fluid" alt="">
+        <h7 class="">RMS Titanic was the largest ship afloat at the time she entered service and the second of three Olympic-class ocean liners operated by the White Star Line. She was built by the Harland and Wolff shipyard in Belfast.</h7>
+    </div>
+</div>
         </main>
     </div>
 
@@ -52,6 +59,6 @@
     <script src="/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/wwwroot/js/site.js" asp-append-version="true"></script>
 
-    @await RenderSectionAsync("Scripts", required: false)
+    
 </body>
 </html>

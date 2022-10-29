@@ -4,9 +4,9 @@
     {
         public IndexViewModel()
         {
-            Name = "WIG";
-            Data = DateTime.Now;
-            Items = new List<IndexItemViewModel>
+            this.Name = "WIG";
+            this.Data = DateTime.Now;
+            this.Items = new List<IndexItemViewModel>
                     {
                         new IndexItemViewModel
                         {
@@ -33,11 +33,18 @@
                             Image = "Hulk.jpg"
                         }
                     };
+            this.Privacy = new PrivacyViewModel
+            {
+                Name = "WIG Privacy",
+                Data = DateTime.Now
+            };
         }
 
         public string Name { get; set; }
 
         public DateTime Data { get; set; }
+
+        public PrivacyViewModel Privacy { get; set; }
 
         public List<IndexItemViewModel> Items { get; set; }
     }

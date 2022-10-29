@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -38,7 +38,14 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody()
+            
+<div class="col-2 portfolio-item">
+    <div class="portfolio-wrap">
+        <a class="display-4 nav-link text-dark" href="Matrix.html">Matrix</a>
+        <img src="/wwwroot/img/Matrix.jpg" class="img-fluid" alt="">
+        <h7 class="">The Matrix is a 1999 science fiction action film written and directed by the Wachowskis.[a] It is the first installment in The Matrix film series, starring Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving, and Joe Pantoliano, it depicts a dystopian future in which humanity is unknowingly trapped inside the Matrix, a simulated reality that intelligent machines have created to distract humans while using their bodies as an energy source.</h7>
+    </div>
+</div>
         </main>
     </div>
 
@@ -52,6 +59,6 @@
     <script src="/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/wwwroot/js/site.js" asp-append-version="true"></script>
 
-    @await RenderSectionAsync("Scripts", required: false)
+    
 </body>
 </html>

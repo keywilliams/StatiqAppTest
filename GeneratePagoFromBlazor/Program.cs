@@ -1,7 +1,5 @@
-﻿using GeneratePagoFromBlazor.Models;
-using GeneratePagoFromBlazor.Pipelines;
+﻿using GeneratePagoFromBlazor.Pipelines;
 using GeneratePagoFromBlazor.Utils;
-using Statiq.Razor;
 
 namespace GeneratePagoFromBlazor
 {
@@ -9,37 +7,43 @@ namespace GeneratePagoFromBlazor
     {
         public static async Task<int> Main(string[] args)
         {
-            GenerateScssFile();
-
-            var bootstrapper = Bootstrapper.Factory
-                                           .CreateDefault(args)
-                                           .AddPipeline<IndexPipeline>()
-                                           .AddPipeline<PrivacyPipeline>()
-                                           .AddPipeline<JavaScriptPipeline>()
-                                           .AddPipeline<CssScriptPipeline>()
-                                           .AddPipeline<ResourcesPipeline>()
-                                           .AddPipeline<ScssScriptPipeline>();
-
-            AddPipelines(bootstrapper);
-
-            return await bootstrapper.RunAsync();
+            return await Bootstrapper.Factory
+                                     .CreateDefault(args)
+                                     .AddPipeline<JavaScriptPipeline>()
+                                     .AddPipeline<CssScriptPipeline>()
+                                     .AddPipeline<ResourcesPipeline>()
+                                     .AddPipeline<ScssScriptPipeline>()
+                                     .DownloadInputFiles(new Uri("https://github.com/keywilliams/StatiqAppTest/raw/master/input.zip"))
+                                     .GenerateScssFiles()
+                                     .GenerateSiteByLanguage()
+                                     .RunAsync();
         }
 
-        private static void GenerateScssFile()
-        {
-            GenerateScss.Generate();
-        }
+        //private static void AddPipelines(Bootstrapper bootstrapper)
+        //{
+        //    var tmcService = new TmcService();
+        //    var language = tmcService.GetIndex();
 
-        private static void AddPipelines(Bootstrapper bootstrapper)
-        {
-            var index = new IndexViewModel();
-            foreach (var item in index.Items)
-            {
-                bootstrapper.BuildPipeline($"Render {item.Name}", builder => builder
-                    .WithInputReadFiles("IndexItem.cshtml")
-                    .WithProcessModules(new RenderRazor().WithModel(Config.FromValue(item)))
-                    .WithOutputWriteFiles(new NormalizedPath($"{item.Name}.html")));
-            }
-        }
+        //    foreach (var index in language.IndexCollection)
+        //    {
+        //        bootstrapper.BuildPipeline($"Render Index in {index.Key}", builder => builder
+        //            .WithInputReadFiles("Index.cshtml")
+        //            .WithProcessModules(new RenderRazor().WithModel(Config.FromValue(index.Value)))
+        //            .WithOutputWriteFiles(new NormalizedPath($"{index.Key}/Index.html")));
+
+        //        bootstrapper.BuildPipeline($"Render Privacy in {index.Key}", builder => builder
+        //            .WithInputReadFiles("Privacy.cshtml")
+        //            .WithProcessModules(new RenderRazor().WithModel(Config.FromValue(index.Value.Privacy)))
+        //            .WithOutputWriteFiles(new NormalizedPath($"{index.Key}/Privacy.html")));
+
+        //        foreach (var item in index.Value.Items)
+        //        {
+        //            bootstrapper.BuildPipeline($"Render IndexItem {item.Name} in {index.Key}", builder => builder
+        //                .WithInputReadFiles("IndexItem.cshtml")
+        //                .WithProcessModules(new RenderRazor().WithModel(Config.FromValue(item)))
+        //                .WithOutputWriteFiles(new NormalizedPath($"{index.Key}/{item.Name}.html")));
+        //        }
+        //    }
+        //}
     }
 }

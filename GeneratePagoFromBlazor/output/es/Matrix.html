@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -38,7 +38,14 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody()
+            
+<div class="col-2 portfolio-item">
+    <div class="portfolio-wrap">
+        <a class="display-4 nav-link text-dark" href="Matrix.html">Matrix</a>
+        <img src="/wwwroot/img/Matrix.jpg" class="img-fluid" alt="">
+        <h7 class="">The Matrix (conocida como Matrix en Hispanoam&#xE9;rica) es una pel&#xED;cula de acci&#xF3;n y ciencia ficci&#xF3;n de 1999 escrita y dirigida por las hermanas Wachowski y protagonizada por Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss y Hugo Weaving. Representa un futuro dist&#xF3;pico en el que la humanidad est&#xE1; atrapada sin saberlo dentro de una realidad simulada llamada Matrix, que las m&#xE1;quinas inteligentes han creado para distraer a los humanos mientras usan sus cuerpos como fuente de energ&#xED;a en campos de cultivo.</h7>
+    </div>
+</div>
         </main>
     </div>
 
@@ -52,6 +59,6 @@
     <script src="/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/wwwroot/js/site.js" asp-append-version="true"></script>
 
-    @await RenderSectionAsync("Scripts", required: false)
+    
 </body>
 </html>

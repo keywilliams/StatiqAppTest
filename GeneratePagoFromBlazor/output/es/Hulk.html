@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -38,7 +38,14 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody()
+            
+<div class="col-2 portfolio-item">
+    <div class="portfolio-wrap">
+        <a class="display-4 nav-link text-dark" href="Hulk.html">Hulk</a>
+        <img src="/wwwroot/img/Hulk.jpg" class="img-fluid" alt="">
+        <h7 class="">Hulk es una pel&#xED;cula de 2003 basada en el personaje ficticio de Marvel Comics del mismo nombre.2&#x200B; Ang Lee dirigi&#xF3; el filme, que es protagonizado por Eric Bana como el Dr. Bruce Banner, as&#xED; como Jennifer Connelly, Sam Elliott, Nick Nolte y Josh Lucas.</h7>
+    </div>
+</div>
         </main>
     </div>
 
@@ -52,6 +59,6 @@
     <script src="/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/wwwroot/js/site.js" asp-append-version="true"></script>
 
-    @await RenderSectionAsync("Scripts", required: false)
+    
 </body>
 </html>
