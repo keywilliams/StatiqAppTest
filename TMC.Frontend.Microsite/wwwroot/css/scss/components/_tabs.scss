@@ -1,0 +1,54 @@
+﻿@import "../variables/all";
+
+$tabs-border-color: $accent-color !default;
+$tabs-border-bottom-width: 1px !default;
+$tabs-border-radius: 50rem !default;
+$tabs-background-color-active: $accent-color !default;
+$tabs-link-color: $accent-color !default;
+
+$tabs-font-size: 14px !default;
+
+.nav {
+    justify-content: center;
+}
+
+.nav-tabs {
+    border: 1.5px solid $tabs-border-color;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    color: #ffffff;
+    background-color: $tabs-background-color-active;
+    border-color: $tabs-border-color;
+}
+
+.rounded-nav {
+    border-radius: $tabs-border-radius;
+
+    .nav-link {
+        border-radius: $tabs-border-radius;
+        padding: 0.4rem 1rem;
+        color: $tabs-link-color;
+    }
+}
+
+.nav-item {
+    font-size: $tabs-font-size;
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+    border-color: transparent;
+}
+
+.tab-content{
+    .tab-pane {
+        display: none;
+    }
+}
+.tab-content{
+    .active {
+        display: block;
+    }
+}

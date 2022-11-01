@@ -1,0 +1,28 @@
+﻿@import "../variables/all";
+
+.footer {
+    background-color: $dark-color;
+    color: #fff;
+
+    &__top {
+        padding: 30px 130px;
+
+        &-logo {
+            img {
+                width: 275px;
+            }
+        }
+    }
+
+    &__separator {
+        height: 2px;
+        background-color: $primary-color;
+    }
+
+    &__bottom {
+        font-size: 15px;
+        padding: 30px 130px;
+
+    }
+}
+

@@ -1,0 +1,25 @@
+﻿// Colors
+
+$primary-color: #003366;
+$accent-color: #C01933;
+$dark-color: #041C2C;
+$filter-color: #EFF4F7;
+$body-color: #fff;
+
+.fill-white {
+    fill: #fff;
+}
+.fill-primary {
+    fill: $primary-color;
+}
+.fill-accent {
+    fill: $accent-color;
+}
+
+.bg-dark {
+    background-color: $dark-color !important;
+}
+
+.bg-primary {
+    background-color: $primary-color;
+}

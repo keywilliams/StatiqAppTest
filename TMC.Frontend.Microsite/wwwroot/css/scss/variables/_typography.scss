@@ -1,0 +1,56 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+//Brand Font Family
+$primary-font: "Montserrat", sans-serif !default;
+
+//Font Weight
+$weight-thin: 100 !default;
+$weight-extralight: 200 !default;
+$weight-light: 300 !default;
+$weight-regular: 400 !default;
+$weight-medium: 500 !default;
+$weight-semibold: 600 !default;
+$weight-bold: 700 !default;
+$weight-extrabold: 800 !default;
+$weight-black: 900 !default;
+
+//Class
+.primary-font {
+    font-family: $primary-font;
+}
+
+.font-weight-thin {
+    font-weight: $weight-thin;
+}
+
+.font-weight-extralight {
+    font-weight: $weight-extralight;
+}
+
+.font-weight-light {
+    font-weight: $weight-light;
+}
+
+.font-weight-regular {
+    font-weight: $weight-regular;
+}
+
+.font-weight-medium {
+    font-weight: $weight-medium;
+}
+
+.font-weight-semibold {
+    font-weight: $weight-semibold;
+}
+
+.font-weight-bold {
+    font-weight: $weight-bold;
+}
+
+.font-weight-extrabold {
+    font-weight: $weight-extrabold;
+}
+
+.font-weight-black {
+    font-weight: $weight-black;
+}
