@@ -11,10 +11,16 @@
 
             ProcessModules = new ModuleList
             {
+                // Misc
+                new CopyFiles("wwwroot/*.svg"),
+                new CopyFiles("wwwroot/*.ico"),
                 // Images
                 new CopyFiles("wwwroot/img/**"),
                 // Libs
                 new CopyFiles("wwwroot/lib/**"),
+                // CSS
+                new CopyFiles("wwwroot/css/bootstrap/**"),
+                new CopyFiles("wwwroot/css/open-iconic/**"),
             };
         }
     }

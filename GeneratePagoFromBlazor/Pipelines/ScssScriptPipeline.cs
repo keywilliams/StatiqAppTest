@@ -8,7 +8,7 @@ namespace GeneratePagoFromBlazor.Pipelines
         {
             InputModules = new ModuleList
             {
-              new ReadFiles("wwwroot/scss/site2.scss")
+              new ReadFiles("wwwroot/scss/site.scss")
             };
 
             ProcessModules = new ModuleList

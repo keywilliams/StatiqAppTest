@@ -1,5 +1,4 @@
 ﻿using GeneratePagoFromBlazor.Pipelines;
-using GeneratePagoFromBlazor.Utils;
 
 namespace GeneratePagoFromBlazor
 {
@@ -13,9 +12,10 @@ namespace GeneratePagoFromBlazor
                                      .AddPipeline<CssScriptPipeline>()
                                      .AddPipeline<ResourcesPipeline>()
                                      .AddPipeline<ScssScriptPipeline>()
-                                     .DownloadInputFiles(new Uri("https://github.com/keywilliams/StatiqAppTest/raw/master/input.zip"))
-                                     .GenerateScssFiles()
-                                     .GenerateSiteByLanguage()
+                                     //.DownloadInputFiles(new Uri("https://github.com/keywilliams/StatiqAppTest/raw/master/input.zip"))
+                                     //.GenerateScssFiles()
+                                     //.GenerateSiteByLanguage()
+                                     .AddWeb()
                                      .RunAsync();
         }
     }

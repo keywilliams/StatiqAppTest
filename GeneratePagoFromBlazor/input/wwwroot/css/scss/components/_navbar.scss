@@ -1,0 +1,56 @@
+﻿@import "../variables/all";
+
+$navbar-background-color: $dark-color !default;
+$navbar-height-desktop: 6.5rem !default;
+$navbar-height-mobile: 4.25rem !default;
+$navbar-padding-horizontal: 2rem !default;
+$navbar-padding-vertical: 1rem !default;
+$navbar-z: 30 !default;
+$navbar-item-color: #fff !default;
+
+
+.navbar {
+    //background-color: $navbar-background-color;
+    padding: $navbar-padding-vertical $navbar-padding-horizontal;
+    min-height: $navbar-height-desktop;
+    position: relative;
+    z-index: $navbar-z;
+
+    @include until($tablet) {
+        min-height: $navbar-height-mobile;
+    }
+
+    &__brand {
+        img {
+            width: 280px;
+
+            @include until($tablet) {
+                width: 190px;
+            }
+        }
+    }
+
+    &__menu {
+        display: flex;
+        gap: 35px;
+        width: 50%;
+        justify-content: end;
+        font-size: 15px;
+        padding-right: 4rem;
+        align-items: center;
+
+        @include until($tablet) {
+            padding-right: 0;
+        }
+
+        &-item {
+            color: $navbar-item-color;
+            text-decoration: none;
+        }
+
+        .navbar-link {
+            text-decoration: none;
+        }
+    }
+}
+
