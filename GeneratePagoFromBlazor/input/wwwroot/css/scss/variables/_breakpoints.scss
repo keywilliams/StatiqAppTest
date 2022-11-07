@@ -1,0 +1,93 @@
+﻿//Media Queries
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$largedesktop: 1200px;
+
+//MIXINS
+@mixin mobile {
+    @media screen and (max-width: $mobile) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media screen and (max-width: $tablet) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (max-width: $desktop) {
+        @content;
+    }
+}
+@mixin largedesktop {
+    @media screen and (max-width: $largedesktop) {
+        @content;
+    }
+}
+
+//Responsivve
+@mixin from($device) {
+    @media screen and (min-width: $device) {
+        @content;
+    }
+}
+
+@mixin until($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+
+@mixin desktop-only {
+    @media screen and (min-width: $desktop) and (max-width: $largedesktop) {
+        @content;
+    }
+}
+
+@mixin tablet-only {
+    @media screen and (min-width: $tablet) and (max-width: $desktop) {
+        @content;
+    }
+}
+
+//Visibility
+
+@include mobile {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+
+@include tablet {
+    .hide-tablet {
+        display: none !important;
+    }
+}
+
+@mixin tablet-only {
+    @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+        @content;
+    }
+}
+
+
+@include desktop {
+    .hide-desktop{
+        display: none !important;
+    }
+}
+
+
+@include largedesktop {
+    .hide-largedesktop {
+        display: none !important;
+    }
+}
+
+
+
+
+

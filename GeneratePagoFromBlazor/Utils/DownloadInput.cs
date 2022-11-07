@@ -5,8 +5,7 @@
         public static Bootstrapper DownloadInputFiles(this Bootstrapper bootstrapper, Uri uri)
         {
             bootstrapper
-                .ConfigureFileSystem(
-                (fileSystem, settings, serviceCollection) =>
+                .ConfigureFileSystem((fileSystem, settings, serviceCollection) =>
                 {
                     var path = fileSystem.RootPath.Combine("input");
 
@@ -44,8 +43,7 @@
                         using var fileStream = file.Open(true);
                         entryStream.CopyTo(fileStream);
                     }
-                }
-                                            );
+                });
 
             return bootstrapper;
         }

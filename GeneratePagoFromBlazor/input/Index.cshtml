@@ -1,15 +1,425 @@
-﻿@model IndexViewModel
+﻿@model IndexModel
+<div>
+    <article class="home-slider bg-light">
+        <img class="" />
+        slider
+    </article>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome @Model.Name</h1>
-    <h2 class="display-4">Today: @Model.Data.ToShortDateString()</h2>
-    <div class="text-center">
-        @{
-            foreach (var item in Model.Items)
-            {
-                @Html.Partial("/_partials/_IndexItem.cshtml", item)
-            }
-        }
-    </div>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <section class="search-content p-5 hide-tablet">
+
+        <div class="container">
+            <div class="d-flex">
+                <div class="search-content__control">
+                    <svg class="all svg-search">
+                        <use xlink:href="../wwwroot/all.svg#icon-search"></use>
+                    </svg>
+                    <input type="text" placeholder="Search..">
+                    <button class="clear-icon-btn">
+                        <svg class="all">
+                            <use xlink:href="../wwwroot/all.svg#icon-close"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="search-content__buttons d-flex">
+                    <button type="button" class="btn btn-primary">Search</button>
+                    <button type="button" class="btn btn-primary">Filters</button>
+                </div>
+            </div>
+
+            <div class="search-content__filters my-4">
+                <div>
+                    <button class="btn btn-filter-outline btn-rounded me-3 active" onclick="filterSelection('all')"> All Content</button>
+                    <button class="btn btn-filter-outline btn-rounded me-3" onclick="filterSelection('movies')"> Movies</button>
+                    <button class="btn btn-filter-outline btn-rounded me-3" onclick="filterSelection('series')"> Series</button>
+                    <button class="btn btn-filter-outline btn-rounded me-3" onclick="filterSelection('audio')"> Audio</button>
+                </div>
+
+                <div class="search-content__filters-form my-4">
+                    <div>
+                        <label>Category</label>
+                        <select class="form-select" aria-label="Default select example">
+                            @{
+                                foreach (var item in Model.Categories)
+                                {
+                                    <option value="@item.Id">@item.Description</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>Genre</label>
+                        <select class="form-select" aria-label="Default select example">
+                            @{
+                                foreach (var item in Model.Genres)
+                                {
+                                    <option value="@item.Id">@item.Description</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>Language</label>
+                        <select class="form-select" aria-label="Default select example">
+                            @{
+                                foreach (var item in Model.Languages)
+                                {
+                                    <option value="@item.Id">@item.Description</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>Subtitle</label>
+                        <select class="form-select" aria-label="Default select example">
+                            @{
+                                foreach (var item in Model.Subtitles)
+                                {
+                                    <option value="@item.Id">@item.Description</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>Sort by</label>
+                        <select class="form-select" aria-label="Default select example">
+                            @{
+                                foreach (var item in Model.SortBy)
+                                {
+                                    <option value="@item.Id">@item.Description</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <a href="#"> Clear all</a>
+                </div>
+
+                <h5>What's on your flight</h5>
+
+                <div class="search-content__filters-form my-4">
+                    <div>
+                        <label>Date</label>
+                        <select class="form-select" aria-label="Default select example">
+                            @{
+                                foreach (var item in Model.Dates)
+                                {
+                                    <option value="@item.Id">@item.Description</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>From</label>
+                        <select class="form-select" aria-label="Default select example">
+                            @{
+                                foreach (var item in Model.From)
+                                {
+                                    <option value="@item.Id">@item.Description</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>To</label>
+                        <select class="form-select" aria-label="Default select example">
+                            @{
+                                foreach (var item in Model.To)
+                                {
+                                    <option value="@item.Id">@item.Description</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>Flight Number</label>
+                        <select class="form-select" aria-label="Default select example">
+                            @{
+                                foreach (var item in Model.FlightNumber)
+                                {
+                                    <option value="@item.Id">@item.Description</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+
+                    <a href="#"> Edit</a>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="search-results p-5">
+        <div class="container">
+            <p class="search-results__title hide-tablet"> Search Results <span>(4)</span></p>
+
+            <div class="d-flex d-md-none justify-content-between align-items-center mb-4">
+                <p class="search-results__title mb-0"> All Movies</p>
+                <button class="btn-outline btn-rounded btn-outline-mobile">Filter</button>
+            </div>
+
+
+
+            <div class="row row-cols-lg-5 ">
+                @{
+                    foreach (var movie in Model.Movies)
+                    {
+                        <div class="col col-6 col-md-4">
+
+                            <a href="@{@movie.Name}.html">
+                                <div class="search-results__item">
+                                    <img src="../wwwroot/img/content/@{@movie.Name}.jpg" />
+                                    <div class="search-results__item-type">
+                                        <svg class="all fill-white">
+                                            <use xlink:href="../wwwroot/all.svg#icon-movie"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                            </a>
+
+                            <p class="search-results__item-title mb-0 mt-3">@movie.Name<span></span></p>
+                            <p class="search-results__item-info"><span>@movie.Year</span> | <span>1h58 min</span></p>
+
+                        </div>
+                    }
+                }
+
+                <div class="col col-6 col-md-4">
+
+                    <a href="AudioDetail.html">
+                        <div class="search-results__item">
+                            <img src="../wwwroot/img/content/AllAmericanS1.jpg" />
+                            <div class="search-results__item-type">
+                                <svg class="all fill-white">
+                                    <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <p class="search-results__item-title mb-0 mt-3">All American, <span>S1</span></p>
+                    <p class="search-results__item-info"><span>2018</span> | <span>1h58 min</span></p>
+
+                </div>
+                <div class="col col-6 col-md-4">
+
+                    <a href="TvDetail.html">
+                        <div class="search-results__item">
+                            <img src="../wwwroot/img/content/bigweekend.jpg" />
+                            <div class="search-results__item-type">
+                                <svg class="all fill-white">
+                                    <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <p class="search-results__item-title mb-0 mt-3">The Big Bang Theory: <span>Season 12</span></p>
+                    <p class="search-results__item-info"><span>2018</span> | <span>1h58 min</span></p>
+
+                </div>
+                <div class="col col-6 col-md-4">
+
+                    <a href="MovieDetail.html">
+                        <div class="search-results__item">
+                            <img src="../wwwroot/img/content/Cruella.jpg" />
+                            <div class="search-results__item-type">
+                                <svg class="all fill-white">
+                                    <use xlink:href="../wwwroot/all.svg#icon-movie"></use>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <p class="search-results__item-title mb-0 mt-3">Cruella<span></span></p>
+                    <p class="search-results__item-info"><span>2018</span> | <span>1h58 min</span></p>
+
+                </div>
+                <div class="col col-6 col-md-4">
+
+                    <a href="Index.html">
+                        <div class="search-results__item">
+                            <img src="../wwwroot/img/content/htga.jpg" />
+                            <div class="search-results__item-type">
+                                <svg class="all fill-white">
+                                    <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <p class="search-results__item-title mb-0 mt-3">How to Get Away with a Murder <span>Season 12</span></p>
+                    <p class="search-results__item-info"><span>2018</span> | <span>1h58 min</span></p>
+
+                </div>
+                <div class="col col-6 col-md-4">
+
+                    <a href="MovieDetail.html">
+                        <div class="search-results__item">
+                            <img src="../wwwroot/img/content/luca.jpg" />
+                            <div class="search-results__item-type">
+                                <svg class="all fill-white">
+                                    <use xlink:href="../wwwroot/all.svg#icon-movie"></use>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <p class="search-results__item-title mb-0 mt-3">Luca <span></span></p>
+                    <p class="search-results__item-info"><span>2018</span> | <span>1h58 min</span></p>
+
+                </div>
+
+                <div class="col col-6 col-md-4">
+
+                    <a href="TvDetail.html">
+                        <div class="search-results__item">
+                            <img src="../wwwroot/img/content/bigweekend.jpg" />
+                            <div class="search-results__item-type">
+                                <svg class="all fill-white">
+                                    <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <p class="search-results__item-title mb-0 mt-3">The Big Bang Theory: <span>Season 12</span></p>
+                    <p class="search-results__item-info"><span>2018</span> | <span>1h58 min</span></p>
+
+                </div>
+
+                <div class="col col-6 col-md-4">
+
+                    <a href="MovieDetail.html">
+                        <div class="search-results__item">
+                            <img src="../wwwroot/img/content/luca.jpg" />
+                            <div class="search-results__item-type">
+                                <svg class="all fill-white">
+                                    <use xlink:href="../wwwroot/all.svg#icon-movie"></use>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <p class="search-results__item-title mb-0 mt-3">Luca <span></span></p>
+                    <p class="search-results__item-info"><span>2018</span> | <span>1h58 min</span></p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="onYourFlightModal" tabindex="-1" role="dialog" aria-labelledby="onYourFlightModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <h5 class="modal-title mb-4" id="onYourFlightModalLabel">What's on your flight</h5>
+
+                <!-- modal tabs -->
+                <ul class="nav nav-tabs rounded-nav flex-column flex-sm-row text-center">
+                    <li class="nav-item flex-sm-fill">
+                        <a id="destination-tab" data-toggle="tab" role="tab" class="nav-link active" aria-controls="destination" href="#destination" aria-selected="true">Destination</a>
+                    </li>
+                    <li class="nav-item flex-sm-fill">
+                        <a id="flightnumber-tab" data-toggle="tab" role="tab" class="nav-link" aria-controls="flightnumber" href="#flightNumber" aria-selected="true">Flight Number</a>
+                    </li>
+                </ul>
+
+                <!-- tabs content -->
+                <div id="modalTabContent" class="tab-content">
+                    <div id="destination" role="tabpanel" aria-labelledby="destination-tab" class="py-4 show active tab-pane">
+                        <div class="modal-form my-4">
+                            <label>Date of Departure</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+
+                            <label>From</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+
+                            <label>To</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+
+                            <label>Flight Number</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+
+                        <div class="text-end">
+                            <a href="#"> Clear all</a>
+                        </div>
+                    </div>
+
+                    <div id="flightNumber" role="tabpanel" aria-labelledby="flightnumber-tab " class="py-4 tab-pane">
+                        <div class="modal-form my-4">
+                            <label>Flight Number</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+
+                            <label>Date of Departure</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+
+
+                        </div>
+
+                        <div class="text-end">
+                            <a href="#"> Clear all</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .navbar {
+        background-color: #041C2C;
+    }
+</style>

@@ -1,0 +1,21 @@
+﻿@import "../variables/all";
+
+input:focus-visible {
+    outline: none;
+}
+
+label {
+    @extend .font-weight-bold;
+    color: $accent-color;
+    margin-bottom: 0.5rem;
+}
+
+.form-select {
+    border: none;
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+        margin-bottom: 1.5rem;
+    }
+}
+

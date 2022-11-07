@@ -1,0 +1,67 @@
+﻿@import "../variables/all";
+
+$modal-background-background-color: #EFF4F7 !default;
+$modal-button-close-size: 40px !default;
+$modal-button-close-z: 10 !default;
+
+$modal-md-border-radius: 1.3rem !default;
+
+.modal-content {
+    background-color: $modal-background-background-color;
+    border-radius: $modal-md-border-radius;
+
+    a {
+        text-decoration: none;
+        color: $accent-color;
+        @extend .font-weight-semibold;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+}
+
+.modal-header {
+    border-bottom: none;
+    justify-content: end;
+}
+.modal-body {
+    padding: 2rem 1rem;
+    width: 400px;
+    margin: auto;
+
+    .modal-title {
+        text-align: center;
+        color: $primary-color;
+        @extend .font-weight-semibold;
+    }
+}
+.modal-footer {
+    border-top: none;
+}
+
+.modal-close {
+    @extend .font-weight-light;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 45px;
+    background-color: #fff;
+    border-radius: 50%;
+    width: $modal-button-close-size;
+    height: $modal-button-close-size;
+    line-height: $modal-button-close-size;
+    color: #2D2926;
+    z-index: $modal-button-close-z;
+}
+
+
+.modal-md {
+    @include from($tablet) {
+        max-width: 650px;
+    }
+
+    @include until($tablet) {
+        max-width: 500px;
+    }
+}
