@@ -1,11 +1,10 @@
 ﻿namespace GeneratePagoFromBlazor.Models
 {
-    public class AudioDetailModel
+    public class AudioDetailModel : BaseModel
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Image { get; set; }
+        public string Season { get; set; }
         public List<Track> TrackList { get; set; }
+        public List<AudioDetailModel> Related { get; set; }
     }
 
     public class Track

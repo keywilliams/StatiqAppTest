@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TMC.Frontend.Microsite</title>
+    <link rel="stylesheet" href="../wwwroot/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="../wwwroot/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="../wwwroot/css/scss/styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="page">
+        <main>
+            <div class="navmenu">
+                <div class="navbar navbar-dark">
+    <div class="navbar__brand" >
+        <a class="navbar__item" href="Index.html">
+            <img src="../wwwroot/img/brand/company-logo.png" alt="">
+        </a>
+
+    </div>
+
+    <div class="navbar__menu">
+        <button type="button" class="navbar__menu-item hide-tablet" data-toggle="modal" data-target="#onYourFlightModal">
+
+            Whats on my flight
+            <svg class="all fill-white" style="width: 31px; height: 31px">
+                <use xlink:href="../wwwroot/all.svg#icon-airplane"></use>
+            </svg>
+        </button>
+
+        <div class="navbar__menu-item has-dropdown">
+            <a href="../pt/Index.html" class="navbar-link">PT</a>
+            <a href="../en/Index.html" class="navbar-link">EN</a>
+            <a href="../es/Index.html" class="navbar-link">ES</a>
+
+            <div class="navbar-dropdown d-none">
+                <button class="navbar__menu-item">PT</button>
+                <button class="navbar__menu-item">ES</button>
+            </div>
+
+        </div>
+
+        <button class="navbar__menu-item hide-mobile">
+            <svg class="all fill-white" style="width: 18px; height: 18px">
+                <use xlink:href="../wwwroot/all.svg#icon-search"></use>
+            </svg>
+        </button>
+
+        <button class="navbar__menu-item">
+            <svg class="all fill-white" style="width: 26px; height: 26px">
+                <use xlink:href="../wwwroot/all.svg#icon-help"></use>
+            </svg>
+        </button>
+    </div>
+</div>
+            </div>
+
+            <article class="content p-0" style="min-height: 100vh;">
+                
+<div class="detail-header">
+    <div class="detail-header__banner position-relative">
+        <div class="detail-header__banner-overlay"></div>
+        <img src="../wwwroot/img/content/AllAmericanS1-banner.jpg" />
+    </div>
+
+    <div class="detail-header__info">
+        <div class="row align-items-end">
+            <div class="col-4 col-md-3 detail-header__info-poster">
+                <img src="../wwwroot/img/content/AllAmericanS1.jpg" />
+            </div>
+            <div class="col-8 col-md-9 detail-header__info-text">
+                <div class="text-details">
+                            <p class="item-type mb-2">
+                                <svg class="all fill-primary">
+                                    <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
+                                </svg>
+                                TV
+                            </p>
+                    <h2>All American</h2>
+                    <p class="item-category mb-2">DRAMA, BOX SETS</p>
+                    <p class="m-0"><small>1h 33mins | 2019 | G</small></p>
+                </div>
+                <div class="text-rating d-flex justify-content-between pt-4">
+                    <h5>9.2</h5>
+                    <img src="../wwwroot/img/content/imdb.png" />
+                </div>
+            </div>
+
+            <div class="detail-header__info-btn">
+                <button type="button" class="btn btn-primary" onclick=" window.open('https://www.youtube.com/','_blank')">
+                    Trailer
+                    <svg class="all fill-white">
+                        <use xlink:href="../wwwroot/all.svg#icon-play"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="item-details">
+
+    <div class="item-details__info">
+        <div class="mb-4">
+            <h6>Overview</h6>
+            <p>All American is an American sports drama television series, created by April Blair that premiered on The CW on October 10, 2018. The series is inspired by the life of professional American football player Spencer Paysinger, with Daniel Ezra in the lead role. In January 2020, The CW renewed the series for a third season which premiered on January 18, 2021.</p>
+        </div>
+
+        <div class="mb-4">
+            <h6>Credits</h6>
+            <div class="d-flex">
+                <div class="item-details__subtitle">
+                    <p>Director</p>
+                    <p>Cast</p>
+                </div>
+                <div class="item-details__description">
+                    <p>Teste</p>
+                    <p>Teste</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <h6>Information</h6>
+            <div class="d-flex">
+                <div class="item-details__subtitle">
+                    <p>Studio</p>
+                    <p>Genre</p>
+                    <p>Released</p>
+                    <p>Copyright</p>
+                </div>
+                <div class="item-details__description">
+                    <p>Teste</p>
+                    <p>Teste</p>
+                    <p>Teste</p>
+                    <p>Teste©</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<section class="audio-track bg-dark py-5 mb-5">
+    <div class="item-all__content">
+        <h6>Episodes</h6>
+
+        <div class="content-table">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">
+                            <svg class="all fill-accent">
+                                <use xlink:href="all.svg#icon-clock"></use>
+                            </svg>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Pilot</td>
+                                <td>1:05</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>99 Problems</td>
+                                <td>1:02</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>i</td>
+                                <td>0:55</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Lose Yourself</td>
+                                <td>0:59</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>All We Got</td>
+                                <td>1:00</td>
+                            </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+<section class="audio-track bg-dark py-5 mb-5">
+    <div class="item-all__content">
+        <h6>Episodes</h6>
+        <div class="content-slider">
+            SLIDER
+        </div>
+    </div>
+
+</section>
+
+<div class="item-all__content content-light mb-4">
+    <h6>Related</h6>
+
+    <div class="row row-cols-lg-5 ">
+                <div class="col col-4">
+
+                    <a href="All American.html">
+                        <div class="search-results__item">
+                            <img src="../wwwroot/img/content/AllAmericanS1.jpg" />
+                            <div class="search-results__item-type">
+                                <svg class="all fill-white">
+                                    <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <p class="search-results__item-title mb-0 mt-3">All American<span></span></p>
+                    <p class="search-results__item-info"><span>2019</span> | <span>1h58 min</span></p>
+
+                </div>
+                <div class="col col-4">
+
+                    <a href="The Big Bang Theory.html">
+                        <div class="search-results__item">
+                            <img src="../wwwroot/img/content/TheBigBangTheoryS1.jpg" />
+                            <div class="search-results__item-type">
+                                <svg class="all fill-white">
+                                    <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <p class="search-results__item-title mb-0 mt-3">The Big Bang Theory<span></span></p>
+                    <p class="search-results__item-info"><span>2007</span> | <span>1h58 min</span></p>
+
+                </div>
+                <div class="col col-4">
+
+                    <a href="How to Get Away with Murder.html">
+                        <div class="search-results__item">
+                            <img src="../wwwroot/img/content/htgawmS1.jpg" />
+                            <div class="search-results__item-type">
+                                <svg class="all fill-white">
+                                    <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <p class="search-results__item-title mb-0 mt-3">How to Get Away with Murder<span></span></p>
+                    <p class="search-results__item-info"><span>2014</span> | <span>1h58 min</span></p>
+
+                </div>
+                <div class="col col-4">
+
+                    <a href="The Simpsons.html">
+                        <div class="search-results__item">
+                            <img src="../wwwroot/img/content/TheSimpsonsS1.jpg" />
+                            <div class="search-results__item-type">
+                                <svg class="all fill-white">
+                                    <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </a>
+
+                    <p class="search-results__item-title mb-0 mt-3">The Simpsons<span></span></p>
+                    <p class="search-results__item-info"><span>1989</span> | <span>1h58 min</span></p>
+
+                </div>
+    </div>
+</div>
+
+<section class="item-all bg-dark py-5 mb-5">
+    <div class="item-all__content">
+        <h6>All Series</h6>
+
+        <div class="content-slider">
+            SLIDER
+        </div>
+    </div>
+
+</section>
+            </article>
+
+            <div class="footer">
+                <footer class="footer">
+    <div class="footer__top">
+        <div class="row">
+            <div class="col-12 col-md-6 footer__top-logo">
+                <a href="#">
+                    <img src="../wwwroot/img/brand/company-logo.png" alt="">
+                </a>
+            </div>
+            <div class="col-12 col-md-6 footer__top-social text-end text">
+                <a href="https://twitter.com" target="_blank">
+                    <svg class="all fill-white me-3" style="width: 14px; height: 27px">
+                        <use xlink:href="../wwwroot/all.svg#icon-facebook"></use>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <svg class="all fill-white me-3" style="width: 24px; height: 24px">
+                        <use xlink:href="../wwwroot/all.svg#icon-instagram"></use>
+                    </svg>
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <svg class="all fill-white" style="width: 27px; height: 22px">
+                        <use xlink:href="../wwwroot/all.svg#icon-twitter"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer__separator"></div>
+
+    <div class="footer__bottom">
+        <div class="row">
+            <div class="col-12">
+                <p class="text-bottom-footer" style="margin-bottom: 0px;">© 2022 Company Airlines, Inc.</p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+            </div>
+        </main>
+    </div>
+
+    <script src="../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <script src="../wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../wwwroot/js/site.js" asp-append-version="true"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+</body>
+</html>

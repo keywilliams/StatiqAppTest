@@ -15,6 +15,16 @@
         public List<Item> From { get; set; }
         public List<Item> To { get; set; }
         public List<Item> FlightNumber { get; set; }
+
+        public ModalModel Modal { get; set; }
+    }
+
+    public class ModalModel
+    {
+        public List<Item> Dates { get; set; }
+        public List<Item> From { get; set; }
+        public List<Item> To { get; set; }
+        public List<Item> FlightNumber { get; set; }
     }
 
     public class Item

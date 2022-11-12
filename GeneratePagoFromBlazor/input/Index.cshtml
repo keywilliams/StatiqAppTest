@@ -164,12 +164,9 @@
             <p class="search-results__title hide-tablet"> Search Results <span>(4)</span></p>
 
             <div class="d-flex d-md-none justify-content-between align-items-center mb-4">
-                <p class="search-results__title mb-0"> All Movies</p>
+                <p class="search-results__title mb-0">  </p>
                 <button class="btn-outline btn-rounded btn-outline-mobile">Filter</button>
             </div>
-
-
-
             <div class="row row-cols-lg-5 ">
                 @{
                     foreach (var movie in Model.Movies)
@@ -178,7 +175,7 @@
 
                             <a href="@{@movie.Name}.html">
                                 <div class="search-results__item">
-                                    <img src="../wwwroot/img/content/@{@movie.Name}.jpg" />
+                                    <img src="../wwwroot/img/content/@{@movie.Image}" />
                                     <div class="search-results__item-type">
                                         <svg class="all fill-white">
                                             <use xlink:href="../wwwroot/all.svg#icon-movie"></use>
@@ -193,137 +190,51 @@
 
                         </div>
                     }
+
+                    foreach (var tv in Model.Tvs)
+                    {
+                        <div class="col col-6 col-md-4">
+
+                            <a href="@{@tv.Name}.html">
+                                <div class="search-results__item">
+                                    <img src="../wwwroot/img/content/@{@tv.Image}" />
+                                    <div class="search-results__item-type">
+                                        <svg class="all fill-white">
+                                            <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                            </a>
+
+                            <p class="search-results__item-title mb-0 mt-3">@tv.Name: <span>Season @tv.Season</span></p>
+                            <p class="search-results__item-info"><span>@tv.Year</span> | <span>1h58 min</span></p>
+
+                        </div>
+                    }
+
+                    foreach (var audio in Model.Audios)
+                    {
+                        <div class="col col-6 col-md-4">
+
+                            <a href="@{@audio.Name}.html">
+                                <div class="search-results__item">
+                                    <img src="../wwwroot/img/content/@{@audio.Image}" />
+                                    <div class="search-results__item-type">
+                                        <svg class="all fill-white">
+                                            <use xlink:href="../wwwroot/all.svg#icon-audio"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                            </a>
+
+                            <p class="search-results__item-title mb-0 mt-3">@audio.Name, <span>Season @audio.Season</span></p>
+                            <p class="search-results__item-info"><span>@audio.Year</span> | <span>1h58 min</span></p>
+
+                        </div>
+                    }
                 }
-
-                <div class="col col-6 col-md-4">
-
-                    <a href="AudioDetail.html">
-                        <div class="search-results__item">
-                            <img src="../wwwroot/img/content/AllAmericanS1.jpg" />
-                            <div class="search-results__item-type">
-                                <svg class="all fill-white">
-                                    <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
-                                </svg>
-                            </div>
-                        </div>
-
-                    </a>
-
-                    <p class="search-results__item-title mb-0 mt-3">All American, <span>S1</span></p>
-                    <p class="search-results__item-info"><span>2018</span> | <span>1h58 min</span></p>
-
-                </div>
-                <div class="col col-6 col-md-4">
-
-                    <a href="TvDetail.html">
-                        <div class="search-results__item">
-                            <img src="../wwwroot/img/content/bigweekend.jpg" />
-                            <div class="search-results__item-type">
-                                <svg class="all fill-white">
-                                    <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
-                                </svg>
-                            </div>
-                        </div>
-
-                    </a>
-
-                    <p class="search-results__item-title mb-0 mt-3">The Big Bang Theory: <span>Season 12</span></p>
-                    <p class="search-results__item-info"><span>2018</span> | <span>1h58 min</span></p>
-
-                </div>
-                <div class="col col-6 col-md-4">
-
-                    <a href="MovieDetail.html">
-                        <div class="search-results__item">
-                            <img src="../wwwroot/img/content/Cruella.jpg" />
-                            <div class="search-results__item-type">
-                                <svg class="all fill-white">
-                                    <use xlink:href="../wwwroot/all.svg#icon-movie"></use>
-                                </svg>
-                            </div>
-                        </div>
-
-                    </a>
-
-                    <p class="search-results__item-title mb-0 mt-3">Cruella<span></span></p>
-                    <p class="search-results__item-info"><span>2018</span> | <span>1h58 min</span></p>
-
-                </div>
-                <div class="col col-6 col-md-4">
-
-                    <a href="Index.html">
-                        <div class="search-results__item">
-                            <img src="../wwwroot/img/content/htga.jpg" />
-                            <div class="search-results__item-type">
-                                <svg class="all fill-white">
-                                    <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
-                                </svg>
-                            </div>
-                        </div>
-
-                    </a>
-
-                    <p class="search-results__item-title mb-0 mt-3">How to Get Away with a Murder <span>Season 12</span></p>
-                    <p class="search-results__item-info"><span>2018</span> | <span>1h58 min</span></p>
-
-                </div>
-                <div class="col col-6 col-md-4">
-
-                    <a href="MovieDetail.html">
-                        <div class="search-results__item">
-                            <img src="../wwwroot/img/content/luca.jpg" />
-                            <div class="search-results__item-type">
-                                <svg class="all fill-white">
-                                    <use xlink:href="../wwwroot/all.svg#icon-movie"></use>
-                                </svg>
-                            </div>
-                        </div>
-
-                    </a>
-
-                    <p class="search-results__item-title mb-0 mt-3">Luca <span></span></p>
-                    <p class="search-results__item-info"><span>2018</span> | <span>1h58 min</span></p>
-
-                </div>
-
-                <div class="col col-6 col-md-4">
-
-                    <a href="TvDetail.html">
-                        <div class="search-results__item">
-                            <img src="../wwwroot/img/content/bigweekend.jpg" />
-                            <div class="search-results__item-type">
-                                <svg class="all fill-white">
-                                    <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
-                                </svg>
-                            </div>
-                        </div>
-
-                    </a>
-
-                    <p class="search-results__item-title mb-0 mt-3">The Big Bang Theory: <span>Season 12</span></p>
-                    <p class="search-results__item-info"><span>2018</span> | <span>1h58 min</span></p>
-
-                </div>
-
-                <div class="col col-6 col-md-4">
-
-                    <a href="MovieDetail.html">
-                        <div class="search-results__item">
-                            <img src="../wwwroot/img/content/luca.jpg" />
-                            <div class="search-results__item-type">
-                                <svg class="all fill-white">
-                                    <use xlink:href="../wwwroot/all.svg#icon-movie"></use>
-                                </svg>
-                            </div>
-                        </div>
-
-                    </a>
-
-                    <p class="search-results__item-title mb-0 mt-3">Luca <span></span></p>
-                    <p class="search-results__item-info"><span>2018</span> | <span>1h58 min</span></p>
-
-                </div>
-
             </div>
         </div>
     </section>
@@ -350,69 +261,86 @@
                     </li>
                 </ul>
 
-                <!-- tabs content -->
-                <div id="modalTabContent" class="tab-content">
-                    <div id="destination" role="tabpanel" aria-labelledby="destination-tab" class="py-4 show active tab-pane">
-                        <div class="modal-form my-4">
-                            <label>Date of Departure</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
+                @if (Model.Modal != null)
+                {
+                    <!-- tabs content -->
+                    <div id="modalTabContent" class="tab-content">
+                        <div id="destination" role="tabpanel" aria-labelledby="destination-tab" class="py-4 show active tab-pane">
+                            <div class="modal-form my-4">
+                                <label>Date of Departure</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    @{
+                                        foreach (var item in Model.Dates)
+                                        {
+                                            <option value="@item.Id">@item.Description</option>
+                                        }
+                                    }
+                                </select>
 
-                            <label>From</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
+                                <label>From</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    @{
+                                        foreach (var item in Model.From)
+                                        {
+                                            <option value="@item.Id">@item.Description</option>
+                                        }
+                                    }
+                                </select>
 
-                            <label>To</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
+                                <label>To</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    @{
+                                        foreach (var item in Model.To)
+                                        {
+                                            <option value="@item.Id">@item.Description</option>
+                                        }
+                                    }
+                                </select>
 
-                            <label>Flight Number</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
+                                <label>Flight Number</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    @{
+                                        foreach (var item in Model.FlightNumber)
+                                        {
+                                            <option value="@item.Id">@item.Description</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="text-end">
+                                <a href="#"> Clear all</a>
+                            </div>
                         </div>
 
-                        <div class="text-end">
-                            <a href="#"> Clear all</a>
+                        <div id="flightNumber" role="tabpanel" aria-labelledby="flightnumber-tab " class="py-4 tab-pane">
+                            <div class="modal-form my-4">
+                                <label>Flight Number</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    @{
+                                        foreach (var item in Model.FlightNumber)
+                                        {
+                                            <option value="@item.Id">@item.Description</option>
+                                        }
+                                    }
+                                </select>
+
+                                <label>Date of Departure</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    @{
+                                        foreach (var item in Model.Dates)
+                                        {
+                                            <option value="@item.Id">@item.Description</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="text-end">
+                                <a href="#"> Clear all</a>
+                            </div>
                         </div>
                     </div>
-
-                    <div id="flightNumber" role="tabpanel" aria-labelledby="flightnumber-tab " class="py-4 tab-pane">
-                        <div class="modal-form my-4">
-                            <label>Flight Number</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-
-                            <label>Date of Departure</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-
-
-                        </div>
-
-                        <div class="text-end">
-                            <a href="#"> Clear all</a>
-                        </div>
-                    </div>
-                </div>
-
+                }
             </div>
         </div>
     </div>
