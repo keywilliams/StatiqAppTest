@@ -8,9 +8,10 @@ namespace GeneratePagoFromBlazor.Utils
         public static Bootstrapper GenerateTMCSiteByLanguage(this Bootstrapper bootstrapper)
         {
             var tmcService = new TmcService();
-            var language = tmcService.GetTmcIndex();
+            var languages = tmcService.GetSiteLanguages();
+            var tmcDataByLanguage = tmcService.GetTmcIndex(languages);
 
-            foreach (var index in language.IndexCollection)
+            foreach (var index in tmcDataByLanguage.IndexCollection)
             {
                 bootstrapper.BuildPipeline($"Render TMC Index in {index.Key}", builder => builder
                     .WithInputReadFiles("Index.cshtml")

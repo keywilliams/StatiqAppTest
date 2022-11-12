@@ -11,16 +11,24 @@ namespace GeneratePagoFromBlazor.Services
 
         public List<SiteColor> GetSiteColors()
         {
-            var colors = new List<SiteColor>
+            return new List<SiteColor>
             {
                 new SiteColor("MainColor", "green"),
                 new SiteColor("BackgroundColor", "yellow")
             };
-
-            return colors;
         }
 
-        public LanguageModel GetTmcIndex()
+        public List<Language> GetSiteLanguages()
+        {
+            return new List<Language>
+            {
+                new Language("pt", "PT"),
+                new Language("en", "EN"),
+                new Language("es", "ES")
+            };
+        }
+
+        public LanguageModel GetTmcIndex(List<Language> languages)
         {
             var index = new LanguageModel
             {
@@ -44,7 +52,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Studio = "Teste",
                                  Year = 1998 ,
                                  ContentType = Models.ContentType.Movie,
-                                 ImdbRating = 8.5M
+                                 ImdbRating = 8.5M,
+                                 SiteLanguages = languages,
+                                 Title = "Titanic PT"
                              },
                              new MovieDetailModel
                              {
@@ -60,7 +70,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Studio = "Teste",
                                  Year = 1999,
                                  ContentType = Models.ContentType.Movie,
-                                 ImdbRating = 8.5M
+                                 ImdbRating = 8.5M,
+                                 SiteLanguages = languages,
+                                 Title = "Matrix PT"
                              },
                              new MovieDetailModel
                              {
@@ -76,7 +88,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Studio = "Teste",
                                  Year = 2009,
                                  ContentType = Models.ContentType.Movie,
-                                 ImdbRating = 8.5M
+                                 ImdbRating = 8.5M,
+                                 SiteLanguages = languages,
+                                 Title = "Avatar PT"
                              },
                              new MovieDetailModel
                              {
@@ -92,7 +106,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Studio = "Teste",
                                  Year = 2003,
                                  ContentType = Models.ContentType.Movie,
-                                 ImdbRating = 8.5M
+                                 ImdbRating = 8.5M,
+                                 SiteLanguages = languages,
+                                 Title = "Hulk PT"
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -119,7 +135,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Track { Id = 9, Description = "One and Only", Duration = "5:48" },
                                     new Track { Id = 10, Description = "Love Song", Duration = "5:16" },
                                     new Track { Id = 11, Description = "Someone Like You", Duration = "4:45" },
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "Adele 21 PT"
                             },
                             new AudioDetailModel
                             {
@@ -144,7 +162,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Track { Id = 10, Description = "Crawling", Duration = "5:16" },
                                     new Track { Id = 11, Description = "In The End", Duration = "4:45" },
                                     new Track { Id = 12, Description = "One Step Closer", Duration = "4:45" }
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "Linkin Park PT"
                             }
                         },
                         Tvs = new List<TvDetailModel>
@@ -172,7 +192,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 3, Description = "i", Duration = "0:55" },
                                     new Episode { Id = 4, Description = "Lose Yourself", Duration = "0:59" },
                                     new Episode { Id = 5, Description = "All We Got", Duration = "1:00" },
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "All American PT"
                             },
                             new TvDetailModel
                             {
@@ -198,7 +220,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 3, Description = "The Fuzzy Boots Corollary", Duration = "0:55" },
                                     new Episode { Id = 4, Description = "The Luminous Fish Effect", Duration = "0:59" },
                                     new Episode { Id = 5, Description = "The Hamburger Postulate", Duration = "1:00" },
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "The Big Bang Theory PT"
                             },
                             new TvDetailModel
                             {
@@ -223,7 +247,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 3, Description = "Smile, or Go to Jail", Duration = "0:55" },
                                     new Episode { Id = 4, Description = "Let's Get to Scooping", Duration = "0:59" },
                                     new Episode { Id = 5, Description = "We're Not Friends", Duration = "1:00" },
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "How to Get Away with Murder PT"
                             },
                             new TvDetailModel
                             {
@@ -248,7 +274,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 3, Description = "Homer's Odyssey", Duration = "0:55" },
                                     new Episode { Id = 4, Description = "There's No Disgrace Like Home", Duration = "0:59" },
                                     new Episode { Id = 5, Description = "Bart the General", Duration = "1:00" },
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "The Simpsons PT"
                             }
                         },
                         Categories = new List<Item>
@@ -330,7 +358,9 @@ namespace GeneratePagoFromBlazor.Services
                                 new Item(2, "Brasil"),
                                 new Item(3, "Espanha")
                             }
-                        }
+                        },
+                        SiteLanguages = languages,
+                        Title = "Index PT"
                     }},
                     {"en", new IndexModel
                     {
@@ -350,7 +380,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Studio = "Teste",
                                  Year = 1998,
                                  ContentType = Models.ContentType.Movie,
-                                 ImdbRating = 8.5M
+                                 ImdbRating = 8.5M,
+                                 SiteLanguages = languages,
+                                 Title = "Titanic EN"
                              },
                              new MovieDetailModel
                              {
@@ -366,7 +398,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Studio = "Teste",
                                  Year = 1999,
                                  ContentType = Models.ContentType.Movie,
-                                 ImdbRating = 8.5M
+                                 ImdbRating = 8.5M,
+                                 SiteLanguages = languages,
+                                 Title = "Matrix EN"
                              },
                              new MovieDetailModel
                              {
@@ -382,7 +416,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Studio = "Teste",
                                  Year = 2009,
                                  ContentType = Models.ContentType.Movie,
-                                 ImdbRating = 8.5M
+                                 ImdbRating = 8.5M,
+                                 SiteLanguages = languages,
+                                 Title = "Avatar EN"
                              },
                              new MovieDetailModel
                              {
@@ -398,7 +434,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Studio = "Teste",
                                  Year = 2003,
                                  ContentType = Models.ContentType.Movie,
-                                 ImdbRating = 8.5M
+                                 ImdbRating = 8.5M,
+                                 SiteLanguages = languages,
+                                 Title = "Hulk EN"
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -425,7 +463,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Track { Id = 9, Description = "One and Only", Duration = "5:48" },
                                     new Track { Id = 10, Description = "Love Song", Duration = "5:16" },
                                     new Track { Id = 11, Description = "Someone Like You", Duration = "4:45" },
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "Adele 21 EN"
                             },
                             new AudioDetailModel
                             {
@@ -450,7 +490,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Track { Id = 10, Description = "Crawling", Duration = "5:16" },
                                     new Track { Id = 11, Description = "In The End", Duration = "4:45" },
                                     new Track { Id = 12, Description = "One Step Closer", Duration = "4:45" }
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "Linkin Park EN"
                             }
                         },
                         Tvs = new List<TvDetailModel>
@@ -478,7 +520,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 3, Description = "i", Duration = "0:55" },
                                     new Episode { Id = 4, Description = "Lose Yourself", Duration = "0:59" },
                                     new Episode { Id = 5, Description = "All We Got", Duration = "1:00" },
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "All American EN"
                             },
                             new TvDetailModel
                             {
@@ -504,7 +548,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 3, Description = "The Fuzzy Boots Corollary", Duration = "0:55" },
                                     new Episode { Id = 4, Description = "The Luminous Fish Effect", Duration = "0:59" },
                                     new Episode { Id = 5, Description = "The Hamburger Postulate", Duration = "1:00" },
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "The Big Bang Theory EN"
                             },
                             new TvDetailModel
                             {
@@ -529,7 +575,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 3, Description = "Smile, or Go to Jail", Duration = "0:55" },
                                     new Episode { Id = 4, Description = "Let's Get to Scooping", Duration = "0:59" },
                                     new Episode { Id = 5, Description = "We're Not Friends", Duration = "1:00" },
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "How to Get Away with Murder EN"
                             },
                             new TvDetailModel
                             {
@@ -554,7 +602,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 3, Description = "Homer's Odyssey", Duration = "0:55" },
                                     new Episode { Id = 4, Description = "There's No Disgrace Like Home", Duration = "0:59" },
                                     new Episode { Id = 5, Description = "Bart the General", Duration = "1:00" },
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "The Simpsons EN"
                             }
                         },
                         Categories = new List<Item>
@@ -636,7 +686,9 @@ namespace GeneratePagoFromBlazor.Services
                                 new Item(2, "Brazil"),
                                 new Item(3, "Spain")
                             }
-                        }
+                        },
+                        SiteLanguages = languages,
+                        Title = "Index EN"
                     }},
                     {"es", new IndexModel
                     {
@@ -656,7 +708,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Studio = "Teste",
                                  Year = 1998,
                                  ContentType = Models.ContentType.Movie,
-                                 ImdbRating = 8.5M
+                                 ImdbRating = 8.5M,
+                                 SiteLanguages = languages,
+                                 Title = "Titanic ES"
                              },
                              new MovieDetailModel
                              {
@@ -672,7 +726,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Studio = "Teste",
                                  Year = 1999,
                                  ContentType = Models.ContentType.Movie,
-                                 ImdbRating = 8.5M
+                                 ImdbRating = 8.5M,
+                                 SiteLanguages = languages,
+                                 Title = "Matrix ES"
                              },
                              new MovieDetailModel
                              {
@@ -688,7 +744,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Studio = "Teste",
                                  Year = 2009,
                                  ContentType = Models.ContentType.Movie,
-                                 ImdbRating = 8.5M
+                                 ImdbRating = 8.5M,
+                                 SiteLanguages = languages,
+                                 Title = "Avatar ES"
                              },
                              new MovieDetailModel
                              {
@@ -704,7 +762,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Studio = "Teste",
                                  Year = 2003,
                                  ContentType = Models.ContentType.Movie,
-                                 ImdbRating = 8.5M
+                                 ImdbRating = 8.5M,
+                                 SiteLanguages = languages,
+                                 Title = "Hulk ES"
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -731,7 +791,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Track { Id = 9, Description = "One and Only", Duration = "5:48" },
                                     new Track { Id = 10, Description = "Love Song", Duration = "5:16" },
                                     new Track { Id = 11, Description = "Someone Like You", Duration = "4:45" },
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "Adele 21 ES"
                             },
                             new AudioDetailModel
                             {
@@ -756,7 +818,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Track { Id = 10, Description = "Crawling", Duration = "5:16" },
                                     new Track { Id = 11, Description = "In The End", Duration = "4:45" },
                                     new Track { Id = 12, Description = "One Step Closer", Duration = "4:45" }
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "Linkin Park ES"
                             }
                         },
                         Tvs = new List<TvDetailModel>
@@ -784,7 +848,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 3, Description = "i", Duration = "0:55" },
                                     new Episode { Id = 4, Description = "Lose Yourself", Duration = "0:59" },
                                     new Episode { Id = 5, Description = "All We Got", Duration = "1:00" },
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "All American ES"
                             },
                             new TvDetailModel
                             {
@@ -810,7 +876,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 3, Description = "The Fuzzy Boots Corollary", Duration = "0:55" },
                                     new Episode { Id = 4, Description = "The Luminous Fish Effect", Duration = "0:59" },
                                     new Episode { Id = 5, Description = "The Hamburger Postulate", Duration = "1:00" },
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "The Big Bang Theory ES"
                             },
                             new TvDetailModel
                             {
@@ -835,7 +903,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 3, Description = "Smile, or Go to Jail", Duration = "0:55" },
                                     new Episode { Id = 4, Description = "Let's Get to Scooping", Duration = "0:59" },
                                     new Episode { Id = 5, Description = "We're Not Friends", Duration = "1:00" },
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "How to Get Away with Murder ES"
                             },
                             new TvDetailModel
                             {
@@ -860,7 +930,9 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 3, Description = "Homer's Odyssey", Duration = "0:55" },
                                     new Episode { Id = 4, Description = "There's No Disgrace Like Home", Duration = "0:59" },
                                     new Episode { Id = 5, Description = "Bart the General", Duration = "1:00" },
-                                }
+                                },
+                                 SiteLanguages = languages,
+                                 Title = "The Simpsons ES"
                             }
                         },
                         Categories = new List<Item>
@@ -928,7 +1000,9 @@ namespace GeneratePagoFromBlazor.Services
                             {
                                 new Item(1, "Lisboa") , new Item(2, "Brasil") , new Item(3, "España")
                             }
-                        }
+                        },
+                        SiteLanguages = languages,
+                        Title = "Index ES"
                     }}
                 },
             };

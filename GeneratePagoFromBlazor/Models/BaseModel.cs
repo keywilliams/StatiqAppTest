@@ -1,6 +1,6 @@
 ﻿namespace GeneratePagoFromBlazor.Models
 {
-    public class BaseModel
+    public class BaseModel : LayoutModel
     {
         public string Name { get; set; }
         public string Description { get; set; }
