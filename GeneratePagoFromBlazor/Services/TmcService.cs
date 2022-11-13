@@ -63,7 +63,8 @@ namespace GeneratePagoFromBlazor.Services
                                  ContentType = Models.ContentType.Movie,
                                  ImdbRating = 8.5M,
                                  SiteLanguages = languages,
-                                 Title = "Titanic PT"
+                                 Title = "Titanic PT",
+                                 MetaDescription = "Página Titanic PT"
                              },
                              new MovieDetailModel
                              {
@@ -81,7 +82,8 @@ namespace GeneratePagoFromBlazor.Services
                                  ContentType = Models.ContentType.Movie,
                                  ImdbRating = 8.5M,
                                  SiteLanguages = languages,
-                                 Title = "Matrix PT"
+                                 Title = "Matrix PT",
+                                 MetaDescription = "Página Matrix PT"
                              },
                              new MovieDetailModel
                              {
@@ -99,7 +101,8 @@ namespace GeneratePagoFromBlazor.Services
                                  ContentType = Models.ContentType.Movie,
                                  ImdbRating = 8.5M,
                                  SiteLanguages = languages,
-                                 Title = "Avatar PT"
+                                 Title = "Avatar PT",
+                                 MetaDescription = "Página Avatar PT"
                              },
                              new MovieDetailModel
                              {
@@ -117,7 +120,8 @@ namespace GeneratePagoFromBlazor.Services
                                  ContentType = Models.ContentType.Movie,
                                  ImdbRating = 8.5M,
                                  SiteLanguages = languages,
-                                 Title = "Hulk PT"
+                                 Title = "Hulk PT",
+                                 MetaDescription = "Página Hulk PT"
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -146,7 +150,8 @@ namespace GeneratePagoFromBlazor.Services
                                     new Track { Id = 11, Description = "Someone Like You", Duration = "4:45" },
                                 },
                                  SiteLanguages = languages,
-                                 Title = "Adele 21 PT"
+                                 Title = "Adele 21 PT",
+                                 MetaDescription = "Página Adele 21 PT"
                             },
                             new AudioDetailModel
                             {
@@ -173,7 +178,8 @@ namespace GeneratePagoFromBlazor.Services
                                     new Track { Id = 12, Description = "One Step Closer", Duration = "4:45" }
                                 },
                                  SiteLanguages = languages,
-                                 Title = "Linkin Park PT"
+                                 Title = "Linkin Park PT",
+                                 MetaDescription = "Página Linkin Park PT"
                             }
                         },
                         Tvs = new List<TvDetailModel>
@@ -203,7 +209,8 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 5, Description = "All We Got", Duration = "1:00" },
                                 },
                                  SiteLanguages = languages,
-                                 Title = "All American PT"
+                                 Title = "All American PT",
+                                 MetaDescription = "Página All American PT PT"
                             },
                             new TvDetailModel
                             {
@@ -231,7 +238,8 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 5, Description = "The Hamburger Postulate", Duration = "1:00" },
                                 },
                                  SiteLanguages = languages,
-                                 Title = "The Big Bang Theory PT"
+                                 Title = "The Big Bang Theory PT",
+                                 MetaDescription = "Página The Big Bang Theory PT"
                             },
                             new TvDetailModel
                             {
@@ -258,7 +266,8 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 5, Description = "We're Not Friends", Duration = "1:00" },
                                 },
                                  SiteLanguages = languages,
-                                 Title = "How to Get Away with Murder PT"
+                                 Title = "How to Get Away with Murder PT",
+                                 MetaDescription = "Página How to Get Away with Murder PT"
                             },
                             new TvDetailModel
                             {
@@ -285,7 +294,8 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 5, Description = "Bart the General", Duration = "1:00" },
                                 },
                                  SiteLanguages = languages,
-                                 Title = "The Simpsons PT"
+                                 Title = "The Simpsons PT",
+                                 MetaDescription = "Página Simpsons PT"
                             }
                         },
                         Categories = new List<Item>
@@ -370,7 +380,8 @@ namespace GeneratePagoFromBlazor.Services
                         },
                         SiteLanguages = languages,
                         Title = "Index PT",
-                        Name= "Index"
+                        Name= "Index",
+                        MetaDescription = "Página Index PT"
                     }},
                     {"en", new IndexModel
                     {
@@ -392,7 +403,8 @@ namespace GeneratePagoFromBlazor.Services
                                  ContentType = Models.ContentType.Movie,
                                  ImdbRating = 8.5M,
                                  SiteLanguages = languages,
-                                 Title = "Titanic EN"
+                                 Title = "Titanic EN",
+                                 MetaDescription = "Titanic Page EN"
                              },
                              new MovieDetailModel
                              {
@@ -410,7 +422,8 @@ namespace GeneratePagoFromBlazor.Services
                                  ContentType = Models.ContentType.Movie,
                                  ImdbRating = 8.5M,
                                  SiteLanguages = languages,
-                                 Title = "Matrix EN"
+                                 Title = "The Matrix EN",
+                                 MetaDescription = "The Matrix Page EN"
                              },
                              new MovieDetailModel
                              {
@@ -428,7 +441,8 @@ namespace GeneratePagoFromBlazor.Services
                                  ContentType = Models.ContentType.Movie,
                                  ImdbRating = 8.5M,
                                  SiteLanguages = languages,
-                                 Title = "Avatar EN"
+                                 Title = "Avatar EN",
+                                 MetaDescription = "Avatar Page EN"
                              },
                              new MovieDetailModel
                              {
@@ -446,7 +460,8 @@ namespace GeneratePagoFromBlazor.Services
                                  ContentType = Models.ContentType.Movie,
                                  ImdbRating = 8.5M,
                                  SiteLanguages = languages,
-                                 Title = "Hulk EN"
+                                 Title = "The Hulk EN",
+                                 MetaDescription = "The Hulk Page EN"
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -475,7 +490,8 @@ namespace GeneratePagoFromBlazor.Services
                                     new Track { Id = 11, Description = "Someone Like You", Duration = "4:45" },
                                 },
                                  SiteLanguages = languages,
-                                 Title = "Adele 21 EN"
+                                 Title = "Adele 21 EN",
+                                 MetaDescription = "Adele 21 Page EN"
                             },
                             new AudioDetailModel
                             {
@@ -502,7 +518,8 @@ namespace GeneratePagoFromBlazor.Services
                                     new Track { Id = 12, Description = "One Step Closer", Duration = "4:45" }
                                 },
                                  SiteLanguages = languages,
-                                 Title = "Linkin Park EN"
+                                 Title = "Linkin Park EN",
+                                 MetaDescription = "Linkin Park Page EN"
                             }
                         },
                         Tvs = new List<TvDetailModel>
@@ -532,7 +549,8 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 5, Description = "All We Got", Duration = "1:00" },
                                 },
                                  SiteLanguages = languages,
-                                 Title = "All American EN"
+                                 Title = "All American EN",
+                                 MetaDescription = "All American Page EN"
                             },
                             new TvDetailModel
                             {
@@ -560,7 +578,8 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 5, Description = "The Hamburger Postulate", Duration = "1:00" },
                                 },
                                  SiteLanguages = languages,
-                                 Title = "The Big Bang Theory EN"
+                                 Title = "The Big Bang Theory EN",
+                                 MetaDescription = "The Big Bang Theory Page EN"
                             },
                             new TvDetailModel
                             {
@@ -587,7 +606,8 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 5, Description = "We're Not Friends", Duration = "1:00" },
                                 },
                                  SiteLanguages = languages,
-                                 Title = "How to Get Away with Murder EN"
+                                 Title = "How to Get Away with Murder EN",
+                                 MetaDescription = "How to Get Away with Murder Page EN"
                             },
                             new TvDetailModel
                             {
@@ -614,7 +634,8 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 5, Description = "Bart the General", Duration = "1:00" },
                                 },
                                  SiteLanguages = languages,
-                                 Title = "The Simpsons EN"
+                                 Title = "The Simpsons EN",
+                                 MetaDescription = "The Simpsons Page EN"
                             }
                         },
                         Categories = new List<Item>
@@ -699,7 +720,8 @@ namespace GeneratePagoFromBlazor.Services
                         },
                         SiteLanguages = languages,
                         Title = "Index EN",
-                        Name= "Index"
+                        Name= "Index",
+                        MetaDescription = "Index Page EN"
                     }},
                     {"es", new IndexModel
                     {
@@ -1014,7 +1036,8 @@ namespace GeneratePagoFromBlazor.Services
                         },
                         SiteLanguages = languages,
                         Title = "Index ES",
-                        Name= "Index"
+                        Name= "Index",
+                        MetaDescription = "Página Index"
                     }}
                 },
             };
