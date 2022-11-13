@@ -2,6 +2,7 @@
 {
     public class LayoutModel
     {
+        public string Name { get; set; }
         public string Title { get; set; }
         public List<Language> SiteLanguages { get; set; }
 

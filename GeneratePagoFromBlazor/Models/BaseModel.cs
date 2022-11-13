@@ -2,7 +2,6 @@
 {
     public class BaseModel : LayoutModel
     {
-        public string Name { get; set; }
         public string Description { get; set; }
         public ContentType ContentType { get; set; }
         public decimal ImdbRating { get; set; }
