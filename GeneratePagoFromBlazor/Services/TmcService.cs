@@ -9,6 +9,15 @@ namespace GeneratePagoFromBlazor.Services
 
         }
 
+        public List<SiteModel> GetSiteConfigurations()
+        {
+            return new List<SiteModel>
+            {
+                new SiteModel("https://github.com/keywilliams/StatiqAppTest/raw/master/input.zip", "Teste"),
+                new SiteModel("https://github.com/keywilliams/StatiqAppTest/raw/master/input_tmc.zip", "TMC")
+            };
+        }
+
         public List<SiteColor> GetSiteColors()
         {
             return new List<SiteColor>

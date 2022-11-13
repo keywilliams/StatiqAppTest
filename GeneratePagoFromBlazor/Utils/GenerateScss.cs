@@ -14,18 +14,21 @@ namespace GeneratePagoFromBlazor.Utils
                         var colors = tmcService.GetSiteColors();
 
                         var filePathTemplate = fileSystem.RootPath.Combine("input/wwwroot/scss/_template.scss");
-                        string fileTemplate = File.ReadAllText(filePathTemplate.FullPath);
-
-                        foreach (var color in colors)
+                        if (File.Exists(filePathTemplate.FullPath))
                         {
-                            fileTemplate = fileTemplate.Replace($"[{color.Tag}]", color.Color);
-                        }
+                            string fileTemplate = File.ReadAllText(filePathTemplate.FullPath);
 
-                        var filePath = fileSystem.RootPath.Combine("input/wwwroot/scss/_colors.scss");
+                            foreach (var color in colors)
+                            {
+                                fileTemplate = fileTemplate.Replace($"[{color.Tag}]", color.Color);
+                            }
 
-                        using (var writer = new StreamWriter(filePath.FullPath, false))
-                        {
-                            writer.WriteLine(fileTemplate);
+                            var filePath = fileSystem.RootPath.Combine("input/wwwroot/scss/_colors.scss");
+
+                            using (var writer = new StreamWriter(filePath.FullPath, false))
+                            {
+                                writer.WriteLine(fileTemplate);
+                            }
                         }
                     }
                 );
