@@ -16,7 +16,7 @@ namespace GeneratePagoFromBlazor.Utils
                 bootstrapper.BuildPipeline($"Render TMC Index in {index.Key}", builder => builder
                     .WithInputReadFiles("Index.cshtml")
                     .WithProcessModules(new RenderRazor().WithModel(Config.FromValue(index.Value)))
-                    .WithOutputWriteFiles(new NormalizedPath($"{index.Key}/Index.html")));
+                    .WithOutputWriteFiles(new NormalizedPath($"{index.Key}/{index.Value.Name}.html")));
 
                 foreach (var movie in index.Value.Movies)
                 {

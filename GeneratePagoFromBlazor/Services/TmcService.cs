@@ -369,7 +369,8 @@ namespace GeneratePagoFromBlazor.Services
                             }
                         },
                         SiteLanguages = languages,
-                        Title = "Index PT"
+                        Title = "Index PT",
+                        Name= "Index"
                     }},
                     {"en", new IndexModel
                     {
@@ -697,7 +698,8 @@ namespace GeneratePagoFromBlazor.Services
                             }
                         },
                         SiteLanguages = languages,
-                        Title = "Index EN"
+                        Title = "Index EN",
+                        Name= "Index"
                     }},
                     {"es", new IndexModel
                     {
@@ -1011,7 +1013,8 @@ namespace GeneratePagoFromBlazor.Services
                             }
                         },
                         SiteLanguages = languages,
-                        Title = "Index ES"
+                        Title = "Index ES",
+                        Name= "Index"
                     }}
                 },
             };

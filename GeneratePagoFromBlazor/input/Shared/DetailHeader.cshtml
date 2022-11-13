@@ -1,0 +1,68 @@
+﻿@model BaseModel
+
+<div class="detail-header">
+    <div class="detail-header__banner position-relative">
+        <div class="detail-header__banner-overlay"></div>
+        <img src="../wwwroot/img/content/@{@Model.BannerImage}" />
+    </div>
+
+    <div class="detail-header__info">
+        <div class="row align-items-end">
+            <div class="col-4 col-md-3 detail-header__info-poster">
+                <img src="../wwwroot/img/content/@{@Model.Image}" />
+            </div>
+            <div class="col-8 col-md-9 detail-header__info-text">
+                <div class="text-details">
+                    @{
+                        if (Model.ContentType == GeneratePagoFromBlazor.Models.ContentType.Movie)
+                        {
+                            <p class="item-type mb-2">
+                                <svg class="all fill-primary">
+                                    <use xlink:href="../wwwroot/all.svg#icon-movie"></use>
+                                </svg>
+                                Movie
+                            </p>
+                        }
+
+                        if (Model.ContentType == GeneratePagoFromBlazor.Models.ContentType.TV)
+                        {
+                            <p class="item-type mb-2">
+                                <svg class="all fill-primary">
+                                    <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
+                                </svg>
+                                TV
+                            </p>
+                        }
+
+                        if (Model.ContentType == GeneratePagoFromBlazor.Models.ContentType.Audio)
+                        {
+                            <p class="item-type mb-2">
+                                <svg class="all fill-primary">
+                                    <use xlink:href="../wwwroot/all.svg#icon-audio"></use>
+                                </svg>
+                                Audio
+                            </p>
+                        }
+
+                    }
+                    <h2>@Model.Name</h2>
+                    <p class="item-category mb-2">DRAMA, BOX SETS</p>
+                    <p class="m-0"><small>1h 33mins | @Model.Year | G</small></p>
+                </div>
+                <div class="text-rating d-flex justify-content-between pt-4">
+                    <h5>@Model.ImdbRating</h5>
+                    <img src="../wwwroot/img/content/imdb.png" />
+                </div>
+            </div>
+
+            <div class="detail-header__info-btn">
+                <button type="button" class="btn btn-primary" onclick=" window.open('https://www.youtube.com/','_blank')">
+                    Trailer
+                    <svg class="all fill-white">
+                        <use xlink:href="../wwwroot/all.svg#icon-play"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
