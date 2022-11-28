@@ -1,6 +1,6 @@
 ﻿namespace GeneratePagoFromBlazor.Models
 {
-    public class IndexModel : LayoutModel
+    public class IndexViewModel : LayoutModel
     {
         public List<AudioDetailModel> Audios { get; set; }
         public List<MovieDetailModel> Movies { get; set; }

@@ -13,7 +13,7 @@ namespace GeneratePagoFromBlazor.Services
         {
             return new List<SiteModel>
             {
-                new SiteModel("https://github.com/keywilliams/StatiqAppTest/raw/master/input.zip", "Teste"),
+                //new SiteModel("https://github.com/keywilliams/StatiqAppTest/raw/master/input.zip", "Teste"),
                 new SiteModel("https://github.com/keywilliams/StatiqAppTest/raw/master/input_tmc.zip", "TMC")
             };
         }
@@ -41,9 +41,9 @@ namespace GeneratePagoFromBlazor.Services
         {
             var index = new LanguageModel
             {
-                IndexCollection = new Dictionary<string, IndexModel>
+                IndexCollection = new Dictionary<string, IndexViewModel>
                 {
-                    {"pt", new IndexModel
+                    {"pt", new IndexViewModel
                     {
                         Movies = new List<MovieDetailModel>
                         {
@@ -405,7 +405,7 @@ namespace GeneratePagoFromBlazor.Services
                         OgTitle = "Página Index PT",
                         Robots = "Index PT"
                     }},
-                    {"en", new IndexModel
+                    {"en", new IndexViewModel
                     {
                         Movies = new List<MovieDetailModel>
                         {
@@ -767,7 +767,7 @@ namespace GeneratePagoFromBlazor.Services
                         OgTitle = "Página Index EN",
                         Robots = "Index EN"
                     }},
-                    {"es", new IndexModel
+                    {"es", new IndexViewModel
                     {
                         Movies = new List<MovieDetailModel>
                         {

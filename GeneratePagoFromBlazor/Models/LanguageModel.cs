@@ -2,6 +2,6 @@
 {
     public class LanguageModel
     {
-        public Dictionary<string, IndexModel> IndexCollection { get; set; }
+        public Dictionary<string, IndexViewModel> IndexCollection { get; set; }
     }
 }

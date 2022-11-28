@@ -14,7 +14,7 @@
             <div class="col-8 col-md-9 detail-header__info-text">
                 <div class="text-details">
                     @{
-                        if (Model.ContentType == GeneratePagoFromBlazor.Models.ContentType.Movie)
+                        if (Model.ContentType == ContentType.Movie)
                         {
                             <p class="item-type mb-2">
                                 <svg class="all fill-primary">
@@ -24,7 +24,7 @@
                             </p>
                         }
 
-                        if (Model.ContentType == GeneratePagoFromBlazor.Models.ContentType.TV)
+                        if (Model.ContentType == ContentType.TV)
                         {
                             <p class="item-type mb-2">
                                 <svg class="all fill-primary">
@@ -34,7 +34,7 @@
                             </p>
                         }
 
-                        if (Model.ContentType == GeneratePagoFromBlazor.Models.ContentType.Audio)
+                        if (Model.ContentType == ContentType.Audio)
                         {
                             <p class="item-type mb-2">
                                 <svg class="all fill-primary">
