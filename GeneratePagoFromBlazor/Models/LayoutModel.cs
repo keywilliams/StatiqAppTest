@@ -9,7 +9,7 @@
         public string Robots { get; set; }
         public List<Language> SiteLanguages { get; set; }
 
-
+        public bool MainPage { get; set; } = false;
     }
 
     public class Language
