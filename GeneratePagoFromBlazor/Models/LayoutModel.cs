@@ -10,6 +10,7 @@
         public List<Language> SiteLanguages { get; set; }
 
         public bool MainPage { get; set; } = false;
+        public string Logo { get; set; }
     }
 
     public class Language

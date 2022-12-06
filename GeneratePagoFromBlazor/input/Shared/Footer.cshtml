@@ -1,9 +1,11 @@
-﻿<footer class="footer">
+﻿@model BaseModel
+
+<footer class="footer">
     <div class="footer__top">
         <div class="row">
             <div class="col-12 col-md-6 footer__top-logo">
-                <a href="#">
-                    <img src="../wwwroot/img/brand/company-logo.png" alt="">
+                <a href="Index.html">
+                    <img src="@Model.Logo" alt="">
                 </a>
             </div>
             <div class="col-12 col-md-6 footer__top-social text-end text">
@@ -31,7 +33,7 @@
     <div class="footer__bottom">
         <div class="row">
             <div class="col-12">
-                <p class="text-bottom-footer" style="margin-bottom: 0px;">© 2022 Company Airlines, Inc.</p>
+                <p class="text-bottom-footer" style="margin-bottom: 0px;">© @DateTime.Now.Year @Model.CompanyName.</p>
             </div>
         </div>
     </div>
