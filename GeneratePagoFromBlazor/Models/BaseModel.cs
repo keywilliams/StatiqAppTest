@@ -8,6 +8,5 @@
         public int Year { get; set; }
         public string Image { get; set; }
         public string BannerImage { get; set; }
-        public string CompanyName { get; set; }
     }
 }

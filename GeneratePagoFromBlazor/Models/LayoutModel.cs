@@ -11,6 +11,7 @@
 
         public bool MainPage { get; set; } = false;
         public string Logo { get; set; }
+        public string CompanyName { get; set; }
     }
 
     public class Language
