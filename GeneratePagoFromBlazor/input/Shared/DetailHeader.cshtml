@@ -47,11 +47,11 @@
                     }
                     <h2>@Model.Name</h2>
                     <p class="item-category mb-2">DRAMA, BOX SETS</p>
-                    <p class="m-0"><small>1h 33mins | @Model.Year | G</small></p>
+                    <p class="m-0"><small>@Model.Duration | @Model.Year | @Model.Rating</small></p>
                 </div>
                 <div class="text-rating d-flex justify-content-between pt-4">
                     <h5>@Model.ImdbRating</h5>
-                    <a href="https://www.imdb.com/title/@{@Model.DefaultTrailerUrl}" target="_blank">
+                    <a href="https://www.imdb.com/title/@{@Model.ImdbId}" target="_blank">
 						<img src="../wwwroot/img/content/imdb.png" />
 					</a>
                 </div>

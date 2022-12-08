@@ -9,5 +9,8 @@
         public string Image { get; set; }
         public string BannerImage { get; set; }
         public string DefaultTrailerUrl { get; set; }
+        public string ImdbId { get; set; }
+        public string Rating { get; set; }
+        public string Duration { get; set; }
     }
 }
