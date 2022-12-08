@@ -3,13 +3,13 @@
 <div class="detail-header">
     <div class="detail-header__banner position-relative">
         <div class="detail-header__banner-overlay"></div>
-        <img src="../wwwroot/img/content/@{@Model.BannerImage}" />
+        <img src="@Model.BannerImage" />
     </div>
 
     <div class="detail-header__info">
         <div class="row align-items-end">
             <div class="col-4 col-md-3 detail-header__info-poster">
-                <img src="../wwwroot/img/content/@{@Model.Image}" />
+                <img src="@Model.Image" />
             </div>
             <div class="col-8 col-md-9 detail-header__info-text">
                 <div class="text-details">
@@ -51,12 +51,14 @@
                 </div>
                 <div class="text-rating d-flex justify-content-between pt-4">
                     <h5>@Model.ImdbRating</h5>
-                    <img src="../wwwroot/img/content/imdb.png" />
+                    <a href="https://www.imdb.com/title/@{@Model.DefaultTrailerUrl}" target="_blank">
+						<img src="../wwwroot/img/content/imdb.png" />
+					</a>
                 </div>
             </div>
 
             <div class="detail-header__info-btn">
-                <button type="button" class="btn btn-primary" onclick=" window.open('@{@Model.Description}','_blank')">
+                <button type="button" class="btn btn-primary" onclick="window.open('@{@Model.DefaultTrailerUrl}', '_blank')">
                     Trailer
                     <svg class="all fill-white">
                         <use xlink:href="../wwwroot/all.svg#icon-play"></use>
