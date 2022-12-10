@@ -1,0 +1,51 @@
+﻿@model FAQsViewModel
+<div>
+    @{
+        foreach (var faq in Model.FAQs)
+        {
+            <section>
+                <section class="item-details">
+                    <div class="item-details__info">
+                        <div class="mb-4">
+                            <h6>@faq.Title</h6>
+                            <p>@faq.Subtitle</p>
+                        </div>
+
+                    </div>
+                </section>
+                <section class="audio-track bg-dark py-5 mb-5">
+                    <div class="item-all__content">
+                        <div class="content-table">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Question</th>
+                                        <th scope="col">Answer</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (faq.FAQItems != null && faq.FAQItems.Any())
+                                    {
+                                        @foreach (var item in faq.FAQItems.OrderBy(x => x.Order))
+                                        {
+                                            <tr>
+                                                <td>@item.Question</td>
+                                                <td>@item.Answer</td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        }
+    }
+</div>
+
+<style>
+    .navbar {
+        background-color: #041C2C;
+    }
+</style>

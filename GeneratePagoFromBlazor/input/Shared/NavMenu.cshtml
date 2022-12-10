@@ -33,13 +33,18 @@
             }
         </div>
 
-        <button class="navbar__menu-item hide-mobile">
-            <svg class="all fill-white" style="width: 18px; height: 18px">
-                <use xlink:href="../wwwroot/all.svg#icon-search"></use>
-            </svg>
-        </button>
+        @{
+            if (Model.MainPage)
+            {
+                <button class="navbar__menu-item hide-mobile">
+                    <svg class="all fill-white" style="width: 18px; height: 18px">
+                        <use xlink:href="../wwwroot/all.svg#icon-search"></use>
+                    </svg>
+                </button>
+            }
+        }
 
-        <button class="navbar__menu-item">
+        <button class="navbar__menu-item" onclick="window.location.href='FAQs.html';">
             <svg class="all fill-white" style="width: 26px; height: 26px">
                 <use xlink:href="../wwwroot/all.svg#icon-help"></use>
             </svg>

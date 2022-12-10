@@ -44,6 +44,14 @@ namespace GeneratePagoFromBlazor.Utils
                         .WithProcessModules(new RenderRazor().WithModel(Config.FromValue(audio)))
                         .WithOutputWriteFiles(new NormalizedPath($"{index.Key}/{audio.Name}.html")));
                 }
+
+                foreach (var faq in index.Value.FAQs)
+                {
+                    bootstrapper.BuildPipeline($"Render faq {faq.Title} in {index.Key}", builder => builder
+                        .WithInputReadFiles("FAQs.cshtml")
+                        .WithProcessModules(new RenderRazor().WithModel(Config.FromValue(faq)))
+                        .WithOutputWriteFiles(new NormalizedPath($"{index.Key}/FAQs.html")));
+                }
             }
 
             return bootstrapper;
