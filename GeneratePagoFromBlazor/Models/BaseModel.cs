@@ -12,5 +12,6 @@
         public string ImdbId { get; set; }
         public string Rating { get; set; }
         public string Duration { get; set; }
+        public string Category { get; set; }
     }
 }
