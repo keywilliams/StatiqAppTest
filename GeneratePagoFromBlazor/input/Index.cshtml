@@ -173,9 +173,9 @@
                     {
                         <div class="col col-6 col-md-4">
 
-                            <a href="@{@movie.Name}.html">
+                            <a href="@{@movie.HtmlName}.html">
                                 <div class="search-results__item">
-                                    <img src="../wwwroot/img/content/@{@movie.Image}" />
+                                    <img src="@movie.Image" />
                                     <div class="search-results__item-type">
                                         <svg class="all fill-white">
                                             <use xlink:href="../wwwroot/all.svg#icon-movie"></use>
@@ -186,7 +186,7 @@
                             </a>
 
                             <p class="search-results__item-title mb-0 mt-3">@movie.Name<span></span></p>
-                            <p class="search-results__item-info"><span>@movie.Year</span> | <span>1h58 min</span></p>
+                            <p class="search-results__item-info"><span>@movie.Year</span> | <span>@movie.Duration</span></p>
 
                         </div>
                     }
@@ -195,9 +195,9 @@
                     {
                         <div class="col col-6 col-md-4">
 
-                            <a href="@{@tv.Name}.html">
+                            <a href="@{@tv.HtmlName}.html">
                                 <div class="search-results__item">
-                                    <img src="../wwwroot/img/content/@{@tv.Image}" />
+                                    <img src="@tv.Image" />
                                     <div class="search-results__item-type">
                                         <svg class="all fill-white">
                                             <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
@@ -208,7 +208,7 @@
                             </a>
 
                             <p class="search-results__item-title mb-0 mt-3">@tv.Name: <span>Season @tv.Season</span></p>
-                            <p class="search-results__item-info"><span>@tv.Year</span> | <span>1h58 min</span></p>
+                            <p class="search-results__item-info"><span>@tv.Year</span> | <span>@tv.Duration</span></p>
 
                         </div>
                     }
@@ -217,9 +217,9 @@
                     {
                         <div class="col col-6 col-md-4">
 
-                            <a href="@{@audio.Name}.html">
+                            <a href="@{@audio.HtmlName}.html">
                                 <div class="search-results__item">
-                                    <img src="../wwwroot/img/content/@{@audio.Image}" />
+                                    <img src="@audio.Image" />
                                     <div class="search-results__item-type">
                                         <svg class="all fill-white">
                                             <use xlink:href="../wwwroot/all.svg#icon-audio"></use>
@@ -230,7 +230,7 @@
                             </a>
 
                             <p class="search-results__item-title mb-0 mt-3">@audio.Name, <span>Season @audio.Season</span></p>
-                            <p class="search-results__item-info"><span>@audio.Year</span> | <span>1h58 min</span></p>
+                            <p class="search-results__item-info"><span>@audio.Year</span> | <span>@audio.Duration</span></p>
 
                         </div>
                     }

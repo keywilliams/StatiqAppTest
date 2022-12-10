@@ -46,40 +46,6 @@
 <section class="audio-track bg-dark py-5 mb-5">
     <div class="item-all__content">
         <h6>Episodes</h6>
-
-        <div class="content-table">
-            <table class="table table-sm">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">
-                            <svg class="all fill-accent">
-                                <use xlink:href="all.svg#icon-clock"></use>
-                            </svg>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @{
-                        foreach (var episode in Model.Episodes)
-                        {
-                            <tr>
-                                <td>@episode.Id</td>
-                                <td>@episode.Description</td>
-                                <td>@episode.Duration</td>
-                            </tr>
-                        }
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-</section>
-<section class="audio-track bg-dark py-5 mb-5">
-    <div class="item-all__content">
-        <h6>Episodes</h6>
         <div class="content-slider">
             SLIDER
         </div>
@@ -96,9 +62,9 @@
             {
                 <div class="col col-4">
 
-                    <a href="@{@relate.Name}.html">
+                    <a href="@{@relate.HtmlName}.html">
                         <div class="search-results__item">
-                            <img src="../wwwroot/img/content/@{@relate.Image}" />
+                            <img src="@relate.Image" />
                             <div class="search-results__item-type">
                                 <svg class="all fill-white">
                                     <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
@@ -109,7 +75,7 @@
                     </a>
 
                     <p class="search-results__item-title mb-0 mt-3">@relate.Name<span></span></p>
-                    <p class="search-results__item-info"><span>@relate.Year</span> | <span>1h58 min</span></p>
+                    <p class="search-results__item-info"><span>@relate.Year</span> | <span>@relate.Duration</span></p>
 
                 </div>
             }
