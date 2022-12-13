@@ -26,7 +26,27 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "output(1)", "GeneratePagoFr
 		SlnRelativePath = "GeneratePagoFromBlazor\output\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMC.Frontend.Microsite", "TMC.Frontend.Microsite\TMC.Frontend.Microsite.csproj", "{680F37CB-1449-4277-91B0-93230E52A5BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TMC.Frontend.Microsite", "TMC.Frontend.Microsite\TMC.Frontend.Microsite.csproj", "{680F37CB-1449-4277-91B0-93230E52A5BA}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "output(2)", "..\..\..\..\..\Temp\TMC\MicroSites\EW\output\", "{7A0FDF4F-56BE-43E7-A8C0-BA3705FA3B7E}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_60257"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\Temp\TMC\MicroSites\EW\output\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60257\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_60257"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\Temp\TMC\MicroSites\EW\output\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60257\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "60257"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +66,10 @@ Global
 		{680F37CB-1449-4277-91B0-93230E52A5BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{680F37CB-1449-4277-91B0-93230E52A5BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{680F37CB-1449-4277-91B0-93230E52A5BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A0FDF4F-56BE-43E7-A8C0-BA3705FA3B7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A0FDF4F-56BE-43E7-A8C0-BA3705FA3B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A0FDF4F-56BE-43E7-A8C0-BA3705FA3B7E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A0FDF4F-56BE-43E7-A8C0-BA3705FA3B7E}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
