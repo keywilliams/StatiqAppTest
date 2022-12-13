@@ -20,7 +20,7 @@
                                 <svg class="all fill-primary">
                                     <use xlink:href="../wwwroot/all.svg#icon-movie"></use>
                                 </svg>
-                                Movie
+                                @Model.Resources.TextMovie
                             </p>
                         }
 
@@ -30,7 +30,7 @@
                                 <svg class="all fill-primary">
                                     <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
                                 </svg>
-                                TV
+                                @Model.Resources.TextTV
                             </p>
                         }
 
@@ -40,7 +40,7 @@
                                 <svg class="all fill-primary">
                                     <use xlink:href="../wwwroot/all.svg#icon-audio"></use>
                                 </svg>
-                                Audio
+                                @Model.Resources.TextAudio
                             </p>
                         }
 
@@ -59,7 +59,7 @@
 
             <div class="detail-header__info-btn">
                 <button type="button" class="btn btn-primary" onclick="window.open('@{@Model.DefaultTrailerUrl}', '_blank')">
-                    Trailer
+                    @Model.Resources.ButtonTrailer
                     <svg class="all fill-white">
                         <use xlink:href="../wwwroot/all.svg#icon-play"></use>
                     </svg>

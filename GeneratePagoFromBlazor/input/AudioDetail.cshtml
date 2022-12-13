@@ -5,7 +5,7 @@
 
     <div class="item-details__info">
         <div class="mb-4">
-            <h6>Overview</h6>
+            <h6>@Model.Resources.TextOverview</h6>
             <p>@Model.Description</p>
         </div>
 
@@ -15,14 +15,14 @@
 
 <section class="audio-track bg-dark py-5 mb-5">
     <div class="item-all__content">
-        <h6>Tracklist</h6>
+        <h6>@Model.Resources.TextTrackList</h6>
 
         <div class="content-table">
             <table class="table table-sm">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Title</th>
+                        <th scope="col">@Model.Resources.TextTitle</th>
                         <th scope="col">
                             <svg class="all fill-accent">
                                 <use xlink:href="all.svg#icon-clock"></use>
@@ -49,7 +49,7 @@
 </section>
 
 <div class="item-all__content content-light mb-4">
-    <h6>Related</h6>
+    <h6>@Model.Resources.TextRelated</h6>
     <div class="row row-cols-lg-5 ">
         @{
             foreach (var relate in Model.Related)
@@ -79,7 +79,7 @@
 
 <section class="item-all bg-dark py-5 mb-5">
     <div class="item-all__content">
-        <h6>All Audio</h6>
+        <h6>@Model.Resources.TextAllAudio</h6>
 
         <div class="content-slider">
             SLIDER

@@ -13,6 +13,7 @@ namespace GeneratePagoFromBlazor.Utils
 
             foreach (var index in tmcDataByLanguage.IndexCollection)
             {
+                index.Value.Total = (index.Value.Movies.Count + index.Value.Audios.Count + index.Value.Tvs.Count);
                 bootstrapper.BuildPipeline($"Render TMC Index in {index.Key}", builder => builder
                     .WithInputReadFiles("Index.cshtml")
                     .WithProcessModules(new RenderRazor().WithModel(Config.FromValue(index.Value)))

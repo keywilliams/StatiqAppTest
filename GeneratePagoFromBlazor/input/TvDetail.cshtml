@@ -5,16 +5,16 @@
 
     <div class="item-details__info">
         <div class="mb-4">
-            <h6>Overview</h6>
+            <h6>@Model.Resources.TextOverview</h6>
             <p>@Model.Description</p>
         </div>
 
         <div class="mb-4">
-            <h6>Credits</h6>
+            <h6>@Model.Resources.TextCredits</h6>
             <div class="d-flex">
                 <div class="item-details__subtitle">
-                    <p>Director</p>
-                    <p>Cast</p>
+                    <p>@Model.Resources.TextDirector</p>
+                    <p>@Model.Resources.TextCast</p>
                 </div>
                 <div class="item-details__description">
                     <p>@Model.Director</p>
@@ -24,13 +24,13 @@
         </div>
 
         <div class="mb-4">
-            <h6>Information</h6>
+            <h6>@Model.Resources.TextInformation</h6>
             <div class="d-flex">
                 <div class="item-details__subtitle">
-                    <p>Studio</p>
-                    <p>Genre</p>
-                    <p>Released</p>
-                    <p>Copyright</p>
+                    <p>@Model.Resources.TextStudio</p>
+                    <p>@Model.Resources.TextGenre</p>
+                    <p>@Model.Resources.TextReleased</p>
+                    <p>@Model.Resources.TextCopyright</p>
                 </div>
                 <div class="item-details__description">
                     <p>@Model.Studio</p>
@@ -45,7 +45,7 @@
 </section>
 <section class="audio-track bg-dark py-5 mb-5">
     <div class="item-all__content">
-        <h6>Episodes</h6>
+        <h6>@Model.Resources.TextEpisodes</h6>
         <div class="content-slider">
             SLIDER
         </div>
@@ -54,7 +54,7 @@
 </section>
 
 <div class="item-all__content content-light mb-4">
-    <h6>Related</h6>
+    <h6>@Model.Resources.TextRelated</h6>
 
     <div class="row row-cols-lg-5 ">
         @{
@@ -85,7 +85,7 @@
 
 <section class="item-all bg-dark py-5 mb-5">
     <div class="item-all__content">
-        <h6>All Series</h6>
+        <h6>@Model.Resources.TextAllSeries</h6>
 
         <div class="content-slider">
             SLIDER

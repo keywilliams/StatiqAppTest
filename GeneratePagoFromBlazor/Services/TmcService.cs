@@ -39,6 +39,160 @@ namespace GeneratePagoFromBlazor.Services
 
         public LanguageModel GetTmcIndex(List<Language> languages)
         {
+            var resourcePT = new Resource()
+            {
+                ButtonAllContent = "Todo o conteúdo",
+                ButtonAudio = "Áudio",
+                ButtonClearAll = "Limpar tudo",
+                ButtonEdit = "Editar",
+                ButtonFilters = "Filtros",
+                ButtonMovies = "Filmes",
+                ButtonSearch = "Pesquisar",
+                ButtonSeries = "Série",
+                DropDownCategory = "Categoria",
+                DropDownDate = "Data",
+                DropDownDateDeparture = "Data de Partida",
+                DropDownFlightNumber = "Número do Voo",
+                DropDownFrom = "De",
+                DropDownGenre = "Gênero",
+                DropDownLanguage = "Idioma",
+                DropDownSortby = "Classificar por",
+                DropDownSubtitle = "Legenda",
+                DropDownTo = "Para",
+                TextSearchResults = "Resultados da pesquisa",
+                TabDestination = "Destino",
+                TabFlightNumber = "Número do Voo",
+                TextWhatsOnMyFlight = "O que há no meu voo",
+                TextWhatsOnYourFlight = "O que há no seu voo",
+                ButtonTrailer = "Trailer",
+                TextAllAudio = "Todos os áudios",
+                TextAllMovies = "Todos os filmes",
+                TextAudio = "Áudio",
+                TextCast = "Elenco",
+                TextCopyright = "Direitos autorais",
+                TextCredits = "Créditos",
+                TextDirector = "Diretor",
+                TextEpisodes = "Episódios",
+                TextGenre = "Gênero",
+                TextInformation = "Informações",
+                TextMovie = "Filme",
+                TextOverview = "Visão geral",
+                TextRelated = "Relacionado",
+                TextReleased = "Lançado",
+                TextStudio = "Estúdio",
+                TextTitle = "Título",
+                TextTrackList = "Lista de faixas",
+                TextTV = "TV",
+                TextAllSeries = "Todas as Séries",
+                TextAnswer = "Resposta",
+                TextQuestion = "Pergunta",
+                FAQSubtitle = "Subtítulo da questão em português",
+                FAQTitle = "Título da questão em português",
+            };
+
+            var resourceEN = new Resource()
+            {
+                ButtonAllContent = "All Content",
+                ButtonAudio = "Audio",
+                ButtonClearAll = "Clear all",
+                ButtonEdit = "Edit",
+                ButtonFilters = "Filters",
+                ButtonMovies = "Movies",
+                ButtonSearch = "Search",
+                ButtonSeries = "Series",
+                DropDownCategory = "Category",
+                DropDownDate = "Date",
+                DropDownDateDeparture = "Date of Departure",
+                DropDownFlightNumber = "Flight Number",
+                DropDownFrom = "From",
+                DropDownGenre = "Genre",
+                DropDownLanguage = "Language",
+                DropDownSortby = "Sort by",
+                DropDownSubtitle = "Subtitle",
+                DropDownTo = "To",
+                TextSearchResults = "Search Results",
+                TabDestination = "Destination",
+                TabFlightNumber = "Flight Number",
+                TextWhatsOnMyFlight = "What's on my flight",
+                TextWhatsOnYourFlight = "What's on your flight",
+                ButtonTrailer = "Trailer",
+                TextAllAudio = "All Audio",
+                TextAllMovies = "All Movies",
+                TextAudio = "Audio",
+                TextCast = "Elenco",
+                TextCopyright = "Derechos de Autor",
+                TextCredits = "Credits",
+                TextDirector = "Director",
+                TextEpisodes = "Episodes",
+                TextGenre = "Genre",
+                TextInformation = "Information",
+                TextMovie = "Movie",
+                TextOverview = "Overview",
+                TextRelated = "Related",
+                TextReleased = "Released",
+                TextStudio = "Studio",
+                TextTitle = "Title",
+                TextTrackList = "Tracklist",
+                TextTV = "TV",
+                TextAllSeries = "All Series",
+                TextAnswer = "Answer",
+                TextQuestion = "Question",
+                FAQSubtitle = "Question subtitle in english",
+                FAQTitle = "Question title in english",
+            };
+
+            var resourceES = new Resource()
+            {
+                ButtonAllContent = "Todo el contenido",
+                ButtonAudio = "Audio",
+                ButtonClearAll = "Borrar todo",
+                ButtonEdit = "Editar",
+                ButtonFilters = "Filtros",
+                ButtonMovies = "Películas",
+                ButtonSearch = "Buscar",
+                ButtonSeries = "Serie",
+                DropDownCategory = "Categoría",
+                DropDownDate = "Fecha",
+                DropDownDateDeparture = "Fecha de salida",
+                DropDownFlightNumber = "Número de vuelo",
+                DropDownFrom = "Desde",
+                DropDownGenre = "Género",
+                DropDownLanguage = "Idioma",
+                DropDownSortby = "Ordenar por",
+                DropDownSubtitle = "Subtítulo",
+                DropDownTo = "Hasta",
+                TextSearchResults = "Resultados de búsqueda",
+                TabDestination = "Destino",
+                TabFlightNumber = "Número de vuelo",
+                TextWhatsOnMyFlight = "Qué hay en mi vuelo",
+                TextWhatsOnYourFlight = "Qué hay en tu vuelo",
+                ButtonTrailer = "Tráiler",
+                TextAllAudio = "Todo el audio",
+                TextAllMovies = "Todas las películas",
+                TextAudio = "Audio",
+                TextCast = "Transmitir",
+                TextCopyright = "Derechos de autor",
+                TextCredits = "Créditos",
+                TextDirector = "Director",
+                TextEpisodes = "Episodios",
+                TextGenre = "Género",
+                TextInformation = "Información",
+                TextMovie = "Película",
+                TextOverview = "Resumen",
+                TextRelated = "Relacionado",
+                TextReleased = "Liberado",
+                TextStudio = "Estudio",
+                TextTitle = "Título",
+                TextTrackList = "Lista de pistas",
+                TextTV = "TV",
+                TextAllSeries = "Todas las series",
+                TextAnswer = "Respuesta",
+                TextQuestion = "Pregunta",
+                FAQSubtitle = "Pregunta subtítulo en español",
+                FAQTitle = "Título de la pregunta en español",
+            };
+
+
             var index = new LanguageModel
             {
                 IndexCollection = new Dictionary<string, IndexViewModel>
@@ -67,7 +221,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "Titanic PT",
                                  MetaDescription = "Página Titanic PT",
                                  OgTitle = "Página Titanic PT",
-                                 Robots = "Titanic PT"
+                                 Robots = "Titanic PT",
+                                 Resources = resourcePT
                              },
                              new MovieDetailModel
                              {
@@ -89,7 +244,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "Matrix PT",
                                  MetaDescription = "Página Matrix PT",
                                  OgTitle = "Página Matrix PT",
-                                 Robots = "Matrix PT"
+                                 Robots = "Matrix PT",
+                                 Resources = resourcePT
                              },
                              new MovieDetailModel
                              {
@@ -111,7 +267,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "Avatar PT",
                                  MetaDescription = "Página Avatar PT",
                                  OgTitle = "Página Avatar PT",
-                                 Robots = "Avatar PT"
+                                 Robots = "Avatar PT",
+                                 Resources = resourcePT
                              },
                              new MovieDetailModel
                              {
@@ -133,7 +290,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "Hulk PT",
                                  MetaDescription = "Página Hulk PT",
                                  OgTitle = "Página Hulk PT",
-                                 Robots = "Hulk PT"
+                                 Robots = "Hulk PT",
+                                 Resources = resourcePT
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -165,7 +323,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "Adele 21 PT",
                                  MetaDescription = "Página Adele 21 PT",
                                  OgTitle = "Página Adele 21 PT",
-                                 Robots = "Adele 21 PT"
+                                 Robots = "Adele 21 PT",
+                                 HtmlName = "Adele 21",
+                                 Resources = resourcePT
                             },
                             new AudioDetailModel
                             {
@@ -195,7 +355,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "Linkin Park PT",
                                  MetaDescription = "Página Linkin Park PT",
                                  OgTitle = "Página Linkin Park PT",
-                                 Robots = "Linkin Park PT"
+                                 Robots = "Linkin Park PT",
+                                 HtmlName = "Linkin Park",
+                                 Resources = resourcePT
                             }
                         },
                         Tvs = new List<TvDetailModel>
@@ -228,7 +390,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "All American PT",
                                  MetaDescription = "Página All American PT",
                                  OgTitle = "Página All American PT",
-                                 Robots = "All American PT"
+                                 Robots = "All American PT",
+                                 HtmlName = "All American",
+                                 Resources = resourcePT
                             },
                             new TvDetailModel
                             {
@@ -259,7 +423,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "The Big Bang Theory PT",
                                  MetaDescription = "Página The Big Bang Theory PT",
                                  OgTitle = "Página The Big Bang Theory PT",
-                                 Robots = "The Big Bang Theory PT"
+                                 Robots = "The Big Bang Theory PT",
+                                 HtmlName = "The Big Bang Theory",
+                                 Resources = resourcePT
                             },
                             new TvDetailModel
                             {
@@ -289,7 +455,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "How to Get Away with Murder PT",
                                  MetaDescription = "Página How to Get Away with Murder PT",
                                  OgTitle = "Página How to Get Away with Murder PT",
-                                 Robots = "How to Get Away with Murder PT"
+                                 Robots = "How to Get Away with Murder PT",
+                                 HtmlName = "How to Get Away with Murder",
+                                 Resources = resourcePT
                             },
                             new TvDetailModel
                             {
@@ -319,7 +487,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "The Simpsons PT",
                                  MetaDescription = "Página Simpsons PT",
                                  OgTitle = "Página The Simpsons PT",
-                                 Robots = "The Simpsons PT"
+                                 Robots = "The Simpsons PT",
+                                 HtmlName = "The Simpsons",
+                                 Resources = resourcePT
                             }
                         },
                         Categories = new List<Item>
@@ -408,6 +578,7 @@ namespace GeneratePagoFromBlazor.Services
                         MetaDescription = "Página Index PT",
                         OgTitle = "Página Index PT",
                         Robots = "Index PT",
+                        MainPage = true,
                         FAQs = new List<FAQsViewModel>()
                         {
                             new FAQsViewModel()
@@ -432,9 +603,11 @@ namespace GeneratePagoFromBlazor.Services
                                             new(){Order = 3, Question =  "Question 3 PT", Answer = "Answer 3 PT" }
                                         }
                                     }
-                                }
+                                },
+                                 Resources = resourcePT
                             }
-                        }
+                        },
+                        Resources = resourcePT
                     }},
                     {"en", new IndexViewModel
                     {
@@ -460,7 +633,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "Titanic EN",
                                  MetaDescription = "Titanic Page EN",
                                  OgTitle = "Página Titanic EN",
-                                 Robots = "Titanic EN"
+                                 Robots = "Titanic EN",
+                                 Resources = resourceEN
                              },
                              new MovieDetailModel
                              {
@@ -482,7 +656,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "The Matrix EN",
                                  MetaDescription = "The Matrix Page EN",
                                  OgTitle = "The Matrix Page EN",
-                                 Robots = "The Matrix EN"
+                                 Robots = "The Matrix EN",
+                                 Resources = resourceEN
                              },
                              new MovieDetailModel
                              {
@@ -504,7 +679,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "Avatar EN",
                                  MetaDescription = "Avatar Page EN",
                                  OgTitle = "Avatar Page EN",
-                                 Robots = "Avatar EN"
+                                 Robots = "Avatar EN",
+                                 Resources = resourceEN
                              },
                              new MovieDetailModel
                              {
@@ -526,7 +702,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "The Hulk EN",
                                  MetaDescription = "The Hulk Page EN",
                                  OgTitle = "The Hulk Page EN",
-                                 Robots = "The Hulk Page EN"
+                                 Robots = "The Hulk Page EN",
+                                 Resources = resourceEN
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -558,7 +735,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "Adele 21 EN",
                                  MetaDescription = "Adele 21 Page EN",
                                  OgTitle = "Adele 21 Page EN",
-                                 Robots = "Adele 21 EN"
+                                 Robots = "Adele 21 EN",
+                                 HtmlName = "Adele 21",
+                                 Resources = resourceEN
                             },
                             new AudioDetailModel
                             {
@@ -588,7 +767,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "Linkin Park EN",
                                  MetaDescription = "Linkin Park Page EN",
                                  OgTitle = "Linkin Park Page EN",
-                                 Robots = "Linkin Park EN"
+                                 Robots = "Linkin Park EN",
+                                 HtmlName = "Linkin Park",
+                                 Resources = resourceEN
                             }
                         },
                         Tvs = new List<TvDetailModel>
@@ -621,7 +802,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "All American EN",
                                  MetaDescription = "All American Page EN",
                                  OgTitle = "All American Page EN",
-                                 Robots = "All American EN"
+                                 Robots = "All American EN",
+                                 HtmlName = "All American",
+                                 Resources = resourceEN
                             },
                             new TvDetailModel
                             {
@@ -652,7 +835,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "The Big Bang Theory EN",
                                  MetaDescription = "The Big Bang Theory Page EN",
                                  OgTitle = "The Big Bang Theory Page EN",
-                                 Robots = "The Big Bang Theory EN"
+                                 Robots = "The Big Bang Theory EN",
+                                 HtmlName = "The Big Bang Theory",
+                                 Resources = resourceEN
                             },
                             new TvDetailModel
                             {
@@ -682,7 +867,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "How to Get Away with Murder EN",
                                  MetaDescription = "How to Get Away with Murder Page EN",
                                  OgTitle = "How to Get Away with Murder Page EN",
-                                 Robots = "How to Get Away with Murder EN"
+                                 Robots = "How to Get Away with Murder EN",
+                                 HtmlName = "How to Get Away with Murder",
+                                 Resources = resourceEN
                             },
                             new TvDetailModel
                             {
@@ -712,7 +899,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "The Simpsons EN",
                                  MetaDescription = "The Simpsons Page EN",
                                  OgTitle = "The Simpsons Page EN",
-                                 Robots = "The Simpsons EN"
+                                 Robots = "The Simpsons EN",
+                                 HtmlName = "The Simpsons",
+                                 Resources = resourceEN
                             }
                         },
                         Categories = new List<Item>
@@ -825,9 +1014,12 @@ namespace GeneratePagoFromBlazor.Services
                                             new(){Order = 3, Question =  "Question 3 EN", Answer = "Answer 3 EN" }
                                         }
                                     }
-                                }
+                                },
+                                 Resources = resourceEN
                             }
-                        }
+                        },
+                        MainPage = true,
+                        Resources = resourceEN
                     }},
                     {"es", new IndexViewModel
                     {
@@ -853,7 +1045,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "Titanic ES",
                                  OgTitle = "Página Titanic ES",
                                  Robots = "Titanic ES",
-                                 MetaDescription = "Página Titanic ES"
+                                 MetaDescription = "Página Titanic ES",
+                                Resources = resourceES
                              },
                              new MovieDetailModel
                              {
@@ -875,7 +1068,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "Matrix ES",
                                  OgTitle = "Página Matrix ES",
                                  Robots = "Matrix ES",
-                                 MetaDescription = "Página Matrix ES"
+                                 MetaDescription = "Página Matrix ES",
+                                Resources = resourceES
                              },
                              new MovieDetailModel
                              {
@@ -897,7 +1091,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "Avatar ES",
                                  OgTitle = "Página Avatar ES",
                                  Robots = "Avatar ES",
-                                 MetaDescription = "Página Avatar ES"
+                                 MetaDescription = "Página Avatar ES",
+                                Resources = resourceES
                              },
                              new MovieDetailModel
                              {
@@ -919,7 +1114,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "Hulk ES",
                                  OgTitle = "Página Hulk ES",
                                  Robots = "Hulk ES",
-                                 MetaDescription = "Página Hulk ES"
+                                 MetaDescription = "Página Hulk ES",
+                                Resources = resourceES
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -951,7 +1147,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "Adele 21 ES",
                                  OgTitle = "Página Adele 21 ES",
                                  Robots = "Adele 21 ES",
-                                 MetaDescription = "Página Adele 21 ES"
+                                 MetaDescription = "Página Adele 21 ES",
+                                 HtmlName = "Adele 21",
+                                Resources = resourceES
                             },
                             new AudioDetailModel
                             {
@@ -981,7 +1179,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "Linkin Park ES",
                                  OgTitle = "Página Linkin Park ES",
                                  Robots = "Linkin Park ES",
-                                 MetaDescription = "Página Linkin Park ES"
+                                 MetaDescription = "Página Linkin Park ES",
+                                 HtmlName = "Linkin Park",
+                                Resources = resourceES
                             }
                         },
                         Tvs = new List<TvDetailModel>
@@ -1010,11 +1210,13 @@ namespace GeneratePagoFromBlazor.Services
                                     new Episode { Id = 4, Description = "Lose Yourself", Duration = "0:59" },
                                     new Episode { Id = 5, Description = "All We Got", Duration = "1:00" },
                                 },
-                                 SiteLanguages = languages,
-                                 Title = "All American ES",
-                                 OgTitle = "Página All American ES",
-                                 Robots = "All American ES",
-                                 MetaDescription = "Página All American ES"
+                                SiteLanguages = languages,
+                                Title = "All American ES",
+                                OgTitle = "Página All American ES",
+                                Robots = "All American ES",
+                                MetaDescription = "Página All American ES",
+                                HtmlName = "All American",
+                                Resources = resourceES
                             },
                             new TvDetailModel
                             {
@@ -1045,7 +1247,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "The Big Bang Theory ES",
                                  OgTitle = "Página The Big Bang Theory ES",
                                  Robots = "The Big Bang Theory ES",
-                                 MetaDescription = "Página The Big Bang Theory ES"
+                                 MetaDescription = "Página The Big Bang Theory ES",
+                                 HtmlName = "The Big Bang Theory",
+                                Resources = resourceES
                             },
                             new TvDetailModel
                             {
@@ -1075,7 +1279,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "How to Get Away with Murder ES",
                                  OgTitle = "Página How to Get Away with Murder ES",
                                  Robots = "How to Get Away with Murder ES",
-                                 MetaDescription = "Página How to Get Away with Murder ES"
+                                 MetaDescription = "Página How to Get Away with Murder ES",
+                                 HtmlName = "How to Get Away with Murder",
+                                Resources = resourceES
                             },
                             new TvDetailModel
                             {
@@ -1105,7 +1311,9 @@ namespace GeneratePagoFromBlazor.Services
                                  Title = "The Simpsons ES",
                                  OgTitle = "Página The Simpsons ES",
                                  Robots = "The Simpsons ES",
-                                 MetaDescription = "Página The Simpsons ES"
+                                 MetaDescription = "Página The Simpsons ES",
+                                 HtmlName = "The Simpsons",
+                                Resources = resourceES
                             }
                         },
                         Categories = new List<Item>
@@ -1180,6 +1388,7 @@ namespace GeneratePagoFromBlazor.Services
                         MetaDescription = "Página Index ES",
                         OgTitle = "Página Index ES",
                         Robots = "Index ES",
+                        MainPage = true,
                         FAQs = new List<FAQsViewModel>()
                         {
                             new FAQsViewModel()
@@ -1204,9 +1413,11 @@ namespace GeneratePagoFromBlazor.Services
                                             new(){Order = 3, Question =  "Question 3 ES", Answer = "Answer 3 ES" }
                                         }
                                     }
-                                }
+                                },
+                                 Resources = resourceES
                             }
-                        }
+                        },
+                        Resources = resourceES
                     }}
                 },
             };

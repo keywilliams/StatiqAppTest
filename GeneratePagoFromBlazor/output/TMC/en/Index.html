@@ -26,6 +26,12 @@
     </div>
 
     <div class="navbar__menu">
+                <button type="button" class="navbar__menu-item hide-tablet" data-toggle="modal" data-target="#onYourFlightModal">
+                    What&#x27;s on my flight
+                    <svg class="all fill-white" style="width: 31px; height: 31px">
+                        <use xlink:href="../wwwroot/all.svg#icon-airplane"></use>
+                    </svg>
+                </button>
 
         <div class="navbar__menu-item has-dropdown">
                         <a href="../pt/Index.html" class="navbar-link">PT</a>
@@ -33,6 +39,11 @@
                         <a href="../es/Index.html" class="navbar-link">ES</a>
         </div>
 
+                <button class="navbar__menu-item hide-mobile">
+                    <svg class="all fill-white" style="width: 18px; height: 18px">
+                        <use xlink:href="../wwwroot/all.svg#icon-search"></use>
+                    </svg>
+                </button>
 
         <button class="navbar__menu-item" onclick="window.location.href='FAQs.html';">
             <svg class="all fill-white" style="width: 26px; height: 26px">
@@ -128,7 +139,7 @@
                     <a href="#"> Clear all</a>
                 </div>
 
-                <h5>What's on your flight</h5>
+                <h5>What&#x27;s on your flight</h5>
 
                 <div class="search-content__filters-form my-4">
                     <div>
@@ -178,7 +189,7 @@
 
     <section class="search-results p-5">
         <div class="container">
-            <p class="search-results__title hide-tablet"> Search Results <span>(4)</span></p>
+            <p class="search-results__title hide-tablet"> Search Results <span>(10)</span></p>
 
             <div class="d-flex d-md-none justify-content-between align-items-center mb-4">
                 <p class="search-results__title mb-0">  </p>
@@ -259,7 +270,7 @@
                         </div>
                         <div class="col col-6 col-md-4">
 
-                            <a href=".html">
+                            <a href="All American.html">
                                 <div class="search-results__item">
                                     <img src="AllAmericanS1.jpg" />
                                     <div class="search-results__item-type">
@@ -277,7 +288,7 @@
                         </div>
                         <div class="col col-6 col-md-4">
 
-                            <a href=".html">
+                            <a href="The Big Bang Theory.html">
                                 <div class="search-results__item">
                                     <img src="TheBigBangTheoryS1.jpg" />
                                     <div class="search-results__item-type">
@@ -295,7 +306,7 @@
                         </div>
                         <div class="col col-6 col-md-4">
 
-                            <a href=".html">
+                            <a href="How to Get Away with Murder.html">
                                 <div class="search-results__item">
                                     <img src="htgawmS1.jpg" />
                                     <div class="search-results__item-type">
@@ -313,7 +324,7 @@
                         </div>
                         <div class="col col-6 col-md-4">
 
-                            <a href=".html">
+                            <a href="The Simpsons.html">
                                 <div class="search-results__item">
                                     <img src="TheSimpsonsS1.jpg" />
                                     <div class="search-results__item-type">
@@ -331,7 +342,7 @@
                         </div>
                         <div class="col col-6 col-md-4">
 
-                            <a href=".html">
+                            <a href="Adele 21.html">
                                 <div class="search-results__item">
                                     <img src="Adele21.jpg" />
                                     <div class="search-results__item-type">
@@ -349,7 +360,7 @@
                         </div>
                         <div class="col col-6 col-md-4">
 
-                            <a href=".html">
+                            <a href="Linkin Park.html">
                                 <div class="search-results__item">
                                     <img src="LinkinPark.jpg" />
                                     <div class="search-results__item-type">
@@ -379,7 +390,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
             <div class="modal-body">
-                <h5 class="modal-title mb-4" id="onYourFlightModalLabel">What's on your flight</h5>
+                <h5 class="modal-title mb-4" id="onYourFlightModalLabel">What&#x27;s on your flight</h5>
 
                 <!-- modal tabs -->
                 <ul class="nav nav-tabs rounded-nav flex-column flex-sm-row text-center">
