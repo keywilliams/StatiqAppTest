@@ -1,4 +1,4 @@
-﻿namespace GeneratePagoFromBlazor.Models
+﻿namespace TMC.Backend.Business.Customers.Models
 {
     public class BaseModel : LayoutModel
     {
@@ -13,5 +13,7 @@
         public string Rating { get; set; }
         public string Duration { get; set; }
         public string Category { get; set; }
+        public string SliderImage { get; set; }
+        public string SliderBackgroundImage { get; set; }
     }
 }

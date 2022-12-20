@@ -1,4 +1,4 @@
-﻿namespace GeneratePagoFromBlazor.Models
+﻿namespace TMC.Backend.Business.Customers.Models
 {
     public class SiteColor
     {

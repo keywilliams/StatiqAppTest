@@ -3,8 +3,16 @@
 <div class="detail-header">
     <div class="detail-header__banner position-relative">
         <div class="detail-header__banner-overlay"></div>
-        @*<img src="@Model.BannerImage" />*@
-        <img src="../wwwroot/img/content/banner-placeholder.png" />
+        @{
+            if (string.IsNullOrWhiteSpace(@Model.BannerImage))
+            {
+                <img src="../wwwroot/img/content/banner-placeholder.png" />
+            }
+            else
+            {
+                <img src="@Model.BannerImage" />
+            }
+        }
     </div>
 
     <div class="detail-header__info">
