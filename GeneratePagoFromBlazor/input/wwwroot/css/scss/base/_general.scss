@@ -3,4 +3,66 @@
 html, body {
     font-family: $primary-font;
     background-color: $body-color;
+    color: $text-color;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active,
+a:hover,
+a:focus,
+a:visited {
+    text-decoration: none !important;
+}
+
+a:focus,
+a:visited,
+input:focus,
+input:visited,
+button:focus,
+button:visited,
+textarea:focus,
+textarea:visited,
+button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+    outline: none;
+    outline: 0;
+}
+
+a,
+input,
+button,
+textarea {
+    &:active {
+        outline: none;
+    }
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: initial;
+}
+
+/* Remove Blue Border (Chrome) */
+button,
+a {
+    &:active {
+        outline: none;
+        border: none;
+    }
+}
+
+a
+button {
+    &:focus {
+        outline: none;
+        border: none;
+    }
 }

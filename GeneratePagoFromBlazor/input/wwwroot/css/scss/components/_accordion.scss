@@ -1,0 +1,50 @@
+﻿@import "../variables/all";
+
+.accordion {
+    .accordion-item {
+        border: 0;
+        font-size: 15px;
+
+        .accordion-header {
+            .accordion-button {
+                justify-content: end;
+                padding: 1rem 0;
+                @extend .font-weight-bold;
+
+                &:focus {
+                    z-index: 3;
+                    border-color: transparent;
+                    outline: 0;
+                    box-shadow: none;
+                }
+
+                &::after {
+                    margin-left: 0 !important;
+                    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+                    width: 2.25rem;
+                    height: 2.25rem;
+                    background-position: center;
+                    background-color: $accent-color;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+
+                &:not(.collapsed) {
+                    color: $text-color;
+                    background-color: transparent;
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .accordion-body {
+            padding: 0rem 1.25rem 1rem;
+            padding-left: 3rem;
+            color: $text-color;
+
+            a {
+                color: $accent-color;
+            }
+        }
+    }
+}

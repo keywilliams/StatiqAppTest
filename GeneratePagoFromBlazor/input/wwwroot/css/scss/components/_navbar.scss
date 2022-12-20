@@ -15,6 +15,7 @@ $navbar-item-color: #fff !default;
     min-height: $navbar-height-desktop;
     position: relative;
     z-index: $navbar-z;
+    flex-wrap: inherit;
 
     @include until($tablet) {
         min-height: $navbar-height-mobile;

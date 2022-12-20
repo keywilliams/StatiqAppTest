@@ -89,6 +89,7 @@ button {
         color: $button-outline-color;
     }
 }
+
 .btn-outline {
     @extend .font-weight-bold;
     border: 2px solid $button-border-color;

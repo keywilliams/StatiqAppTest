@@ -7,10 +7,16 @@
     <meta name="description" content="P&#xE1;gina How to Get Away with Murder PT">
     <meta name="og:title" property="og:title" content="P&#xE1;gina How to Get Away with Murder PT">
     <meta name="robots" content="How to Get Away with Murder PT">
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../wwwroot/css/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="../wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css" />
-    <link rel="stylesheet" href="../wwwroot/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="../wwwroot/css/scss/styles.css" asp-append-version="true" />
+
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../wwwroot/css/site.css" />
 </head>
 <body>
     <div class="page">
@@ -20,12 +26,18 @@
 <div class="navbar navbar-dark">
     <div class="navbar__brand">
         <a class="navbar__item" href="Index.html">
-            <img alt="">
+            <img src="../wwwroot/img/brand/company-logo.png" />
         </a>
-
     </div>
 
     <div class="navbar__menu">
+
+        <button type="button" class="navbar__menu-item hide-tablet" data-bs-toggle="modal" data-bs-target="#onYourFlightModal">
+            O que h&#xE1; no meu voo
+            <svg class="all fill-white" style="width: 31px; height: 31px">
+                <use xlink:href="../wwwroot/all.svg#icon-airplane"></use>
+            </svg>
+        </button>
 
         <div class="navbar__menu-item has-dropdown">
                         <a href="../pt/How to Get Away with Murder.html" class="navbar-link">PT</a>
@@ -41,6 +53,91 @@
         </button>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="onYourFlightModal" tabindex="-1" role="dialog" aria-labelledby="onYourFlightModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <button type="button" class="close modal-close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <h5 class="modal-title mb-4" id="onYourFlightModalLabel">O que h&#xE1; no seu voo</h5>
+
+                <!-- modal tabs -->
+                <ul class="nav nav-tabs rounded-nav flex-column flex-sm-row text-center">
+                    <li class="nav-item flex-sm-fill">
+                        <a id="destination-tab" data-bs-toggle="tab" role="tab" class="nav-link active" aria-controls="destination" href="#destination" aria-selected="true">Destino</a>
+                    </li>
+                    <li class="nav-item flex-sm-fill">
+                        <a id="flightnumber-tab" data-bs-toggle="tab" role="tab" class="nav-link" aria-controls="flightnumber" href="#flightNumber" aria-selected="true">N&#xFA;mero do Voo</a>
+                    </li>
+                </ul>
+
+                    <!-- tabs content -->
+                    <div id="modalTabContent" class="tab-content">
+                        <div id="destination" role="tabpanel" aria-labelledby="destination-tab" class="py-4 show active tab-pane">
+                            <div class="modal-form my-4">
+                                <label>Data de Partida</label>
+                                <select class="form-select" aria-label="Default select example">
+                                            <option value="1">01/01/2001</option>
+                                            <option value="2">02/02/2002</option>
+                                            <option value="3">03/03/2003</option>
+                                </select>
+
+                                <label>De</label>
+                                <select class="form-select" aria-label="Default select example">
+                                            <option value="1">Lisboa</option>
+                                            <option value="2">Brasil</option>
+                                            <option value="3">Espanha</option>
+                                </select>
+
+                                <label>Para</label>
+                                <select class="form-select" aria-label="Default select example">
+                                            <option value="1">Lisboa</option>
+                                            <option value="2">Brasil</option>
+                                            <option value="3">Espanha</option>
+                                </select>
+
+                                <label>N&#xFA;mero do Voo</label>
+                                <select class="form-select" aria-label="Default select example">
+                                            <option value="1">12345</option>
+                                            <option value="2">54321</option>
+                                            <option value="3">99887</option>
+                                </select>
+                            </div>
+
+                            <div class="text-end">
+                                <a href="#"> Limpar tudo</a>
+                            </div>
+                        </div>
+
+                        <div id="flightNumber" role="tabpanel" aria-labelledby="flightnumber-tab " class="py-4 tab-pane">
+                            <div class="modal-form my-4">
+                                <label>N&#xFA;mero do Voo</label>
+                                <select class="form-select" aria-label="Default select example">
+                                            <option value="1">12345</option>
+                                            <option value="2">54321</option>
+                                            <option value="3">99887</option>
+                                </select>
+
+                                <label>Data de Partida</label>
+                                <select class="form-select" aria-label="Default select example">
+                                            <option value="1">01/01/2001</option>
+                                            <option value="2">02/02/2002</option>
+                                            <option value="3">03/03/2003</option>
+                                </select>
+                            </div>
+                            <div class="text-end">
+                                <a href="#"> Limpar tudo</a>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
             </div>
 
             <article class="content p-0" style="min-height: 100vh;">
@@ -48,7 +145,7 @@
 <div class="detail-header">
     <div class="detail-header__banner position-relative">
         <div class="detail-header__banner-overlay"></div>
-        <img src="htgawmS1-banner.jpg" />
+        <img src="../wwwroot/img/content/banner-placeholder.png" />
     </div>
 
     <div class="detail-header__info">
@@ -236,18 +333,18 @@
 <footer class="footer">
     <div class="footer__top">
         <div class="row">
-            <div class="col-12 col-md-6 footer__top-logo">
+            <div class="col-12 col-md-6 footer__top-logo text-md-start text-center">
 				<a href="Index.html">
-					<img alt="">
+                    <img src="../wwwroot/img/brand/company-logo.png" />
 				</a>
             </div>
-            <div class="col-12 col-md-6 footer__top-social text-end text">
-                <a href="https://twitter.com" target="_blank">
+            <div class="col-12 col-md-6 footer__top-social text-md-end text-center">
+                <a href="https://www.facebook.com" target="_blank">
                     <svg class="all fill-white me-3" style="width: 14px; height: 27px">
                         <use xlink:href="../wwwroot/all.svg#icon-facebook"></use>
                     </svg>
                 </a>
-                <a href="https://www.facebook.com" target="_blank">
+                <a href="https://www.instagram.com" target="_blank">
                     <svg class="all fill-white me-3" style="width: 24px; height: 24px">
                         <use xlink:href="../wwwroot/all.svg#icon-instagram"></use>
                     </svg>
@@ -276,12 +373,19 @@
         </main>
     </div>
 
-    <script src="../wwwroot/lib/jquery/dist/jquery.min.js"></script>
-    <script src="../wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../wwwroot/js/site.js" asp-append-version="true"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Site JS -->
+    <script src="../wwwroot/js/site.js" asp-append-version="true" defer></script>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+
+    <!-- Slick Slider -->
+    <script src="../wwwroot/js/slick.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" type="text/javascript"></script>
+
 
     
 </body>

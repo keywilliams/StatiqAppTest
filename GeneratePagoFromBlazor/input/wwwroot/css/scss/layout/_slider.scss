@@ -1,0 +1,198 @@
+﻿@import "../variables/all";
+
+
+.slider {
+    width: 100%;
+}
+
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.home-slider {
+    position: relative;
+    margin-top: -$navbar-desktop-height;
+
+    @include until($desktop) {
+        margin-top: 0px;
+    }
+
+    &__fullwidth {
+        .slick-slide {
+            margin: 0;
+        }
+
+        .nav-prev,
+        .nav-next {
+            z-index: 10;
+            position: absolute;
+            top: 50%;
+            width: 55px;
+            height: 55px;
+            background-color: rgba(255,255,255,.52);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 55px;
+
+            &:before {
+                font-family: $google-icons;
+                font-size: 45px;
+            }
+        }
+
+        .nav-prev {
+            left: 50px;
+
+            &:before {
+                content: "\e408";
+            }
+        }
+
+        .nav-next {
+            right: 50px;
+
+            &:before {
+                content: "\e409";
+            }
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background: #000;
+            opacity: 0.7;
+        }
+
+        &-img {
+            @include until($desktop) {
+                height: 550px;
+                object-fit: cover;
+            }
+        }
+
+        &-content {
+            position: absolute;
+            top: 20%;
+            display: flex;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            max-width: 790px;
+            z-index: 2;
+            color: #fff;
+
+            @include until($desktop) {
+                top: 10%;
+                margin: 20px;
+            }
+
+            @include until($tablet) {
+                top: 0;
+                margin: 20px;
+            }
+
+            .content-img {
+
+                @include until($tablet) {
+                    flex: 1 0 30%;
+                }
+            }
+
+            .content-info {
+                &__type {
+                    text-transform: uppercase;
+
+                    svg {
+                        width: 24px;
+                        height: 18px;
+                    }
+
+                    span {
+                        letter-spacing: 6px;
+                        font-size: 13px;
+                    }
+                }
+
+                &__title {
+                    @extend .font-weight-bold;
+                }
+
+                &__genre {
+                    text-transform: uppercase;
+                    color: $accent-color;
+                    @extend .font-weight-bold;
+                    font-size: 18px;
+                }
+
+                &__btn {
+                    .content-rating {
+                        svg {
+                            width: 66px;
+                            height: 33px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .slick-dotted.slick-slider {
+        margin-bottom: 0px;
+    }
+
+    .slick-dots {
+        bottom: 15px;
+
+        li {
+            margin: 0 10px;
+
+            @include until($tablet) {
+                margin: 0;
+            }
+
+            button {
+                &:before {
+                    font-size: 14px;
+                    opacity: 1;
+                    color: #fff;
+
+                    @include until($tablet) {
+                        font-size: 8px;
+                    }
+                }
+            }
+        }
+
+        li.slick-active {
+            button {
+                &:before {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+
+
+    &__items {
+        position: absolute;
+        bottom: 70px;
+        left: 0;
+        right: 0;
+
+        .slick-current {
+            img {
+                outline: 4px solid $primary-color;
+                outline-offset: -4px;
+            }
+        }
+    }
+}
+
+
+

@@ -15,7 +15,6 @@
         public List<Item> From { get; set; }
         public List<Item> To { get; set; }
         public List<Item> FlightNumber { get; set; }
-        public ModalModel Modal { get; set; }
         public int Total { get; set; }
     }
 

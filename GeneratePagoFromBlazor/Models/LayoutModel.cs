@@ -13,6 +13,7 @@
         public bool MainPage { get; set; } = false;
         public string CompanyName { get; set; }
         public Resource Resources { get; set; }
+        public ModalModel Modal { get; set; }
     }
 
     public class Language
@@ -79,6 +80,7 @@
         public string TextAnswer { get; set; }
         public string FAQTitle { get; set; }
         public string FAQSubtitle { get; set; }
+        public string FAQPageTitle { get; set; }
 
         //Tab
         public string TabDestination { get; set; }

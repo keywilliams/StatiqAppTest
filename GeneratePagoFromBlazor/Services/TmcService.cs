@@ -88,8 +88,8 @@ namespace GeneratePagoFromBlazor.Services
                 TextQuestion = "Pergunta",
                 FAQSubtitle = "Subtítulo da questão em português",
                 FAQTitle = "Título da questão em português",
+                FAQPageTitle = "Informações e FAQs"
             };
-
             var resourceEN = new Resource()
             {
                 ButtonAllContent = "All Content",
@@ -139,8 +139,8 @@ namespace GeneratePagoFromBlazor.Services
                 TextQuestion = "Question",
                 FAQSubtitle = "Question subtitle in english",
                 FAQTitle = "Question title in english",
+                FAQPageTitle = "Information and FAQs"
             };
-
             var resourceES = new Resource()
             {
                 ButtonAllContent = "Todo el contenido",
@@ -190,6 +190,81 @@ namespace GeneratePagoFromBlazor.Services
                 TextQuestion = "Pregunta",
                 FAQSubtitle = "Pregunta subtítulo en español",
                 FAQTitle = "Título de la pregunta en español",
+                FAQPageTitle = "Información y FAQs"
+            };
+
+            var modalPT = new ModalModel
+            {
+                Dates = new List<Item>
+            {
+                new Item(1, "01/01/2001"),
+                new Item(2, "02/02/2002"),
+                new Item(3, "03/03/2003")
+            },
+                FlightNumber = new List<Item>
+            {
+                new Item(1, "12345"),
+                new Item(2, "54321"),
+                new Item(3, "99887")
+            },
+                From = new List<Item>
+            {
+                new Item(1, "Lisboa"),
+                new Item(2, "Brasil"),
+                new Item(3, "Espanha")
+            },
+                To = new List<Item>
+            {
+                new Item(1, "Lisboa"),
+                new Item(2, "Brasil"),
+                new Item(3, "Espanha")
+            }
+            };
+            var modalEN = new ModalModel
+            {
+                Dates = new List<Item>
+                            {
+                                new Item(1, "01/01/2001"),
+                                new Item(2, "02/02/2002"),
+                                new Item(3, "03/03/2003")
+                            },
+                FlightNumber = new List<Item>
+                            {
+                                new Item(1, "12345"),
+                                new Item(2, "54321"),
+                                new Item(3, "99887")
+                            },
+                From = new List<Item>
+                            {
+                                new Item(1, "Lisbon"),
+                                new Item(2, "Brazil"),
+                                new Item(3, "Spain")
+                            },
+                To = new List<Item>
+                            {
+                                new Item(1, "Lisbon"),
+                                new Item(2, "Brazil"),
+                                new Item(3, "Spain")
+                            }
+            };
+            var modalES = new ModalModel
+            {
+                Dates = new List<Item>
+                            {
+                                new Item(1, "01/01/2001"), new Item(2, "02/02/2002"), new Item(3, "03/03/2003")
+                            },
+                FlightNumber = new List<Item>
+                            {
+                                new Item(1, "12345"), new Item(2, "54321"), new Item(3, "99887")
+                            },
+                From = new List<Item>
+                            {
+                                new Item(1, "Lisboa") , new Item(2, "Brasil") , new Item(3, "España")
+                            },
+                To = new List<Item>
+                            {
+                                new Item(1, "Lisboa") , new Item(2, "Brasil") , new Item(3, "España")
+                            }
             };
 
 
@@ -222,7 +297,8 @@ namespace GeneratePagoFromBlazor.Services
                                  MetaDescription = "Página Titanic PT",
                                  OgTitle = "Página Titanic PT",
                                  Robots = "Titanic PT",
-                                 Resources = resourcePT
+                                 Resources = resourcePT,
+                                 Modal = modalPT
                              },
                              new MovieDetailModel
                              {
@@ -245,7 +321,8 @@ namespace GeneratePagoFromBlazor.Services
                                  MetaDescription = "Página Matrix PT",
                                  OgTitle = "Página Matrix PT",
                                  Robots = "Matrix PT",
-                                 Resources = resourcePT
+                                 Resources = resourcePT,
+                                 Modal = modalPT
                              },
                              new MovieDetailModel
                              {
@@ -268,7 +345,8 @@ namespace GeneratePagoFromBlazor.Services
                                  MetaDescription = "Página Avatar PT",
                                  OgTitle = "Página Avatar PT",
                                  Robots = "Avatar PT",
-                                 Resources = resourcePT
+                                 Resources = resourcePT,
+                                 Modal = modalPT
                              },
                              new MovieDetailModel
                              {
@@ -291,7 +369,8 @@ namespace GeneratePagoFromBlazor.Services
                                  MetaDescription = "Página Hulk PT",
                                  OgTitle = "Página Hulk PT",
                                  Robots = "Hulk PT",
-                                 Resources = resourcePT
+                                 Resources = resourcePT,
+                                 Modal = modalPT
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -325,7 +404,8 @@ namespace GeneratePagoFromBlazor.Services
                                  OgTitle = "Página Adele 21 PT",
                                  Robots = "Adele 21 PT",
                                  HtmlName = "Adele 21",
-                                 Resources = resourcePT
+                                 Resources = resourcePT,
+                                 Modal = modalPT
                             },
                             new AudioDetailModel
                             {
@@ -357,7 +437,8 @@ namespace GeneratePagoFromBlazor.Services
                                  OgTitle = "Página Linkin Park PT",
                                  Robots = "Linkin Park PT",
                                  HtmlName = "Linkin Park",
-                                 Resources = resourcePT
+                                 Resources = resourcePT,
+                                 Modal = modalPT
                             }
                         },
                         Tvs = new List<TvDetailModel>
@@ -392,7 +473,8 @@ namespace GeneratePagoFromBlazor.Services
                                  OgTitle = "Página All American PT",
                                  Robots = "All American PT",
                                  HtmlName = "All American",
-                                 Resources = resourcePT
+                                 Resources = resourcePT,
+                                 Modal = modalPT
                             },
                             new TvDetailModel
                             {
@@ -425,7 +507,8 @@ namespace GeneratePagoFromBlazor.Services
                                  OgTitle = "Página The Big Bang Theory PT",
                                  Robots = "The Big Bang Theory PT",
                                  HtmlName = "The Big Bang Theory",
-                                 Resources = resourcePT
+                                 Resources = resourcePT,
+                                 Modal = modalPT
                             },
                             new TvDetailModel
                             {
@@ -457,7 +540,8 @@ namespace GeneratePagoFromBlazor.Services
                                  OgTitle = "Página How to Get Away with Murder PT",
                                  Robots = "How to Get Away with Murder PT",
                                  HtmlName = "How to Get Away with Murder",
-                                 Resources = resourcePT
+                                 Resources = resourcePT,
+                                 Modal = modalPT
                             },
                             new TvDetailModel
                             {
@@ -489,7 +573,8 @@ namespace GeneratePagoFromBlazor.Services
                                  OgTitle = "Página The Simpsons PT",
                                  Robots = "The Simpsons PT",
                                  HtmlName = "The Simpsons",
-                                 Resources = resourcePT
+                                 Resources = resourcePT,
+                                 Modal = modalPT
                             }
                         },
                         Categories = new List<Item>
@@ -545,33 +630,7 @@ namespace GeneratePagoFromBlazor.Services
                             new Item(2, "Brasil"),
                             new Item(3, "Espanha")
                         },
-                        Modal = new ModalModel
-                        {
-                            Dates = new List<Item>
-                            {
-                                new Item(1, "01/01/2001"),
-                                new Item(2, "02/02/2002"),
-                                new Item(3, "03/03/2003")
-                            },
-                            FlightNumber = new List<Item>
-                            {
-                                new Item(1, "12345"),
-                                new Item(2, "54321"),
-                                new Item(3, "99887")
-                            },
-                            From = new List <Item>
-                            {
-                                new Item(1, "Lisboa"),
-                                new Item(2, "Brasil"),
-                                new Item(3, "Espanha")
-                            },
-                            To = new List<Item>
-                            {
-                                new Item(1, "Lisboa"),
-                                new Item(2, "Brasil"),
-                                new Item(3, "Espanha")
-                            }
-                        },
+                        Modal = modalPT,
                         SiteLanguages = languages,
                         Title = "Index PT",
                         Name= "Index",
@@ -604,7 +663,8 @@ namespace GeneratePagoFromBlazor.Services
                                         }
                                     }
                                 },
-                                 Resources = resourcePT
+                                 Resources = resourcePT,
+                                Modal = modalPT
                             }
                         },
                         Resources = resourcePT
@@ -634,7 +694,8 @@ namespace GeneratePagoFromBlazor.Services
                                  MetaDescription = "Titanic Page EN",
                                  OgTitle = "Página Titanic EN",
                                  Robots = "Titanic EN",
-                                 Resources = resourceEN
+                                 Resources = resourceEN,
+                                Modal = modalEN
                              },
                              new MovieDetailModel
                              {
@@ -657,7 +718,8 @@ namespace GeneratePagoFromBlazor.Services
                                  MetaDescription = "The Matrix Page EN",
                                  OgTitle = "The Matrix Page EN",
                                  Robots = "The Matrix EN",
-                                 Resources = resourceEN
+                                 Resources = resourceEN,
+                                Modal = modalEN
                              },
                              new MovieDetailModel
                              {
@@ -680,7 +742,8 @@ namespace GeneratePagoFromBlazor.Services
                                  MetaDescription = "Avatar Page EN",
                                  OgTitle = "Avatar Page EN",
                                  Robots = "Avatar EN",
-                                 Resources = resourceEN
+                                 Resources = resourceEN,
+                                Modal = modalEN
                              },
                              new MovieDetailModel
                              {
@@ -703,7 +766,8 @@ namespace GeneratePagoFromBlazor.Services
                                  MetaDescription = "The Hulk Page EN",
                                  OgTitle = "The Hulk Page EN",
                                  Robots = "The Hulk Page EN",
-                                 Resources = resourceEN
+                                 Resources = resourceEN,
+                                Modal = modalEN
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -737,7 +801,8 @@ namespace GeneratePagoFromBlazor.Services
                                  OgTitle = "Adele 21 Page EN",
                                  Robots = "Adele 21 EN",
                                  HtmlName = "Adele 21",
-                                 Resources = resourceEN
+                                 Resources = resourceEN,
+                                Modal = modalEN
                             },
                             new AudioDetailModel
                             {
@@ -769,7 +834,8 @@ namespace GeneratePagoFromBlazor.Services
                                  OgTitle = "Linkin Park Page EN",
                                  Robots = "Linkin Park EN",
                                  HtmlName = "Linkin Park",
-                                 Resources = resourceEN
+                                 Resources = resourceEN,
+                                Modal = modalEN
                             }
                         },
                         Tvs = new List<TvDetailModel>
@@ -804,7 +870,8 @@ namespace GeneratePagoFromBlazor.Services
                                  OgTitle = "All American Page EN",
                                  Robots = "All American EN",
                                  HtmlName = "All American",
-                                 Resources = resourceEN
+                                 Resources = resourceEN,
+                                Modal = modalEN
                             },
                             new TvDetailModel
                             {
@@ -837,7 +904,8 @@ namespace GeneratePagoFromBlazor.Services
                                  OgTitle = "The Big Bang Theory Page EN",
                                  Robots = "The Big Bang Theory EN",
                                  HtmlName = "The Big Bang Theory",
-                                 Resources = resourceEN
+                                 Resources = resourceEN,
+                                Modal = modalEN
                             },
                             new TvDetailModel
                             {
@@ -869,7 +937,8 @@ namespace GeneratePagoFromBlazor.Services
                                  OgTitle = "How to Get Away with Murder Page EN",
                                  Robots = "How to Get Away with Murder EN",
                                  HtmlName = "How to Get Away with Murder",
-                                 Resources = resourceEN
+                                 Resources = resourceEN,
+                                Modal = modalEN
                             },
                             new TvDetailModel
                             {
@@ -901,7 +970,8 @@ namespace GeneratePagoFromBlazor.Services
                                  OgTitle = "The Simpsons Page EN",
                                  Robots = "The Simpsons EN",
                                  HtmlName = "The Simpsons",
-                                 Resources = resourceEN
+                                 Resources = resourceEN,
+                                Modal = modalEN
                             }
                         },
                         Categories = new List<Item>
@@ -957,33 +1027,7 @@ namespace GeneratePagoFromBlazor.Services
                             new Item(2, "Brazil"),
                             new Item(3, "Spain")
                         },
-                        Modal = new ModalModel
-                        {
-                            Dates = new List<Item>
-                            {
-                                new Item(1, "01/01/2001"),
-                                new Item(2, "02/02/2002"),
-                                new Item(3, "03/03/2003")
-                            },
-                            FlightNumber = new List<Item>
-                            {
-                                new Item(1, "12345"),
-                                new Item(2, "54321"),
-                                new Item(3, "99887")
-                            },
-                            From = new List < Item >
-                            {
-                                new Item(1, "Lisbon"),
-                                new Item(2, "Brazil"),
-                                new Item(3, "Spain")
-                            },
-                            To = new List<Item>
-                            {
-                                new Item(1, "Lisbon"),
-                                new Item(2, "Brazil"),
-                                new Item(3, "Spain")
-                            }
-                        },
+                        Modal = modalEN,
                         SiteLanguages = languages,
                         Title = "Index EN",
                         Name= "Index",
@@ -1015,7 +1059,8 @@ namespace GeneratePagoFromBlazor.Services
                                         }
                                     }
                                 },
-                                 Resources = resourceEN
+                                 Resources = resourceEN,
+                                Modal = modalEN
                             }
                         },
                         MainPage = true,
@@ -1046,7 +1091,8 @@ namespace GeneratePagoFromBlazor.Services
                                  OgTitle = "Página Titanic ES",
                                  Robots = "Titanic ES",
                                  MetaDescription = "Página Titanic ES",
-                                Resources = resourceES
+                                Resources = resourceES,
+                                Modal = modalES
                              },
                              new MovieDetailModel
                              {
@@ -1069,7 +1115,8 @@ namespace GeneratePagoFromBlazor.Services
                                  OgTitle = "Página Matrix ES",
                                  Robots = "Matrix ES",
                                  MetaDescription = "Página Matrix ES",
-                                Resources = resourceES
+                                Resources = resourceES,
+                                Modal = modalES
                              },
                              new MovieDetailModel
                              {
@@ -1092,7 +1139,8 @@ namespace GeneratePagoFromBlazor.Services
                                  OgTitle = "Página Avatar ES",
                                  Robots = "Avatar ES",
                                  MetaDescription = "Página Avatar ES",
-                                Resources = resourceES
+                                Resources = resourceES,
+                                Modal = modalES
                              },
                              new MovieDetailModel
                              {
@@ -1115,7 +1163,8 @@ namespace GeneratePagoFromBlazor.Services
                                  OgTitle = "Página Hulk ES",
                                  Robots = "Hulk ES",
                                  MetaDescription = "Página Hulk ES",
-                                Resources = resourceES
+                                Resources = resourceES,
+                                Modal = modalES
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -1149,7 +1198,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Robots = "Adele 21 ES",
                                  MetaDescription = "Página Adele 21 ES",
                                  HtmlName = "Adele 21",
-                                Resources = resourceES
+                                Resources = resourceES,
+                                Modal = modalES
                             },
                             new AudioDetailModel
                             {
@@ -1181,7 +1231,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Robots = "Linkin Park ES",
                                  MetaDescription = "Página Linkin Park ES",
                                  HtmlName = "Linkin Park",
-                                Resources = resourceES
+                                Resources = resourceES,
+                                Modal = modalES
                             }
                         },
                         Tvs = new List<TvDetailModel>
@@ -1216,7 +1267,8 @@ namespace GeneratePagoFromBlazor.Services
                                 Robots = "All American ES",
                                 MetaDescription = "Página All American ES",
                                 HtmlName = "All American",
-                                Resources = resourceES
+                                Resources = resourceES,
+                                Modal = modalES
                             },
                             new TvDetailModel
                             {
@@ -1249,7 +1301,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Robots = "The Big Bang Theory ES",
                                  MetaDescription = "Página The Big Bang Theory ES",
                                  HtmlName = "The Big Bang Theory",
-                                Resources = resourceES
+                                Resources = resourceES,
+                                Modal = modalES
                             },
                             new TvDetailModel
                             {
@@ -1281,7 +1334,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Robots = "How to Get Away with Murder ES",
                                  MetaDescription = "Página How to Get Away with Murder ES",
                                  HtmlName = "How to Get Away with Murder",
-                                Resources = resourceES
+                                Resources = resourceES,
+                                Modal = modalES
                             },
                             new TvDetailModel
                             {
@@ -1313,7 +1367,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Robots = "The Simpsons ES",
                                  MetaDescription = "Página The Simpsons ES",
                                  HtmlName = "The Simpsons",
-                                Resources = resourceES
+                                Resources = resourceES,
+                                Modal = modalES
                             }
                         },
                         Categories = new List<Item>
@@ -1363,25 +1418,7 @@ namespace GeneratePagoFromBlazor.Services
                         {
                             new Item(1, "Lisboa") , new Item(2, "Brasil") , new Item(3, "España")
                         },
-                        Modal = new ModalModel
-                        {
-                            Dates = new List<Item>
-                            {
-                                new Item(1, "01/01/2001"), new Item(2, "02/02/2002"), new Item(3, "03/03/2003")
-                            },
-                            FlightNumber = new List<Item>
-                            {
-                                new Item(1, "12345"), new Item(2, "54321"), new Item(3, "99887")
-                            },
-                            From = new List <Item>
-                            {
-                                new Item(1, "Lisboa") , new Item(2, "Brasil") , new Item(3, "España")
-                            },
-                            To = new List<Item>
-                            {
-                                new Item(1, "Lisboa") , new Item(2, "Brasil") , new Item(3, "España")
-                            }
-                        },
+                        Modal = modalES,
                         SiteLanguages = languages,
                         Title = "Index ES",
                         Name= "Index",
@@ -1414,7 +1451,8 @@ namespace GeneratePagoFromBlazor.Services
                                         }
                                     }
                                 },
-                                 Resources = resourceES
+                                 Resources = resourceES,
+                                Modal = modalES
                             }
                         },
                         Resources = resourceES

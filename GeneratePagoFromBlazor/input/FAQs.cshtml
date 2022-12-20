@@ -1,51 +1,45 @@
 ﻿@model FAQsViewModel
-<div>
-    @{
-        foreach (var faq in Model.FAQs)
-        {
-            <section>
-                <section class="item-details">
-                    <div class="item-details__info">
-                        <div class="mb-4">
-                            <h6>@Model.Resources.FAQTitle</h6>
-                            <p>@Model.Resources.FAQSubtitle</p>
-                        </div>
 
-                    </div>
-                </section>
-                <section class="audio-track bg-dark py-5 mb-5">
-                    <div class="item-all__content">
-                        <div class="content-table">
-                            <table class="table table-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">@Model.Resources.TextQuestion</th>
-                                        <th scope="col">@Model.Resources.TextAnswer</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @if (faq.FAQItems != null && faq.FAQItems.Any())
-                                    {
-                                        @foreach (var item in faq.FAQItems.OrderBy(x => x.Order))
-                                        {
-                                            <tr>
-                                                <td>@item.Question</td>
-                                                <td>@item.Answer</td>
-                                            </tr>
-                                        }
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </section>
-            </section>
-        }
-    }
-</div>
+@Html.Partial("Shared/HeaderPage.cshtml", Model.Resources.FAQPageTitle)
 
-<style>
-    .navbar {
-        background-color: #041C2C;
+@{
+    foreach (var faq in Model.FAQs)
+    {
+        <section class="additional-info">
+
+            <h5 class="additional-info__title mb-4">@Model.Resources.FAQTitle </h5>
+
+            <p class="additional-info__description mb-5">@Model.Resources.FAQSubtitle</p>
+
+
+            <!-- TO DO: Collapse and Expand All Accordion items ('hide all' 'show all' label) -->
+            <button type="button" class="btn btn-rounded btn-primary text-uppercase mb-3">Hide all</button>
+
+
+
+            <div class="additional-info__faqs mb-5">
+                <div class="accordion" id="accordion">
+                    @if (faq.FAQItems != null && faq.FAQItems.Any())
+                    {
+                        @foreach (var item in faq.FAQItems.OrderBy(x => x.Order))
+                        {
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-heading@{@item.Order}">
+                                    <button dir="rtl" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse@{@item.Order}" aria-expanded="true" aria-controls="panelsStayOpen-collapse@{@item.Order}">
+                                        @Model.Resources.TextQuestion
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapse@{@item.Order}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading@{@item.Order}">
+                                    <div class="accordion-body">
+                                        @Model.Resources.TextAnswer<strong><a href="#"> Learn More</a></strong>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    
+                </div>
+            </div>
+        </section>
     }
-</style>
+}

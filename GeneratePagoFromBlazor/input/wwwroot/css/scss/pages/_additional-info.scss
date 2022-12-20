@@ -1,0 +1,17 @@
+﻿@import "../variables/all";
+
+.additional-info {
+    width: $item-details-container;
+    margin: auto;
+    color: $text-color;
+
+    &__title {
+        @extend .font-weight-bold;
+        color: $accent-color;
+        margin-bottom: 1.5rem;
+    }
+
+    &__description {
+        line-height: 34px;
+    }
+}

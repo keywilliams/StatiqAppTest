@@ -1,0 +1,17 @@
+﻿@import "../variables/all";
+
+.header-page {
+    height: 241px;
+    margin-bottom: 50px;
+    margin-top: -$navbar-desktop-height;
+    background-color: $dark-color;
+
+    &__title {
+        @extend .font-weight-bold;
+        line-height: 241px;
+        width: 80%;
+        margin: auto;
+        color: #fff;
+        padding-top: 2rem;
+    }
+}
