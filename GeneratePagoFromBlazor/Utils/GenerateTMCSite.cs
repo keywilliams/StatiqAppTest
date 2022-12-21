@@ -22,6 +22,7 @@ namespace GeneratePagoFromBlazor.Utils
                 foreach (var movie in index.Value.Movies)
                 {
                     movie.Related = index.Value.Movies;
+                    movie.AllMovies = index.Value.Movies;
                     bootstrapper.BuildPipeline($"Render Movie {movie.Name} in {index.Key}", builder => builder
                         .WithInputReadFiles("MovieDetail.cshtml")
                         .WithProcessModules(new RenderRazor().WithModel(Config.FromValue(movie)))
@@ -31,6 +32,7 @@ namespace GeneratePagoFromBlazor.Utils
                 foreach (var tv in index.Value.Tvs)
                 {
                     tv.Related = index.Value.Tvs;
+                    tv.AllTvs = index.Value.Tvs;
                     bootstrapper.BuildPipeline($"Render Tv {tv.Name} in {index.Key}", builder => builder
                         .WithInputReadFiles("TvDetail.cshtml")
                         .WithProcessModules(new RenderRazor().WithModel(Config.FromValue(tv)))
@@ -40,6 +42,7 @@ namespace GeneratePagoFromBlazor.Utils
                 foreach (var audio in index.Value.Audios)
                 {
                     audio.Related = index.Value.Audios;
+                    audio.AllAudios = index.Value.Audios;
                     bootstrapper.BuildPipeline($"Render Audio {audio.Name} in {index.Key}", builder => builder
                         .WithInputReadFiles("AudioDetail.cshtml")
                         .WithProcessModules(new RenderRazor().WithModel(Config.FromValue(audio)))

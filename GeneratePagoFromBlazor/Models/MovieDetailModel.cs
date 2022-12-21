@@ -10,5 +10,6 @@
         public string Released { get; set; }
         public string Copyright { get; set; }
         public List<MovieDetailModel> Related { get; set; }
+        public List<MovieDetailModel> AllMovies { get; set; }
     }
 }

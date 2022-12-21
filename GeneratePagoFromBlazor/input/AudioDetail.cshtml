@@ -14,7 +14,7 @@
 </section>
 
 <section class="audio-track bg-dark py-5 mb-5">
-    <div class="item-all__content">
+    <div class="item-details content-dark ">
         <h6>@Model.Resources.TextTrackList</h6>
 
         <div class="content-table">
@@ -48,7 +48,7 @@
 
 </section>
 
-<div class="item-all__content content-light mb-4">
+<div class="item-details content-light mb-4">
     <h6>@Model.Resources.TextRelated</h6>
     <div class="row row-cols-lg-5 ">
         @{
@@ -57,7 +57,7 @@
                 <div class="col col-4">
 
                     <a href="@{@relate.HtmlName}.html">
-                        <div class="search-results__item">
+                        <div class="search-results__item audio-item">
                             <img src="@relate.Image" />
                             <div class="search-results__item-type">
                                 <svg class="all fill-white">
@@ -77,12 +77,26 @@
     </div>
 </div>
 
-<section class="item-all bg-dark py-5 mb-5">
+<section class="item-all bg-dark py-5 my-5">
     <div class="item-all__content">
         <h6>@Model.Resources.TextAllAudio</h6>
 
-        <div class="content-slider">
-            SLIDER
+        <div class="detail-slider mt-3">
+            <div class="slider all-items detail-slider__all-items audio-item">
+                @{
+                    foreach (var audio in Model.AllAudios)
+                    {
+                        <div>
+                            <a href="@{@audio.HtmlName}.html">
+                                <img src="@audio.Image" />
+                            </a>
+                            <p class="item-title mb-0 mt-2">@audio.Name</p>
+                            <p class="item-info"><small><span>@audio.Year</span> | <span>@audio.Duration</span></small></p>
+                        </div>
+                    }
+                }
+            </div>
+
         </div>
     </div>
 

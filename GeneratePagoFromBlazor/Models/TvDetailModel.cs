@@ -14,6 +14,7 @@
 
         public List<Episode> Episodes { get; set; }
         public List<TvDetailModel> Related { get; set; }
+        public List<TvDetailModel> AllTvs { get; set; }
     }
 
     public class Episode
