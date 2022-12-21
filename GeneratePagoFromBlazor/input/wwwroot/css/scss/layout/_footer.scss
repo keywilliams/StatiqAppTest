@@ -1,6 +1,6 @@
 ﻿@import "../variables/all";
 
-.footer {
+.footer-desktop {
     background-color: $dark-color;
     color: #fff;
 
@@ -38,3 +38,43 @@
     }
 }
 
+$footer-mobile-icon-height: 32px !default;
+.footer-mobile {
+
+    @include footer-mobile-shadow;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 2;
+
+
+    svg {
+        width: 27px;
+        height: $footer-mobile-icon-height;
+
+    }
+
+    .active {
+        .icon-bg {
+            width: 70px;
+            height: $footer-mobile-icon-height;
+            border-radius: 15px;
+            background: lighten($primary-color, 60%);
+
+            svg {
+                rect {
+                    fill: $primary-color;
+                }
+            }
+        }
+    }
+
+    p {
+        font-size: 14px;
+        padding-top: 0.5rem;
+        color: $primary-color;
+        margin: 0;
+    }
+}

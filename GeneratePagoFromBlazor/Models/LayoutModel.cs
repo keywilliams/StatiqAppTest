@@ -14,6 +14,10 @@
         public string CompanyName { get; set; }
         public Resource Resources { get; set; }
         public ModalModel Modal { get; set; }
+        public string FacebookUrl { get; set; }
+        public string InstagramUrl { get; set; }
+        public string TwitterUrl { get; set; }
+        public string CurrentLanguage { get; set; }
     }
 
     public class Language

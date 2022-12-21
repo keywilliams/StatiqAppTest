@@ -194,5 +194,121 @@
     }
 }
 
+.detail-slider {
+    &__all-items {
+        .slick-slide {
+            margin: 0 10px;
+        }
+
+        .nav-prev,
+        .nav-next {
+            z-index: 10;
+            position: absolute;
+            top: 32%;
+            width: 55px;
+            height: 55px;
+            background-color: rgba(255,255,255,.52);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 55px;
+
+            &:before {
+                font-family: $google-icons;
+                font-size: 45px;
+            }
+        }
+
+        .nav-prev {
+            left: 50px;
+
+            &:before {
+                content: "\e408";
+            }
+        }
+
+        .nav-next {
+            right: 50px;
+
+            &:before {
+                content: "\e409";
+            }
+        }
+
+        &.audio-item {
+            img {
+                width: 100%;
+                object-fit: cover;
+                aspect-ratio: $item-audio-poster;
+            }
+        }
+    }
+
+    &__all-episodes {
+        color: #fff;
+        padding: 1.5rem 0;
+
+        &.slider-nav-all-episodes {
+            background: rgba(172, 172, 172, 0.14);
+        }
+
+        .slick-slide {
+            margin: 0px;
+        }
+
+        .episode-detail {
+
+            img {
+                aspect-ratio: $detail-episode-poster;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            &__title {
+                font-size: 34px;
+                @extend .font-weight-bold;
+            }
+
+            &__subtitle {
+                color: $accent-color;
+                @extend .font-weight-bold;
+            }
+
+            &__sinopse {
+                font-size: 13px;
+                line-height: 27px;
+            }
+        }
+
+        .episode-thumbnail {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            @extend .font-weight-bold;
+
+            img {
+                max-width: 100px;
+                aspect-ratio: $detail-episode-thumbnail;
+                width: 100%;
+                object-fit: cover;
+                margin-right: 20px;
+            }
+
+            &__title {
+                font-size: 12px;
+                margin-bottom: 0.5rem;
+            }
+
+            &__info {
+                font-size: 10px;
+            }
+        }
+
+        .slick-current {
+            .episode-thumbnail {
+                background-color: $primary-color;
+            }
+        }
+    }
+}
 
 

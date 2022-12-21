@@ -5,6 +5,22 @@
     margin: auto;
     color: $text-color;
 
+    &.content-light {
+        h6 {
+            color: $accent-color;
+        }
+
+        p {
+            color: $primary-color;
+        }
+    }
+
+    &.content-dark {
+        h6 {
+            color: #fff
+        }
+    }
+
     h6 {
         @extend .font-weight-bold;
         text-transform: uppercase;
@@ -23,71 +39,86 @@
         @extend .font-weight-bold;
         min-width: 100px;
     }
+
+    .content-table {
+        table {
+            color: #fff;
+            font-size: 14px;
+
+            th {
+                color: $accent-color;
+                @extend .font-weight-medium;
+
+                svg {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+
+            th,
+            td {
+                &:first-of-type {
+                    width: 10%;
+                }
+            }
+
+            th,
+            td {
+                &:last-of-type {
+                    text-align: center;
+                    width: 20%;
+                }
+            }
+        }
+
+        table,
+        th,
+        tr,
+        td {
+            border: none;
+        }
+    }
 }
 
 .item-all {
     &__content {
-        width: $item-details-container;
-        margin: auto;
-        color: #fff;
-
-        &.content-light {
-            h6 {
-                color: $accent-color;
-            }
-
-            p {
-                color: $primary-color;
-            }
-        }
 
         h6 {
             @extend .font-weight-bold;
             text-transform: uppercase;
             margin-bottom: 1.5rem;
+            width: $item-details-container;
+            margin: auto;
+            color: #fff;
         }
 
         &-item-title {
             color: $accent-color;
         }
 
-        .content-table {
-            table {
+        .detail-slider {
+            .item-title {
+                color: $accent-color;
+                @extend .font-weight-bold;
+                @include limit-text-length;
+            }
+
+            .item-info {
                 color: #fff;
-                font-size: 14px;
-
-                th {
-                    color: $accent-color;
-                    @extend .font-weight-medium;
-
-                    svg {
-                        width: 16px;
-                        height: 16px;
-                    }
-                }
-
-                th,
-                td {
-                    &:first-of-type {
-                        width: 10%;
-                    }
-                }
-
-                th,
-                td {
-                    &:last-of-type {
-                        text-align: center;
-                        width: 20%;
-                    }
-                }
+                font-size: 12px;
             }
+        }
+    }
 
-            table,
-            th,
-            tr,
-            td {
-                border: none;
-            }
+    &__episodes {
+        width: $item-details-container;
+        margin: auto;
+
+        h6 {
+            @extend .font-weight-bold;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            color: #fff;
         }
     }
 }

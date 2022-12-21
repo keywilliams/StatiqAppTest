@@ -52,10 +52,26 @@ $largedesktop: 1200px;
     }
 }
 
+@mixin mobile-only {
+    @media screen and (min-width: $mobile) {
+        @content;
+    }
+}
+
 //Visibility
 
 @include mobile {
     .hide-mobile {
+        display: none !important;
+    }
+
+    .mobile-only {
+        display: block !important;
+    }
+}
+
+@include mobile-only {
+    .mobile-only {
         display: none !important;
     }
 }

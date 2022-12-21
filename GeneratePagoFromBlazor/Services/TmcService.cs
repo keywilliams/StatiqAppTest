@@ -306,6 +306,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Titanic.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Titanic-banner.jpg",
+                                 CurrentLanguage = "pt"
 
                              },
                              new MovieDetailModel
@@ -338,6 +339,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Matrix.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Matrix-banner.jpg",
+                                 CurrentLanguage = "pt"
                              },
                              new MovieDetailModel
                              {
@@ -369,6 +371,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Avatar.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Avatar-banner.jpg",
+                                 CurrentLanguage = "pt"
                              },
                              new MovieDetailModel
                              {
@@ -400,6 +403,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Hulk.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Hulk-banner.jpg",
+                                 CurrentLanguage = "pt"
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -438,6 +442,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Adele21.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Adele21-banner.jpg",
+                                 CurrentLanguage = "pt"
                             },
                             new AudioDetailModel
                             {
@@ -474,6 +479,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/LinkinPark.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/LinkinPark-banner.jpg",
+                                 CurrentLanguage = "pt"
                             }
                         },
                         Tvs = new List<TvDetailModel>
@@ -517,6 +523,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/AllAmericanS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/AllAmericanS1-banner.jpg",
+                                 CurrentLanguage = "pt"
                             },
                             new TvDetailModel
                             {
@@ -558,6 +565,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/TheBigBangTheoryS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/TheBigBangTheoryS1-banner.jpg",
+                                 CurrentLanguage = "pt"
                             },
                             new TvDetailModel
                             {
@@ -598,6 +606,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/htgawmS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/htgawmS1-banner.jpg",
+                                 CurrentLanguage = "pt"
                             },
                             new TvDetailModel
                             {
@@ -638,6 +647,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/TheSimpsonsS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/TheSimpsonsS1-banner.jpg",
+                                 CurrentLanguage = "pt"
                             }
                         },
                         Categories = new List<Item>
@@ -728,11 +738,13 @@ namespace GeneratePagoFromBlazor.Services
                                 },
                                  Resources = resourcePT,
                                 Modal = modalPT,
-                                 CompanyName = "WIG"
+                                 CompanyName = "WIG",
+                                 CurrentLanguage = "pt"
                             }
                         },
                         Resources = resourcePT,
-                        CompanyName = "WIG"
+                        CompanyName = "WIG",
+                        CurrentLanguage = "pt"
                     }},
                     {"en", new IndexViewModel
                     {
@@ -768,6 +780,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Titanic.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Titanic-banner.jpg",
+                                 CurrentLanguage = "en"
                              },
                              new MovieDetailModel
                              {
@@ -799,6 +812,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Matrix.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Matrix-banner.jpg",
+                                 CurrentLanguage = "en"
                              },
                              new MovieDetailModel
                              {
@@ -830,6 +844,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Avatar.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Avatar-banner.jpg",
+                                 CurrentLanguage = "en"
                              },
                              new MovieDetailModel
                              {
@@ -861,6 +876,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Hulk.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Hulk-banner.jpg",
+                                 CurrentLanguage = "en"
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -899,6 +915,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Adele21.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Adele21-banner.jpg",
+                                 CurrentLanguage = "en"
                             },
                             new AudioDetailModel
                             {
@@ -935,6 +952,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/LinkinPark.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/LinkinPark-banner.jpg",
+                                 CurrentLanguage = "en"
                             }
                         },
                         Tvs = new List<TvDetailModel>
@@ -978,6 +996,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/AllAmericanS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/AllAmericanS1-banner.jpg",
+                                 CurrentLanguage = "en"
                             },
                             new TvDetailModel
                             {
@@ -1019,6 +1038,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/TheBigBangTheoryS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/TheBigBangTheoryS1-banner.jpg",
+                                 CurrentLanguage = "en"
                             },
                             new TvDetailModel
                             {
@@ -1059,6 +1079,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/htgawmS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/htgawmS1-banner.jpg",
+                                 CurrentLanguage = "en"
                             },
                             new TvDetailModel
                             {
@@ -1099,6 +1120,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/TheSimpsonsS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/TheSimpsonsS1-banner.jpg",
+                                 CurrentLanguage = "en"
                             }
                         },
                         Categories = new List<Item>
@@ -1188,12 +1210,14 @@ namespace GeneratePagoFromBlazor.Services
                                 },
                                  Resources = resourceEN,
                                 Modal = modalEN,
-                                 CompanyName = "WIG"
+                                 CompanyName = "WIG",
+                                 CurrentLanguage = "en"
                             }
                         },
                         MainPage = true,
                         Resources = resourceEN,
-                        CompanyName = "WIG"
+                        CompanyName = "WIG",
+                        CurrentLanguage = "en"
                     }},
                     {"es", new IndexViewModel
                     {
@@ -1229,6 +1253,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Titanic.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Titanic-banner.jpg",
+                                 CurrentLanguage = "es"
                              },
                              new MovieDetailModel
                              {
@@ -1260,6 +1285,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Matrix.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Matrix-banner.jpg",
+                                 CurrentLanguage = "es"
                              },
                              new MovieDetailModel
                              {
@@ -1291,6 +1317,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Avatar.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Avatar-banner.jpg",
+                                 CurrentLanguage = "es"
                              },
                              new MovieDetailModel
                              {
@@ -1322,6 +1349,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Hulk.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Hulk-banner.jpg",
+                                 CurrentLanguage = "es"
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -1360,6 +1388,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Adele21.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Adele21-banner.jpg",
+                                 CurrentLanguage = "es"
                             },
                             new AudioDetailModel
                             {
@@ -1396,6 +1425,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/LinkinPark.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/LinkinPark-banner.jpg",
+                                 CurrentLanguage = "es"
                             }
                         },
                         Tvs = new List<TvDetailModel>
@@ -1439,6 +1469,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/AllAmericanS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/AllAmericanS1-banner.jpg",
+                                 CurrentLanguage = "es"
                             },
                             new TvDetailModel
                             {
@@ -1480,6 +1511,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/TheBigBangTheoryS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/TheBigBangTheoryS1-banner.jpg",
+                                 CurrentLanguage = "es"
                             },
                             new TvDetailModel
                             {
@@ -1520,6 +1552,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/htgawmS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/htgawmS1-banner.jpg",
+                                 CurrentLanguage = "es"
                             },
                             new TvDetailModel
                             {
@@ -1560,6 +1593,7 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/TheSimpsonsS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/TheSimpsonsS1-banner.jpg",
+                                 CurrentLanguage = "es"
                             }
                         },
                         Categories = new List<Item>
@@ -1644,11 +1678,13 @@ namespace GeneratePagoFromBlazor.Services
                                 },
                                 Resources = resourceES,
                                 Modal = modalES,
-                                CompanyName = "WIG"
+                                CompanyName = "WIG",
+                                CurrentLanguage = "es"
                             }
                         },
                         Resources = resourceES,
-                        CompanyName = "WIG"
+                        CompanyName = "WIG",
+                        CurrentLanguage = "es"
                     }}
                 },
             };

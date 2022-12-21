@@ -1,26 +1,34 @@
 ﻿@model LayoutModel
 
-<footer class="footer">
-    <div class="footer__top">
+<footer class="footer-desktop hide-mobile">
+    <div class="footer-desktop__top">
         <div class="row">
-            <div class="col-12 col-md-6 footer__top-logo text-md-start text-center">
+            <div class="col-12 col-md-6 footer-desktop__top-logo text-md-start text-center">
 				<a href="Index.html">
-					@*<img src="@Model.Logo" alt="">*@
-                    <img src="../wwwroot/img/brand/company-logo.png" />
+                    @{
+                        if (string.IsNullOrWhiteSpace(Model.Logo))
+                        {
+                            <img src="../wwwroot/img/brand/company-logo.png" />
+                        }
+                        else
+                        {
+                            <img src="@Model.Logo" alt="">
+                        }
+                    }
 				</a>
             </div>
-            <div class="col-12 col-md-6 footer__top-social text-md-end text-center">
-                <a href="https://www.facebook.com" target="_blank">
+            <div class="col-12 col-md-6 footer-desktop__top-social text-md-end text-center">
+                <a href="@Model.FacebookUrl" target="_blank">
                     <svg class="all fill-white me-3" style="width: 14px; height: 27px">
                         <use xlink:href="../wwwroot/all.svg#icon-facebook"></use>
                     </svg>
                 </a>
-                <a href="https://www.instagram.com" target="_blank">
+                <a href="@Model.InstagramUrl" target="_blank">
                     <svg class="all fill-white me-3" style="width: 24px; height: 24px">
                         <use xlink:href="../wwwroot/all.svg#icon-instagram"></use>
                     </svg>
                 </a>
-                <a href="https://twitter.com" target="_blank">
+                <a href="@Model.TwitterUrl" target="_blank">
                     <svg class="all fill-white" style="width: 27px; height: 22px">
                         <use xlink:href="../wwwroot/all.svg#icon-twitter"></use>
                     </svg>
@@ -29,14 +37,48 @@
         </div>
     </div>
 
-    <div class="footer__separator"></div>
+    <div class="footer-desktop__separator"></div>
 
-    <div class="footer__bottom">
+    <div class="footer-desktop__bottom">
         <div class="row">
             <div class="col-12">
                 <p class="text-bottom-footer" style="margin-bottom: 0px;">© @DateTime.Now.Year @Model.CompanyName.</p>
             </div>
         </div>
     </div>
+</footer>
 
+<footer class="footer-mobile mobile-only py-2">
+    <div class="row py-2">
+        <div class="col-4 text-center">
+            <button class="footer-mobile__menu-item active"onclick="window.location.href='Index.html';">
+                <div class="icon-bg">
+                    <svg class="all fill-primary">
+                        <use xlink:href="../wwwroot/all.svg#icon-home-mobile"></use>
+                    </svg>
+                </div>
+                <p>Home</p>
+            </button>
+        </div>
+        <div class="col-4 text-center">
+            <button class="footer-mobile__menu-item">
+                <div class="icon-bg">
+                    <svg class="all fill-primary">
+                        <use xlink:href="../wwwroot/all.svg#icon-flight-mobile"></use>
+                    </svg>
+                </div>
+                <p>Flight</p>
+            </button>
+        </div>
+        <div class="col-4 text-center">
+            <button class="footer-mobile__menu-item">
+                <div class="icon-bg">
+                    <svg class="all fill-primary">
+                        <use xlink:href="../wwwroot/all.svg#icon-search-mobile"></use>
+                    </svg>
+                </div>
+                <p>Search</p>
+            </button>
+        </div>
+    </div>
 </footer>

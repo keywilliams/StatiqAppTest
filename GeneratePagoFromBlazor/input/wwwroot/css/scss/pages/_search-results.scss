@@ -1,6 +1,11 @@
 ﻿@import "../variables/all";
 
 .search-results {
+
+    @include until($tablet) {
+        margin-bottom: 100px;
+    }
+
     &__title {
         @extend .font-weight-bold;
         text-transform: uppercase;
@@ -15,49 +20,68 @@
         img {
             width: 100%;
             object-fit: cover;
-            aspect-ratio: 320/461;
+            aspect-ratio: $item-poster;
         }
 
-        &-type {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.85);
-            width: 40px;
-            text-align: center;
-            height: 50px;
-            line-height: 50px;
-
-            @include until($tablet) {
-                right: 12px;
-                width: 35px;
-                height: 45px;
-                line-height: 45px;
+        &.audio-item {
+            img {
+                width: 100%;
+                object-fit: cover;
+                aspect-ratio: $item-audio-poster;
             }
+        }
+        //v1.0
+        //&-type {
+        //    position: absolute;
+        //    top: 0;
+        //    right: 0;
+        //    background-color: rgba(0, 0, 0, 0.85);
+        //    width: 40px;
+        //    text-align: center;
+        //    height: 50px;
+        //    line-height: 50px;
+        //  @include until($tablet) {
+        //      right: 12px;
+        //      width: 35px;
+        //      height: 45px;
+        //      line-height: 45px;
+        //  }
+        // svg {
+        //   width: 27px;
+        //    height: 22px;
+        //  @include until($tablet) {
+        //      width: 21px;
+        //      height: 17px;
+        //  }
+        //  }
+        // }
+        //v1.1
+        //d-none
+        &-type {
+            display: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            line-height: 26px;
+            text-align: center;
+            background: $primary-light;
 
             svg {
-                width: 27px;
-                height: 22px;
-
-                @include until($tablet) {
-                    width: 21px;
-                    height: 17px;
-                }
+                width: 15px;
+                height: 15px;
             }
         }
 
         &-title {
             @extend .font-weight-bold;
             color: $accent-color !important;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
+            @include limit-text-length;
         }
 
 
         &-info {
             font-size: 12px;
-            margin-bottom: 1rem;
+            margin-bottom: 0;
             color: $primary-color;
         }
     }

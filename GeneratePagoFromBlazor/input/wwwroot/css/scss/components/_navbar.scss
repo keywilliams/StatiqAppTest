@@ -47,10 +47,22 @@ $navbar-item-color: #fff !default;
         &-item {
             color: $navbar-item-color;
             text-decoration: none;
-        }
 
-        .navbar-link {
-            text-decoration: none;
+            &.dropdown {
+                .nav-link {
+                    display: block;
+                    padding: 0;
+                    color: #ffffff;
+                }
+
+                .dropdown-menu {
+                    min-width: inherit;
+                }
+            }
+
+            .navbar-link {
+                text-decoration: none;
+            }
         }
     }
 }

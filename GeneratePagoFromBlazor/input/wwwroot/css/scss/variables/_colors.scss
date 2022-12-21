@@ -5,6 +5,8 @@ $accent-color: #C01933;
 $dark-color: #041C2C;
 $text-color: #000;
 
+$primary-light: lighten( $primary-color, 70% ) ;
+
 $filter-color: #EFF4F7;
 $body-color: #fff;
 
@@ -24,4 +26,8 @@ $body-color: #fff;
 
 .bg-primary {
     background-color: $primary-color;
+}
+
+.primary-light {
+    background: $primary-light;
 }

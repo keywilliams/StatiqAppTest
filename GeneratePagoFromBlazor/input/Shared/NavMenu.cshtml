@@ -9,7 +9,6 @@
     </div>
 
     <div class="navbar__menu">
-
         <button type="button" class="navbar__menu-item hide-tablet" data-bs-toggle="modal" data-bs-target="#onYourFlightModal">
             @Model.Resources.TextWhatsOnMyFlight
             <svg class="all fill-white" style="width: 31px; height: 31px">
@@ -17,7 +16,7 @@
             </svg>
         </button>
 
-        <div class="navbar__menu-item has-dropdown">
+@*        <div class="navbar__menu-item has-dropdown">
             @{
                 if (Model.SiteLanguages != null && Model.SiteLanguages.Any())
                 {
@@ -25,6 +24,28 @@
                     {
                         <a href="../@language.Path/@{@Model.Name}.html" class="navbar-link">@language.Text</a>
                     }
+                }
+            }
+        </div>*@
+
+        <div class="navbar__menu-item dropdown">
+            @{
+                if (Model.SiteLanguages != null && Model.SiteLanguages.Any())
+                {
+                    var selected = Model.SiteLanguages.First(x => x.Path == Model.CurrentLanguage);
+
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        @selected.Text
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    @{
+                            foreach (var language in Model.SiteLanguages.Where(x => x.Path != Model.CurrentLanguage))
+                        {
+                            <li><a class="dropdown-item" href="../@language.Path/@{@Model.Name}.html">@language.Text</a></li>
+                        }
+                    }
+                    </ul>
                 }
             }
         </div>
