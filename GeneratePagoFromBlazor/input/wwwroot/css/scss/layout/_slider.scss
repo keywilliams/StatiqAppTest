@@ -191,6 +191,12 @@
                 outline-offset: -4px;
             }
         }
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            aspect-ratio: $home-slider-item-small-poster;
+        }
     }
 }
 
@@ -232,6 +238,12 @@
             &:before {
                 content: "\e409";
             }
+        }
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            aspect-ratio: $detail-all-poster;
         }
 
         &.audio-item {
