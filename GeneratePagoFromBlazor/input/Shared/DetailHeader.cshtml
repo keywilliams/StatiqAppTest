@@ -66,14 +66,19 @@
                 </div>
             </div>
 
-            <div class="detail-header__info-btn">
-                <button type="button" class="btn btn-primary" onclick="window.open('@{@Model.DefaultTrailerUrl}', '_blank')">
-                    @Model.Resources.ButtonTrailer
-                    <svg class="all fill-white">
-                        <use xlink:href="../wwwroot/all.svg#icon-play"></use>
-                    </svg>
-                </button>
-            </div>
+            @{
+                if (Model.ContentType == ContentType.Movie && !string.IsNullOrWhiteSpace(Model.DefaultTrailerUrl))
+                {
+                    <div class="detail-header__info-btn">
+                        <button type="button" class="btn btn-primary" onclick="window.open('@{@Model.DefaultTrailerUrl}', '_blank')">
+                            @Model.Resources.ButtonTrailer
+                            <svg class="all fill-white">
+                                <use xlink:href="../wwwroot/all.svg#icon-play"></use>
+                            </svg>
+                        </button>
+                    </div>
+                }
+            }
         </div>
     </div>
 </div>
