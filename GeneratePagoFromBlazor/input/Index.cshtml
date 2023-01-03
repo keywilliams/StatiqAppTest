@@ -86,146 +86,164 @@
                     <svg class="all svg-search">
                         <use xlink:href="../wwwroot/all.svg#icon-search"></use>
                     </svg>
-                    <input type="text" placeholder="Search..">
+                    <input type="text" placeholder="Search.." id="searchInput">
                     <button class="clear-icon-btn">
                         <svg class="all">
                             <use xlink:href="../wwwroot/all.svg#icon-close"></use>
                         </svg>
                     </button>
                 </div>
-
                 <div class="search-content__buttons d-flex">
-                    <button type="button" class="btn btn-primary">@Model.Resources.ButtonSearch</button>
-                    <button type="button" class="btn btn-primary">@Model.Resources.ButtonFilters</button>
+                    <button type="button" class="btn btn-primary" onclick="TriggerSearch()">@Model.Resources.ButtonSearch</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#contentFilters" aria-expanded="false" aria-controls="contentFilters">@Model.Resources.ButtonFilters</button>
                 </div>
             </div>
 
-            <div class="search-content__filters my-4">
-                <div>
-                    <button class="btn btn-filter-outline btn-rounded me-3 active" onclick="filterSelection('all')"> @Model.Resources.ButtonAllContent</button>
-                    <button class="btn btn-filter-outline btn-rounded me-3" onclick="filterSelection('movies')"> @Model.Resources.ButtonMovies</button>
-                    <button class="btn btn-filter-outline btn-rounded me-3" onclick="filterSelection('series')"> @Model.Resources.ButtonSeries</button>
-                    <button class="btn btn-filter-outline btn-rounded me-3" onclick="filterSelection('audio')"> @Model.Resources.ButtonAudio</button>
-                </div>
-
-                <div class="search-content__filters-form my-4">
-                    <div>
-                        <label>@Model.Resources.DropDownCategory</label>
-                        <select class="form-select" aria-label="Default select example">
-                            @{
-                                foreach (var item in Model.Categories)
-                                {
-                                    <option value="@item.Id">@item.Description</option>
-                                }
-                            }
-                        </select>
+            <div class="search-content__filters collapse" id="contentFilters">
+                <div class="py-4">
+                    <div id="contentTypes">
+                        <button class="btn btn-filter-outline btn-rounded me-3 active" data-value="all"> @Model.Resources.ButtonAllContent</button>
+                        <button class="btn btn-filter-outline btn-rounded me-3" data-value="movies"> @Model.Resources.ButtonMovies</button>
+                        <button class="btn btn-filter-outline btn-rounded me-3" data-value="series"> @Model.Resources.ButtonSeries</button>
+                        <button class="btn btn-filter-outline btn-rounded me-3" data-value="audio"> @Model.Resources.ButtonAudio</button>
                     </div>
 
-                    <div>
-                        <label>@Model.Resources.DropDownGenre</label>
-                        <select class="form-select" aria-label="Default select example">
-                            @{
-                                foreach (var item in Model.Genres)
-                                {
-                                    <option value="@item.Id">@item.Description</option>
+                    <div class="search-content__filters-form my-4">
+                        <div>
+                            <label>@Model.Resources.DropDownCategory</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="categoryDropdown">
+                                <option value="-1"></option>
+                                @{
+                                    foreach (var item in Model.Categories)
+                                    {
+                                        <option value="@item.Id">@item.Description</option>
+                                    }
                                 }
-                            }
-                        </select>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>@Model.Resources.DropDownGenre</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="genreDropdown">
+                                <option value="-1"></option>
+                                @{
+                                    foreach (var item in Model.Genres)
+                                    {
+                                        <option value="@item.Id">@item.Description</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>@Model.Resources.DropDownLanguage</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="languageDropdown">
+                                <option value="-1"></option>
+                                @{
+                                    foreach (var item in Model.Languages)
+                                    {
+                                        <option value="@item.Id">@item.Description</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>@Model.Resources.DropDownSubtitle</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="subtitleDropdown">
+                                <option value="-1"></option>
+                                @{
+                                    foreach (var item in Model.Subtitles)
+                                    {
+                                        <option value="@item.Id">@item.Description</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>@Model.Resources.DropDownSortby</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="sortingDropdown">
+                                <option value="-1"></option>
+                                @{
+                                    foreach (var item in Model.SortBy)
+                                    {
+                                        <option value="@item.Id">@item.Description</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+
+                        <a href="JavaScript:void(0);" onclick="ResetContentFilters()"> @Model.Resources.ButtonClearAll</a>
                     </div>
 
-                    <div>
-                        <label>@Model.Resources.DropDownLanguage</label>
-                        <select class="form-select" aria-label="Default select example">
-                            @{
-                                foreach (var item in Model.Languages)
-                                {
-                                    <option value="@item.Id">@item.Description</option>
+                    <h5>@Model.Resources.TextWhatsOnYourFlight</h5>
+
+                    <div class="search-content__filters-form my-4">
+                        <div>
+                            <label>@Model.Resources.DropDownDate</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="flightDateDropdown">
+                                <option value="-1"></option>
+                                @{
+                                    foreach (var item in Model.Dates)
+                                    {
+                                        <option value="@item.Id">@item.Description</option>
+                                    }
                                 }
-                            }
-                        </select>
-                    </div>
+                            </select>
+                        </div>
 
-                    <div>
-                        <label>@Model.Resources.DropDownSubtitle</label>
-                        <select class="form-select" aria-label="Default select example">
-                            @{
-                                foreach (var item in Model.Subtitles)
-                                {
-                                    <option value="@item.Id">@item.Description</option>
+                        <div>
+                            <label>@Model.Resources.DropDownFrom</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="flightFromDropdown">
+                                <option value="-1"></option>
+                                @{
+                                    foreach (var item in Model.From)
+                                    {
+                                        <option value="@item.Id">@item.Description</option>
+                                    }
                                 }
-                            }
-                        </select>
-                    </div>
+                            </select>
+                        </div>
 
-                    <div>
-                        <label>@Model.Resources.DropDownSortby</label>
-                        <select class="form-select" aria-label="Default select example">
-                            @{
-                                foreach (var item in Model.SortBy)
-                                {
-                                    <option value="@item.Id">@item.Description</option>
+                        <div>
+                            <label>@Model.Resources.DropDownTo</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="flightToDropdown">
+                                <option value="-1"></option>
+                                @{
+                                    foreach (var item in Model.To)
+                                    {
+                                        <option value="@item.Id">@item.Description</option>
+                                    }
                                 }
-                            }
-                        </select>
-                    </div>
+                            </select>
+                        </div>
 
-                    <a href="#"> @Model.Resources.ButtonClearAll</a>
-                </div>
-
-                <h5>@Model.Resources.TextWhatsOnYourFlight</h5>
-
-                <div class="search-content__filters-form my-4">
-                    <div>
-                        <label>@Model.Resources.DropDownDate</label>
-                        <select class="form-select" aria-label="Default select example">
-                            @{
-                                foreach (var item in Model.Dates)
-                                {
-                                    <option value="@item.Id">@item.Description</option>
+                        <div>
+                            <label>@Model.Resources.DropDownFlightNumber</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="flightNumberDropdown">
+                                <option value="-1"></option>
+                                @{
+                                    foreach (var item in Model.FlightNumber)
+                                    {
+                                        <option value="@item.Id">@item.Description</option>
+                                    }
                                 }
-                            }
-                        </select>
+                            </select>
+                        </div>
+
+                        <a href="JavaScript:void(0);"> @Model.Resources.ButtonEdit</a>
+
                     </div>
-
-                    <div>
-                        <label>@Model.Resources.DropDownFrom</label>
-                        <select class="form-select" aria-label="Default select example">
-                            @{
-                                foreach (var item in Model.From)
-                                {
-                                    <option value="@item.Id">@item.Description</option>
-                                }
-                            }
-                        </select>
-                    </div>
-
-                    <div>
-                        <label>@Model.Resources.DropDownTo</label>
-                        <select class="form-select" aria-label="Default select example">
-                            @{
-                                foreach (var item in Model.To)
-                                {
-                                    <option value="@item.Id">@item.Description</option>
-                                }
-                            }
-                        </select>
-                    </div>
-
-                    <div>
-                        <label>@Model.Resources.DropDownFlightNumber</label>
-                        <select class="form-select" aria-label="Default select example">
-                            @{
-                                foreach (var item in Model.FlightNumber)
-                                {
-                                    <option value="@item.Id">@item.Description</option>
-                                }
-                            }
-                        </select>
-                    </div>
-
-
-                    <a href="#"> @Model.Resources.ButtonEdit</a>
-
                 </div>
             </div>
         </div>

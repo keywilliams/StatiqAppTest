@@ -26,7 +26,7 @@
 <div class="navbar navbar-dark">
     <div class="navbar__brand">
         <a class="navbar__item" href="Index.html">
-            <img src="../wwwroot/img/brand/company-logo.png" />
+                    <img src="../wwwroot/img/brand/company-logo.png" />
         </a>
     </div>
 
@@ -37,7 +37,6 @@
                 <use xlink:href="../wwwroot/all.svg#icon-airplane"></use>
             </svg>
         </button>
-
 
         <div class="navbar__menu-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -89,6 +88,7 @@
                             <div class="modal-form my-4">
                                 <label>Fecha de salida</label>
                                 <select class="form-select" aria-label="Default select example">
+                                    <option value="-1"></option>
                                             <option value="1">01/01/2001</option>
                                             <option value="2">02/02/2002</option>
                                             <option value="3">03/03/2003</option>
@@ -96,6 +96,7 @@
 
                                 <label>Desde</label>
                                 <select class="form-select" aria-label="Default select example">
+                                    <option value="-1"></option>
                                             <option value="1">Lisboa</option>
                                             <option value="2">Brasil</option>
                                             <option value="3">Espa&#xF1;a</option>
@@ -103,6 +104,7 @@
 
                                 <label>Hasta</label>
                                 <select class="form-select" aria-label="Default select example">
+                                    <option value="-1"></option>
                                             <option value="1">Lisboa</option>
                                             <option value="2">Brasil</option>
                                             <option value="3">Espa&#xF1;a</option>
@@ -110,6 +112,7 @@
 
                                 <label>N&#xFA;mero de vuelo</label>
                                 <select class="form-select" aria-label="Default select example">
+                                    <option value="-1"></option>
                                             <option value="1">12345</option>
                                             <option value="2">54321</option>
                                             <option value="3">99887</option>
@@ -125,6 +128,7 @@
                             <div class="modal-form my-4">
                                 <label>N&#xFA;mero de vuelo</label>
                                 <select class="form-select" aria-label="Default select example">
+                                    <option value="-1"></option>
                                             <option value="1">12345</option>
                                             <option value="2">54321</option>
                                             <option value="3">99887</option>
@@ -132,6 +136,7 @@
 
                                 <label>Fecha de salida</label>
                                 <select class="form-select" aria-label="Default select example">
+                                    <option value="-1"></option>
                                             <option value="1">01/01/2001</option>
                                             <option value="2">02/02/2002</option>
                                             <option value="3">03/03/2003</option>
@@ -226,118 +231,136 @@
                     <svg class="all svg-search">
                         <use xlink:href="../wwwroot/all.svg#icon-search"></use>
                     </svg>
-                    <input type="text" placeholder="Search..">
+                    <input type="text" placeholder="Search.." id="searchInput">
                     <button class="clear-icon-btn">
                         <svg class="all">
                             <use xlink:href="../wwwroot/all.svg#icon-close"></use>
                         </svg>
                     </button>
                 </div>
-
                 <div class="search-content__buttons d-flex">
-                    <button type="button" class="btn btn-primary">Buscar</button>
-                    <button type="button" class="btn btn-primary">Filtros</button>
+                    <button type="button" class="btn btn-primary" onclick="TriggerSearch()">Buscar</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#contentFilters" aria-expanded="false" aria-controls="contentFilters">Filtros</button>
                 </div>
             </div>
 
-            <div class="search-content__filters my-4">
-                <div>
-                    <button class="btn btn-filter-outline btn-rounded me-3 active" onclick="filterSelection('all')"> Todo el contenido</button>
-                    <button class="btn btn-filter-outline btn-rounded me-3" onclick="filterSelection('movies')"> Pel&#xED;culas</button>
-                    <button class="btn btn-filter-outline btn-rounded me-3" onclick="filterSelection('series')"> Serie</button>
-                    <button class="btn btn-filter-outline btn-rounded me-3" onclick="filterSelection('audio')"> Audio</button>
-                </div>
-
-                <div class="search-content__filters-form my-4">
-                    <div>
-                        <label>Categor&#xED;a</label>
-                        <select class="form-select" aria-label="Default select example">
-                                    <option value="1">Pel&#xED;cula</option>
-                                    <option value="2">Canci&#xF3;n</option>
-                                    <option value="3">Serie</option>
-                        </select>
+            <div class="search-content__filters collapse" id="contentFilters">
+                <div class="py-4">
+                    <div id="contentTypes">
+                        <button class="btn btn-filter-outline btn-rounded me-3 active" data-value="all"> Todo el contenido</button>
+                        <button class="btn btn-filter-outline btn-rounded me-3" data-value="movies"> Pel&#xED;culas</button>
+                        <button class="btn btn-filter-outline btn-rounded me-3" data-value="series"> Serie</button>
+                        <button class="btn btn-filter-outline btn-rounded me-3" data-value="audio"> Audio</button>
                     </div>
 
-                    <div>
-                        <label>G&#xE9;nero</label>
-                        <select class="form-select" aria-label="Default select example">
-                                    <option value="1">Drama</option>
-                                    <option value="2">Ficci&#xF3;n</option>
-                                    <option value="3">Horror</option>
-                        </select>
+                    <div class="search-content__filters-form my-4">
+                        <div>
+                            <label>Categor&#xED;a</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="categoryDropdown">
+                                <option value="-1"></option>
+                                        <option value="1">Pel&#xED;cula</option>
+                                        <option value="2">Canci&#xF3;n</option>
+                                        <option value="3">Serie</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>G&#xE9;nero</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="genreDropdown">
+                                <option value="-1"></option>
+                                        <option value="1">Drama</option>
+                                        <option value="2">Ficci&#xF3;n</option>
+                                        <option value="3">Horror</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>Idioma</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="languageDropdown">
+                                <option value="-1"></option>
+                                        <option value="1">PT</option>
+                                        <option value="2">EN</option>
+                                        <option value="3">ES</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>Subt&#xED;tulo</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="subtitleDropdown">
+                                <option value="-1"></option>
+                                        <option value="1">PT</option>
+                                        <option value="2">EN</option>
+                                        <option value="3">ES</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>Ordenar por</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="sortingDropdown">
+                                <option value="-1"></option>
+                                        <option value="1">Asc</option>
+                                        <option value="3">Desc</option>
+                            </select>
+                        </div>
+
+                        <a href="JavaScript:void(0);" onclick="ResetContentFilters()"> Borrar todo</a>
                     </div>
 
-                    <div>
-                        <label>Idioma</label>
-                        <select class="form-select" aria-label="Default select example">
-                                    <option value="1">PT</option>
-                                    <option value="2">EN</option>
-                                    <option value="3">ES</option>
-                        </select>
+                    <h5>Qu&#xE9; hay en tu vuelo</h5>
+
+                    <div class="search-content__filters-form my-4">
+                        <div>
+                            <label>Fecha</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="flightDateDropdown">
+                                <option value="-1"></option>
+                                        <option value="1">01/01/2001</option>
+                                        <option value="2">02/02/2002</option>
+                                        <option value="3">03/03/2003</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>Desde</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="flightFromDropdown">
+                                <option value="-1"></option>
+                                        <option value="1">Lisboa</option>
+                                        <option value="2">Brasil</option>
+                                        <option value="3">Espa&#xF1;a</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>Hasta</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="flightToDropdown">
+                                <option value="-1"></option>
+                                        <option value="1">Lisboa</option>
+                                        <option value="2">Brasil</option>
+                                        <option value="3">Espa&#xF1;a</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>N&#xFA;mero de vuelo</label>
+                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                                    id="flightNumberDropdown">
+                                <option value="-1"></option>
+                                        <option value="1">12345</option>
+                                        <option value="2">54321</option>
+                                        <option value="3">99887</option>
+                            </select>
+                        </div>
+
+                        <a href="JavaScript:void(0);"> Editar</a>
+
                     </div>
-
-                    <div>
-                        <label>Subt&#xED;tulo</label>
-                        <select class="form-select" aria-label="Default select example">
-                                    <option value="1">PT</option>
-                                    <option value="2">EN</option>
-                                    <option value="3">ES</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label>Ordenar por</label>
-                        <select class="form-select" aria-label="Default select example">
-                                    <option value="1">Asc</option>
-                                    <option value="3">Desc</option>
-                        </select>
-                    </div>
-
-                    <a href="#"> Borrar todo</a>
-                </div>
-
-                <h5>Qu&#xE9; hay en tu vuelo</h5>
-
-                <div class="search-content__filters-form my-4">
-                    <div>
-                        <label>Fecha</label>
-                        <select class="form-select" aria-label="Default select example">
-                                    <option value="1">01/01/2001</option>
-                                    <option value="2">02/02/2002</option>
-                                    <option value="3">03/03/2003</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label>Desde</label>
-                        <select class="form-select" aria-label="Default select example">
-                                    <option value="1">Lisboa</option>
-                                    <option value="2">Brasil</option>
-                                    <option value="3">Espa&#xF1;a</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label>Hasta</label>
-                        <select class="form-select" aria-label="Default select example">
-                                    <option value="1">Lisboa</option>
-                                    <option value="2">Brasil</option>
-                                    <option value="3">Espa&#xF1;a</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label>N&#xFA;mero de vuelo</label>
-                        <select class="form-select" aria-label="Default select example">
-                                    <option value="1">12345</option>
-                                    <option value="2">54321</option>
-                                    <option value="3">99887</option>
-                        </select>
-                    </div>
-
-
-                    <a href="#"> Editar</a>
-
                 </div>
             </div>
         </div>
@@ -734,7 +757,8 @@
     </div>
 
     <!-- Site JS -->
-    <script src="../wwwroot/js/site.js" asp-append-version="true" defer></script>
+    <script src="../wwwroot/js/site.js" type="text/javascript" asp-append-version="true" defer></script>
+    <script src="../wwwroot/js/script.js" type="text/javascript"></script>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -743,7 +767,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
 
     <!-- Slick Slider -->
-    <script src="../wwwroot/js/slick.js"></script>
+    <script src="../wwwroot/js/slick.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
 
