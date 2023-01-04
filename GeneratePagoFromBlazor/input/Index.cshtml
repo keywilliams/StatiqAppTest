@@ -87,7 +87,7 @@
                         <use xlink:href="../wwwroot/all.svg#icon-search"></use>
                     </svg>
                     <input type="text" placeholder="Search.." id="searchInput">
-                    <button class="clear-icon-btn">
+                    <button class="clear-icon-btn" onclick="ResetSearchKeyInput()">
                         <svg class="all">
                             <use xlink:href="../wwwroot/all.svg#icon-close"></use>
                         </svg>
@@ -113,7 +113,7 @@
                             <label>@Model.Resources.DropDownCategory</label>
                             <select class="form-select dropdown-change-event" aria-label="Default select example"
                                     id="categoryDropdown">
-                                <option value="-1"></option>
+                                    <option value="-1"></option>
                                 @{
                                     foreach (var item in Model.Categories)
                                     {
@@ -127,7 +127,7 @@
                             <label>@Model.Resources.DropDownGenre</label>
                             <select class="form-select dropdown-change-event" aria-label="Default select example"
                                     id="genreDropdown">
-                                <option value="-1"></option>
+                                    <option value="-1"></option>
                                 @{
                                     foreach (var item in Model.Genres)
                                     {
@@ -141,7 +141,7 @@
                             <label>@Model.Resources.DropDownLanguage</label>
                             <select class="form-select dropdown-change-event" aria-label="Default select example"
                                     id="languageDropdown">
-                                <option value="-1"></option>
+                                    <option value="-1"></option>
                                 @{
                                     foreach (var item in Model.Languages)
                                     {
@@ -155,7 +155,7 @@
                             <label>@Model.Resources.DropDownSubtitle</label>
                             <select class="form-select dropdown-change-event" aria-label="Default select example"
                                     id="subtitleDropdown">
-                                <option value="-1"></option>
+                                    <option value="-1"></option>
                                 @{
                                     foreach (var item in Model.Subtitles)
                                     {
@@ -169,7 +169,6 @@
                             <label>@Model.Resources.DropDownSortby</label>
                             <select class="form-select dropdown-change-event" aria-label="Default select example"
                                     id="sortingDropdown">
-                                <option value="-1"></option>
                                 @{
                                     foreach (var item in Model.SortBy)
                                     {
@@ -189,7 +188,7 @@
                             <label>@Model.Resources.DropDownDate</label>
                             <select class="form-select dropdown-change-event" aria-label="Default select example"
                                     id="flightDateDropdown">
-                                <option value="-1"></option>
+                                    <option value="-1"></option>
                                 @{
                                     foreach (var item in Model.Dates)
                                     {
@@ -203,7 +202,7 @@
                             <label>@Model.Resources.DropDownFrom</label>
                             <select class="form-select dropdown-change-event" aria-label="Default select example"
                                     id="flightFromDropdown">
-                                <option value="-1"></option>
+                                    <option value="-1"></option>
                                 @{
                                     foreach (var item in Model.From)
                                     {
@@ -217,7 +216,7 @@
                             <label>@Model.Resources.DropDownTo</label>
                             <select class="form-select dropdown-change-event" aria-label="Default select example"
                                     id="flightToDropdown">
-                                <option value="-1"></option>
+                                    <option value="-1"></option>
                                 @{
                                     foreach (var item in Model.To)
                                     {
@@ -231,7 +230,7 @@
                             <label>@Model.Resources.DropDownFlightNumber</label>
                             <select class="form-select dropdown-change-event" aria-label="Default select example"
                                     id="flightNumberDropdown">
-                                <option value="-1"></option>
+                                    <option value="-1"></option>
                                 @{
                                     foreach (var item in Model.FlightNumber)
                                     {
@@ -249,7 +248,7 @@
         </div>
     </section>
 
-    <section class="search-results p-5">
+    <section class="search-results p-5" id="searchResults">
         <div class="container">
             <p class="search-results__title hide-tablet"> @Model.Resources.TextSearchResults <span>(@Model.Total)</span></p>
 

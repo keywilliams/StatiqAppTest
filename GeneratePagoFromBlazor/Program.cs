@@ -15,7 +15,7 @@ namespace GeneratePagoFromBlazor
             {
                 await Bootstrapper.Factory
                                   .CreateDefault(args)
-                                  //.DownloadInputFiles(new Uri(siteConfiguration.InputUrlZipFile))
+                                  .DownloadInputFiles(new Uri(siteConfiguration.InputUrlZipFile))
                                   .GenerateScssFiles()
                                   .GenerateTMCSiteByLanguage()
                                   .AddPipeline<JavaScriptPipeline>()
