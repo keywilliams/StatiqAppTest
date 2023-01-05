@@ -76,7 +76,7 @@
                 <h5 class="modal-title mb-4" id="onYourFlightModalLabel">@Model.Resources.TextWhatsOnYourFlight</h5>
 
                 <!-- modal tabs -->
-                <ul class="nav nav-tabs rounded-nav flex-column flex-sm-row text-center">
+                <ul class="nav nav-tabs rounded-nav flex-column flex-sm-row text-center" id="onYourFlightModal-tabs">
                     <li class="nav-item flex-sm-fill">
                         <a id="destination-tab" data-bs-toggle="tab" role="tab" class="nav-link active" aria-controls="destination" href="#destination" aria-selected="true">@Model.Resources.TabDestination</a>
                     </li>
@@ -92,7 +92,7 @@
                         <div id="destination" role="tabpanel" aria-labelledby="destination-tab" class="py-4 show active tab-pane">
                             <div class="modal-form my-4">
                                 <label>@Model.Resources.DropDownDateDeparture</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalDestination-dropdown" aria-label="Default select example" id="modalDestinationDateDepart">
                                     <option value="-1"></option>
                                     @{
                                         foreach (var item in Model.Modal.Dates)
@@ -103,7 +103,7 @@
                                 </select>
 
                                 <label>@Model.Resources.DropDownFrom</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalDestination-dropdown" aria-label="Default select example" id="modalDestinationFrom">
                                     <option value="-1"></option>
                                     @{
                                         foreach (var item in Model.Modal.From)
@@ -114,7 +114,7 @@
                                 </select>
 
                                 <label>@Model.Resources.DropDownTo</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalDestination-dropdown" aria-label="Default select example" id="modalDestinationTo">
                                     <option value="-1"></option>
                                     @{
                                         foreach (var item in Model.Modal.To)
@@ -125,7 +125,7 @@
                                 </select>
 
                                 <label>@Model.Resources.DropDownFlightNumber</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalDestination-dropdown" aria-label="Default select example" id="modalDestinationFlightNo">
                                     <option value="-1"></option>
                                     @{
                                         foreach (var item in Model.Modal.FlightNumber)
@@ -135,16 +135,20 @@
                                     }
                                 </select>
                             </div>
-
+                            <div class="validation-error validation-destination-error"></div>
                             <div class="text-end">
-                                <a href="#"> @Model.Resources.ButtonClearAll</a>
+                                <a href="#"> </a>
+                            </div>
+                            <div class="text-end">
+                                <a href="Javascript:void(0)" onclick="ApplyOnClick()">@Model.Resources.ButtonApply</a>
+                                <a href="Javascript:void(0)" onclick="ClearAllOnClick()">@Model.Resources.ButtonClearAll</a>
                             </div>
                         </div>
 
                         <div id="flightNumber" role="tabpanel" aria-labelledby="flightnumber-tab " class="py-4 tab-pane">
                             <div class="modal-form my-4">
                                 <label>@Model.Resources.DropDownFlightNumber</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalflightNumber-dropdown" aria-label="Default select example" id="modalFlightNumber">
                                     <option value="-1"></option>
                                     @{
                                         foreach (var item in Model.Modal.FlightNumber)
@@ -155,7 +159,7 @@
                                 </select>
 
                                 <label>@Model.Resources.DropDownDateDeparture</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalflightNumber-dropdown" aria-label="Default select example" id="modalFlightDateDepart">
                                     <option value="-1"></option>
                                     @{
                                         foreach (var item in Model.Modal.Dates)
@@ -165,8 +169,13 @@
                                     }
                                 </select>
                             </div>
+                            <div class="validation-error validation-flightNumber-error"></div>
                             <div class="text-end">
                                 <a href="#"> @Model.Resources.ButtonClearAll</a>
+                            </div>
+                            <div class="text-end">
+                                <a href="Javascript:void(0)" onclick="ApplyOnClick()">@Model.Resources.ButtonApply</a>
+                                <a href="Javascript:void(0)" onclick="ClearAllOnClick()">@Model.Resources.ButtonClearAll</a>
                             </div>
                         </div>
                     </div>

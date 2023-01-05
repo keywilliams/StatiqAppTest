@@ -172,7 +172,7 @@
                                 @{
                                     foreach (var item in Model.SortBy)
                                     {
-                                        <option value="@item.Id">@item.Description</option>
+                                        <option value="@item.Description">@item.Description</option>
                                     }
                                 }
                             </select>
@@ -186,7 +186,7 @@
                     <div class="search-content__filters-form my-4">
                         <div>
                             <label>@Model.Resources.DropDownDate</label>
-                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                            <select class="form-select flights-dropdown-change-event" disabled aria-label="Default select example"
                                     id="flightDateDropdown">
                                     <option value="-1"></option>
                                 @{
@@ -199,8 +199,8 @@
                         </div>
 
                         <div>
-                            <label>@Model.Resources.DropDownFrom</label>
-                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                            <label>@Model.Resources.DropDownFrom</label> 
+                            <select class="form-select flights-dropdown-change-event" disabled aria-label="Default select example"
                                     id="flightFromDropdown">
                                     <option value="-1"></option>
                                 @{
@@ -214,7 +214,7 @@
 
                         <div>
                             <label>@Model.Resources.DropDownTo</label>
-                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                            <select class="form-select flights-dropdown-change-event" disabled aria-label="Default select example"
                                     id="flightToDropdown">
                                     <option value="-1"></option>
                                 @{
@@ -228,7 +228,7 @@
 
                         <div>
                             <label>@Model.Resources.DropDownFlightNumber</label>
-                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                            <select class="form-select flights-dropdown-change-event" disabled aria-label="Default select example"
                                     id="flightNumberDropdown">
                                     <option value="-1"></option>
                                 @{
@@ -240,7 +240,7 @@
                             </select>
                         </div>
 
-                        <a href="JavaScript:void(0);"> @Model.Resources.ButtonEdit</a>
+                        <a href="#onYourFlightModal" data-bs-toggle="modal" data-bs-target="#onYourFlightModal">@Model.Resources.ButtonEdit</a>
 
                     </div>
                 </div>

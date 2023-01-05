@@ -88,7 +88,9 @@ namespace GeneratePagoFromBlazor.Services
                 TextQuestion = "Pergunta",
                 FAQSubtitle = "Subtítulo da questão em português",
                 FAQTitle = "Título da questão em português",
-                FAQPageTitle = "Informações e FAQs"
+                FAQPageTitle = "Informações e FAQs",
+                ButtonApply = "Aplicar",
+                TextNoContentsFound = "Nenhum conteúdo encontrado"
             };
             var resourceEN = new Resource()
             {
@@ -139,7 +141,9 @@ namespace GeneratePagoFromBlazor.Services
                 TextQuestion = "Question",
                 FAQSubtitle = "Question subtitle in english",
                 FAQTitle = "Question title in english",
-                FAQPageTitle = "Information and FAQs"
+                FAQPageTitle = "Information and FAQs",
+                ButtonApply = "Apply",
+                TextNoContentsFound = "No Contents Found"
             };
             var resourceES = new Resource()
             {
@@ -190,7 +194,9 @@ namespace GeneratePagoFromBlazor.Services
                 TextQuestion = "Pregunta",
                 FAQSubtitle = "Pregunta subtítulo en español",
                 FAQTitle = "Título de la pregunta en español",
-                FAQPageTitle = "Información y FAQs"
+                FAQPageTitle = "Información y FAQs",
+                ButtonApply = "Solicitar",
+                TextNoContentsFound = "No se encontraron contenidos"
             };
 
             var modalPT = new ModalModel

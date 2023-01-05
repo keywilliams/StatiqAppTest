@@ -56,6 +56,7 @@
         public string ButtonClearAll { get; set; }
         public string ButtonEdit { get; set; }
         public string ButtonTrailer { get; set; }
+        public string ButtonApply { get; set; }
 
         //Text
         public string TextSearchResults { get; set; }
@@ -85,6 +86,7 @@
         public string FAQTitle { get; set; }
         public string FAQSubtitle { get; set; }
         public string FAQPageTitle { get; set; }
+        public string TextNoContentsFound { get; set; }
 
         //Tab
         public string TabDestination { get; set; }
