@@ -31,12 +31,13 @@
     </div>
 
     <div class="navbar__menu">
-        <button type="button" class="navbar__menu-item hide-tablet" data-bs-toggle="modal" data-bs-target="#onYourFlightModal">
-            O que h&#xE1; no meu voo
-            <svg class="all fill-white" style="width: 31px; height: 31px">
-                <use xlink:href="../wwwroot/all.svg#icon-airplane"></use>
-            </svg>
-        </button>
+
+                <button type="button" class="navbar__menu-item hide-tablet" data-bs-toggle="modal" data-bs-target="#onYourFlightModal">
+                    O que h&#xE1; no meu voo
+                    <svg class="all fill-white" style="width: 31px; height: 31px">
+                        <use xlink:href="../wwwroot/all.svg#icon-airplane"></use>
+                    </svg>
+                </button>
 
         <div class="navbar__menu-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -73,7 +74,7 @@
                 <h5 class="modal-title mb-4" id="onYourFlightModalLabel">O que h&#xE1; no seu voo</h5>
 
                 <!-- modal tabs -->
-                <ul class="nav nav-tabs rounded-nav flex-column flex-sm-row text-center">
+                <ul class="nav nav-tabs rounded-nav flex-column flex-sm-row text-center" id="onYourFlightModal-tabs">
                     <li class="nav-item flex-sm-fill">
                         <a id="destination-tab" data-bs-toggle="tab" role="tab" class="nav-link active" aria-controls="destination" href="#destination" aria-selected="true">Destino</a>
                     </li>
@@ -87,7 +88,7 @@
                         <div id="destination" role="tabpanel" aria-labelledby="destination-tab" class="py-4 show active tab-pane">
                             <div class="modal-form my-4">
                                 <label>Data de Partida</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalDestination-dropdown" aria-label="Default select example" id="modalDestinationDateDepart">
                                     <option value="-1"></option>
                                             <option value="1">01/01/2001</option>
                                             <option value="2">02/02/2002</option>
@@ -95,7 +96,7 @@
                                 </select>
 
                                 <label>De</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalDestination-dropdown" aria-label="Default select example" id="modalDestinationFrom">
                                     <option value="-1"></option>
                                             <option value="1">Lisboa</option>
                                             <option value="2">Brasil</option>
@@ -103,7 +104,7 @@
                                 </select>
 
                                 <label>Para</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalDestination-dropdown" aria-label="Default select example" id="modalDestinationTo">
                                     <option value="-1"></option>
                                             <option value="1">Lisboa</option>
                                             <option value="2">Brasil</option>
@@ -111,23 +112,27 @@
                                 </select>
 
                                 <label>N&#xFA;mero do Voo</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalDestination-dropdown" aria-label="Default select example" id="modalDestinationFlightNo">
                                     <option value="-1"></option>
                                             <option value="1">12345</option>
                                             <option value="2">54321</option>
                                             <option value="3">99887</option>
                                 </select>
                             </div>
-
+                            <div class="validation-error validation-destination-error"></div>
                             <div class="text-end">
-                                <a href="#"> Limpar tudo</a>
+                                <a href="#"> </a>
+                            </div>
+                            <div class="text-end">
+                                <a href="Javascript:void(0)" onclick="ApplyOnClick()">Aplicar</a>
+                                <a href="Javascript:void(0)" onclick="ClearAllOnClick()">Limpar tudo</a>
                             </div>
                         </div>
 
                         <div id="flightNumber" role="tabpanel" aria-labelledby="flightnumber-tab " class="py-4 tab-pane">
                             <div class="modal-form my-4">
                                 <label>N&#xFA;mero do Voo</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalflightNumber-dropdown" aria-label="Default select example" id="modalFlightNumber">
                                     <option value="-1"></option>
                                             <option value="1">12345</option>
                                             <option value="2">54321</option>
@@ -135,15 +140,17 @@
                                 </select>
 
                                 <label>Data de Partida</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalflightNumber-dropdown" aria-label="Default select example" id="modalFlightDateDepart">
                                     <option value="-1"></option>
                                             <option value="1">01/01/2001</option>
                                             <option value="2">02/02/2002</option>
                                             <option value="3">03/03/2003</option>
                                 </select>
                             </div>
+                            <div class="validation-error validation-flightNumber-error"></div>
                             <div class="text-end">
-                                <a href="#"> Limpar tudo</a>
+                                <a href="Javascript:void(0)" onclick="ApplyOnClick()">Aplicar</a>
+                                <a href="Javascript:void(0)" onclick="ClearAllOnClick()">Limpar tudo</a>
                             </div>
                         </div>
                     </div>
@@ -302,8 +309,8 @@
                             <label>Classificar por</label>
                             <select class="form-select dropdown-change-event" aria-label="Default select example"
                                     id="sortingDropdown">
-                                        <option value="1">Asc</option>
-                                        <option value="3">Desc</option>
+                                        <option value="Asc">Asc</option>
+                                        <option value="Desc">Desc</option>
                             </select>
                         </div>
 
@@ -315,7 +322,7 @@
                     <div class="search-content__filters-form my-4">
                         <div>
                             <label>Data</label>
-                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                            <select class="form-select flights-dropdown-change-event" disabled aria-label="Default select example"
                                     id="flightDateDropdown">
                                     <option value="-1"></option>
                                         <option value="1">01/01/2001</option>
@@ -325,8 +332,8 @@
                         </div>
 
                         <div>
-                            <label>De</label>
-                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                            <label>De</label> 
+                            <select class="form-select flights-dropdown-change-event" disabled aria-label="Default select example"
                                     id="flightFromDropdown">
                                     <option value="-1"></option>
                                         <option value="1">Lisboa</option>
@@ -337,7 +344,7 @@
 
                         <div>
                             <label>Para</label>
-                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                            <select class="form-select flights-dropdown-change-event" disabled aria-label="Default select example"
                                     id="flightToDropdown">
                                     <option value="-1"></option>
                                         <option value="1">Lisboa</option>
@@ -348,7 +355,7 @@
 
                         <div>
                             <label>N&#xFA;mero do Voo</label>
-                            <select class="form-select dropdown-change-event" aria-label="Default select example"
+                            <select class="form-select flights-dropdown-change-event" disabled aria-label="Default select example"
                                     id="flightNumberDropdown">
                                     <option value="-1"></option>
                                         <option value="1">12345</option>
@@ -357,7 +364,7 @@
                             </select>
                         </div>
 
-                        <a href="JavaScript:void(0);"> Editar</a>
+                        <a href="#onYourFlightModal" data-bs-toggle="modal" data-bs-target="#onYourFlightModal">Editar</a>
 
                     </div>
                 </div>

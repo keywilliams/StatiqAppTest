@@ -31,12 +31,7 @@
     </div>
 
     <div class="navbar__menu">
-        <button type="button" class="navbar__menu-item hide-tablet" data-bs-toggle="modal" data-bs-target="#onYourFlightModal">
-            What&#x27;s on my flight
-            <svg class="all fill-white" style="width: 31px; height: 31px">
-                <use xlink:href="../wwwroot/all.svg#icon-airplane"></use>
-            </svg>
-        </button>
+
 
         <div class="navbar__menu-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -68,7 +63,7 @@
                 <h5 class="modal-title mb-4" id="onYourFlightModalLabel">What&#x27;s on your flight</h5>
 
                 <!-- modal tabs -->
-                <ul class="nav nav-tabs rounded-nav flex-column flex-sm-row text-center">
+                <ul class="nav nav-tabs rounded-nav flex-column flex-sm-row text-center" id="onYourFlightModal-tabs">
                     <li class="nav-item flex-sm-fill">
                         <a id="destination-tab" data-bs-toggle="tab" role="tab" class="nav-link active" aria-controls="destination" href="#destination" aria-selected="true">Destination</a>
                     </li>
@@ -82,7 +77,7 @@
                         <div id="destination" role="tabpanel" aria-labelledby="destination-tab" class="py-4 show active tab-pane">
                             <div class="modal-form my-4">
                                 <label>Date of Departure</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalDestination-dropdown" aria-label="Default select example" id="modalDestinationDateDepart">
                                     <option value="-1"></option>
                                             <option value="1">01/01/2001</option>
                                             <option value="2">02/02/2002</option>
@@ -90,7 +85,7 @@
                                 </select>
 
                                 <label>From</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalDestination-dropdown" aria-label="Default select example" id="modalDestinationFrom">
                                     <option value="-1"></option>
                                             <option value="1">Lisbon</option>
                                             <option value="2">Brazil</option>
@@ -98,7 +93,7 @@
                                 </select>
 
                                 <label>To</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalDestination-dropdown" aria-label="Default select example" id="modalDestinationTo">
                                     <option value="-1"></option>
                                             <option value="1">Lisbon</option>
                                             <option value="2">Brazil</option>
@@ -106,23 +101,27 @@
                                 </select>
 
                                 <label>Flight Number</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalDestination-dropdown" aria-label="Default select example" id="modalDestinationFlightNo">
                                     <option value="-1"></option>
                                             <option value="1">12345</option>
                                             <option value="2">54321</option>
                                             <option value="3">99887</option>
                                 </select>
                             </div>
-
+                            <div class="validation-error validation-destination-error"></div>
                             <div class="text-end">
-                                <a href="#"> Clear all</a>
+                                <a href="#"> </a>
+                            </div>
+                            <div class="text-end">
+                                <a href="Javascript:void(0)" onclick="ApplyOnClick()">Apply</a>
+                                <a href="Javascript:void(0)" onclick="ClearAllOnClick()">Clear all</a>
                             </div>
                         </div>
 
                         <div id="flightNumber" role="tabpanel" aria-labelledby="flightnumber-tab " class="py-4 tab-pane">
                             <div class="modal-form my-4">
                                 <label>Flight Number</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalflightNumber-dropdown" aria-label="Default select example" id="modalFlightNumber">
                                     <option value="-1"></option>
                                             <option value="1">12345</option>
                                             <option value="2">54321</option>
@@ -130,15 +129,17 @@
                                 </select>
 
                                 <label>Date of Departure</label>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select modalflightNumber-dropdown" aria-label="Default select example" id="modalFlightDateDepart">
                                     <option value="-1"></option>
                                             <option value="1">01/01/2001</option>
                                             <option value="2">02/02/2002</option>
                                             <option value="3">03/03/2003</option>
                                 </select>
                             </div>
+                            <div class="validation-error validation-flightNumber-error"></div>
                             <div class="text-end">
-                                <a href="#"> Clear all</a>
+                                <a href="Javascript:void(0)" onclick="ApplyOnClick()">Apply</a>
+                                <a href="Javascript:void(0)" onclick="ClearAllOnClick()">Clear all</a>
                             </div>
                         </div>
                     </div>

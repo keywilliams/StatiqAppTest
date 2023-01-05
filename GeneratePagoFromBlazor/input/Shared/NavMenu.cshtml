@@ -17,12 +17,18 @@
     </div>
 
     <div class="navbar__menu">
-        <button type="button" class="navbar__menu-item hide-tablet" data-bs-toggle="modal" data-bs-target="#onYourFlightModal">
-            @Model.Resources.TextWhatsOnMyFlight
-            <svg class="all fill-white" style="width: 31px; height: 31px">
-                <use xlink:href="../wwwroot/all.svg#icon-airplane"></use>
-            </svg>
-        </button>
+
+        @{
+            if (Model.MainPage)
+            {
+                <button type="button" class="navbar__menu-item hide-tablet" data-bs-toggle="modal" data-bs-target="#onYourFlightModal">
+                    @Model.Resources.TextWhatsOnMyFlight
+                    <svg class="all fill-white" style="width: 31px; height: 31px">
+                        <use xlink:href="../wwwroot/all.svg#icon-airplane"></use>
+                    </svg>
+                </button>
+            }
+        }
 
         <div class="navbar__menu-item dropdown">
             @{
@@ -170,9 +176,6 @@
                                 </select>
                             </div>
                             <div class="validation-error validation-flightNumber-error"></div>
-                            <div class="text-end">
-                                <a href="#"> @Model.Resources.ButtonClearAll</a>
-                            </div>
                             <div class="text-end">
                                 <a href="Javascript:void(0)" onclick="ApplyOnClick()">@Model.Resources.ButtonApply</a>
                                 <a href="Javascript:void(0)" onclick="ClearAllOnClick()">@Model.Resources.ButtonClearAll</a>
