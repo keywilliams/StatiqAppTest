@@ -1,9 +1,9 @@
-// Colors
+﻿// Colors
 
-$primary-color: #003366; //PrimaryColor
-$accent-color: #C01933; //SecondaryColor
-$dark-color: #041C2C; //BackgroundColor
-$text-color: #000; //TextColor
+$primary-color: [PrimaryColor]; //PrimaryColor
+$accent-color: [SecondaryColor]; //SecondaryColor
+$dark-color: [BackgroundColor]; //BackgroundColor
+$text-color: [TextColor]; //TextColor
 
 $primary-light: lighten( $primary-color, 70% ) ;
 
