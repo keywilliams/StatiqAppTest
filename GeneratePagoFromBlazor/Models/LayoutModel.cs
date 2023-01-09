@@ -18,15 +18,18 @@
         public string InstagramUrl { get; set; }
         public string TwitterUrl { get; set; }
         public string CurrentLanguage { get; set; }
+        public string ResourcePath { get; set; }
     }
 
     public class Language
     {
+        public int Order { get; set; }
         public string Path { get; set; }
         public string Text { get; set; }
 
-        public Language(string path, string text)
+        public Language(int order, string path, string text)
         {
+            Order = order;
             Path = path;
             Text = text;
         }

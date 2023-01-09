@@ -5,7 +5,7 @@
         public List<AudioDetailModel> Audios { get; set; }
         public List<MovieDetailModel> Movies { get; set; }
         public List<TvDetailModel> Tvs { get; set; }
-        public List<FAQsViewModel> FAQs { get; set; }
+        public FAQsViewModel FAQ { get; set; }
         public List<Item> Categories { get; set; }
         public List<Item> Genres { get; set; }
         public List<Item> Languages { get; set; }

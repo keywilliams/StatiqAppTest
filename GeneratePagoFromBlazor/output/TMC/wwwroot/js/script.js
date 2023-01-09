@@ -59,7 +59,7 @@ return html;};const RenderCard=(item)=>{return`<div class="col col-6 col-md-3">
             <!-- item type v1.0 -->
             <div class="search-results__item-type d-none">
                 <svg class="all fill-white">
-                    <use xlink:href="../wwwroot/all.svg#${GetContentTypeIcon(item)
+                    <use xlink:href="${item.ResourcePath}wwwroot/all.svg#${GetContentTypeIcon(item)
         }"></use>
                 </svg>
             </div>
@@ -77,7 +77,7 @@ return html;};const RenderCard=(item)=>{return`<div class="col col-6 col-md-3">
         <div>
             <div class="search-results__item-type">
                 <svg class="all fill-primary">
-                    <use xlink:href="../wwwroot/all.svg#${GetContentTypeIcon(item)
+                    <use xlink:href="${item.ResourcePath}wwwroot/all.svg#${GetContentTypeIcon(item)
         }"></use>
                 </svg>
             </div>

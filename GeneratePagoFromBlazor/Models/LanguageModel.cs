@@ -2,6 +2,13 @@
 {
     public class LanguageModel
     {
-        public Dictionary<string, IndexViewModel> IndexCollection { get; set; }
+        public List<LanguageItem> IndexCollection { get; set; }
+    }
+
+    public class LanguageItem
+    {
+        public int Order { get; set; }
+        public string Language { get; set; }
+        public IndexViewModel IndexView { get; set; }
     }
 }

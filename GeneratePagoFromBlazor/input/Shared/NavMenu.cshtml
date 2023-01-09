@@ -6,7 +6,7 @@
             @{
                 if (string.IsNullOrWhiteSpace(@Model.Logo))
                 {
-                    <img src="../wwwroot/img/brand/company-logo.png" />
+                    <img src="@{@Model.ResourcePath}wwwroot/img/brand/company-logo.png" />
                 }
                 else
                 {
@@ -24,7 +24,7 @@
                 <button type="button" class="navbar__menu-item hide-tablet" data-bs-toggle="modal" data-bs-target="#onYourFlightModal">
                     @Model.Resources.TextWhatsOnMyFlight
                     <svg class="all fill-white" style="width: 31px; height: 31px">
-                        <use xlink:href="../wwwroot/all.svg#icon-airplane"></use>
+                        <use xlink:href="@{@Model.ResourcePath}wwwroot/all.svg#icon-airplane"></use>
                     </svg>
                 </button>
             }
@@ -41,10 +41,31 @@
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    @{
+                        @{
                             foreach (var language in Model.SiteLanguages.Where(x => x.Path != Model.CurrentLanguage))
-                        {
-                            <li><a class="dropdown-item" href="../@language.Path/@{@Model.Name}.html">@language.Text</a></li>
+                            {
+                                if (language.Order == 1)
+                                {
+                                    if (selected.Order == 1)
+                                    {
+                                        <li><a class="dropdown-item" href="@{@Model.HtmlName}.html">@language.Text</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a class="dropdown-item" href="../@{@Model.HtmlName}.html">@language.Text</a></li>
+                                    }
+                                }
+                                else
+                                {
+                                    if (selected.Order == 1)
+                                    {   
+                                        <li><a class="dropdown-item" href="@language.Path/@{@Model.HtmlName}.html">@language.Text</a></li>
+                                    }
+                                    else
+                                    {   
+                                        <li><a class="dropdown-item" href="../@language.Path/@{@Model.HtmlName}.html">@language.Text</a></li>
+                                    }
+                                }
                         }
                     }
                     </ul>
@@ -57,7 +78,7 @@
             {
                 <button class="navbar__menu-item hide-mobile">
                     <svg class="all fill-white" style="width: 18px; height: 18px">
-                        <use xlink:href="../wwwroot/all.svg#icon-search"></use>
+                        <use xlink:href="@{@Model.ResourcePath}wwwroot/all.svg#icon-search"></use>
                     </svg>
                 </button>
             }
@@ -65,7 +86,7 @@
 
         <button class="navbar__menu-item" onclick="window.location.href='FAQs.html';">
             <svg class="all fill-white" style="width: 26px; height: 26px">
-                <use xlink:href="../wwwroot/all.svg#icon-help"></use>
+                <use xlink:href="@{@Model.ResourcePath}wwwroot/all.svg#icon-help"></use>
             </svg>
         </button>
     </div>

@@ -21,6 +21,9 @@
                 // CSS
                 new CopyFiles("wwwroot/css/bootstrap/**"),
                 new CopyFiles("wwwroot/css/open-iconic/**"),
+                //JSON
+                new CopyFiles("*.json"),
+                new CopyFiles("**/*.json")
             };
         }
     }

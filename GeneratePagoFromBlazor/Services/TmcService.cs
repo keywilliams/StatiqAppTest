@@ -31,9 +31,9 @@ namespace GeneratePagoFromBlazor.Services
         {
             return new List<Language>
             {
-                new Language("pt", "PT"),
-                new Language("en", "EN"),
-                new Language("es", "ES")
+                new Language(2, "pt", "PT"),
+                new Language(1, "en", "EN"),
+                new Language(3, "es", "ES")
             };
         }
 
@@ -276,9 +276,9 @@ namespace GeneratePagoFromBlazor.Services
 
             var index = new LanguageModel
             {
-                IndexCollection = new Dictionary<string, IndexViewModel>
+                IndexCollection = new List<LanguageItem>()
                 {
-                    {"pt", new IndexViewModel
+                    new LanguageItem() {Order = 2, Language = "pt", IndexView = new IndexViewModel
                     {
                         Movies = new List<MovieDetailModel>
                         {
@@ -312,7 +312,8 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Titanic.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Titanic-banner.jpg",
-                                 CurrentLanguage = "pt"
+                                 CurrentLanguage = "pt",
+                                 Genres = new List<string>(){"Action"}
 
                              },
                              new MovieDetailModel
@@ -345,7 +346,8 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Matrix.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Matrix-banner.jpg",
-                                 CurrentLanguage = "pt"
+                                 CurrentLanguage = "pt",
+                                 Genres = new List<string>(){"Action"}
                              },
                              new MovieDetailModel
                              {
@@ -377,7 +379,8 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Avatar.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Avatar-banner.jpg",
-                                 CurrentLanguage = "pt"
+                                 CurrentLanguage = "pt",
+                                 Genres = new List<string>(){"Action"}
                              },
                              new MovieDetailModel
                              {
@@ -409,7 +412,8 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Hulk.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Hulk-banner.jpg",
-                                 CurrentLanguage = "pt"
+                                 CurrentLanguage = "pt",
+                                 Genres = new List<string>(){"Action"}
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -529,7 +533,8 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/AllAmericanS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/AllAmericanS1-banner.jpg",
-                                 CurrentLanguage = "pt"
+                                 CurrentLanguage = "pt",
+                                 Genres = new List<string>(){"Action"}
                             },
                             new TvDetailModel
                             {
@@ -571,7 +576,8 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/TheBigBangTheoryS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/TheBigBangTheoryS1-banner.jpg",
-                                 CurrentLanguage = "pt"
+                                 CurrentLanguage = "pt",
+                                 Genres = new List<string>(){"Action"}
                             },
                             new TvDetailModel
                             {
@@ -612,7 +618,8 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/htgawmS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/htgawmS1-banner.jpg",
-                                 CurrentLanguage = "pt"
+                                 CurrentLanguage = "pt",
+                                 Genres = new List<string>(){"Action"}
                             },
                             new TvDetailModel
                             {
@@ -653,7 +660,8 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/TheSimpsonsS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/TheSimpsonsS1-banner.jpg",
-                                 CurrentLanguage = "pt"
+                                 CurrentLanguage = "pt",
+                                 Genres = new List<string>(){"Action"}
                             }
                         },
                         Categories = new List<Item>
@@ -713,15 +721,15 @@ namespace GeneratePagoFromBlazor.Services
                         SiteLanguages = languages,
                         Title = "Index PT",
                         Name= "Index",
+                        HtmlName= "Index",
                         MetaDescription = "Página Index PT",
                         OgTitle = "Página Index PT",
                         Robots = "Index PT",
                         MainPage = true,
-                        FAQs = new List<FAQsViewModel>()
-                        {
-                            new FAQsViewModel()
+                        FAQ = new FAQsViewModel()
                             {
                                 Name = "FAQs",
+                                HtmlName = "FAQs",
                                 Title = "FAQs PT",
                                 Description = "FAQs PT",
                                 MetaDescription = "Página FAQs PT",
@@ -746,13 +754,12 @@ namespace GeneratePagoFromBlazor.Services
                                 Modal = modalPT,
                                  CompanyName = "WIG",
                                  CurrentLanguage = "pt"
-                            }
                         },
                         Resources = resourcePT,
                         CompanyName = "WIG",
                         CurrentLanguage = "pt"
                     }},
-                    {"en", new IndexViewModel
+                    new LanguageItem() {Order = 1, Language = "en", IndexView = new IndexViewModel
                     {
                         Movies = new List<MovieDetailModel>
                         {
@@ -761,8 +768,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Name = "Titanic",
                                  HtmlName = "Titanic",
                                  Description = "RMS Titanic was the largest ship afloat at the time she entered service and the second of three Olympic-class ocean liners operated by the White Star Line. She was built by the Harland and Wolff shipyard in Belfast.",
-                                 Image = "../wwwroot/img/content/Titanic.jpg",
-                                 BannerImage = "../wwwroot/img/content/Titanic-banner.jpg",
+                                 Image = "wwwroot/img/content/Titanic.jpg",
+                                 BannerImage = "wwwroot/img/content/Titanic-banner.jpg",
                                  Cast = "Teste",
                                  Copyright = "Teste",
                                  Director = "Teste",
@@ -784,17 +791,18 @@ namespace GeneratePagoFromBlazor.Services
                                  Rating = "Teste",
                                  Duration = "2h 2mins",
                                  CompanyName = "WIG",
-                                 SliderImage = "../wwwroot/img/content/Titanic.jpg",
-                                 SliderBackgroundImage = "../wwwroot/img/content/Titanic-banner.jpg",
-                                 CurrentLanguage = "en"
+                                 SliderImage = "wwwroot/img/content/Titanic.jpg",
+                                 SliderBackgroundImage = "wwwroot/img/content/Titanic-banner.jpg",
+                                 CurrentLanguage = "en",
+                                 Genres = new List<string>(){"Action"}
                              },
                              new MovieDetailModel
                              {
                                  Name = "Matrix",
                                  HtmlName = "Matrix",
                                  Description = "The Matrix is a 1999 science fiction action film written and directed by the Wachowskis.[a] It is the first installment in The Matrix film series, starring Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving, and Joe Pantoliano, it depicts a dystopian future in which humanity is unknowingly trapped inside the Matrix, a simulated reality that intelligent machines have created to distract humans while using their bodies as an energy source.",
-                                 Image = "../wwwroot/img/content/Matrix.jpg",
-                                 BannerImage = "../wwwroot/img/content/Matrix-banner.jpg",
+                                 Image = "wwwroot/img/content/Matrix.jpg",
+                                 BannerImage = "wwwroot/img/content/Matrix-banner.jpg",
                                  Cast = "Teste",
                                  Copyright = "Teste",
                                  Director = "Teste",
@@ -816,17 +824,18 @@ namespace GeneratePagoFromBlazor.Services
                                  Rating = "Teste",
                                  Duration = "2h 2mins",
                                  CompanyName = "WIG",
-                                 SliderImage = "../wwwroot/img/content/Matrix.jpg",
-                                 SliderBackgroundImage = "../wwwroot/img/content/Matrix-banner.jpg",
-                                 CurrentLanguage = "en"
+                                 SliderImage = "wwwroot/img/content/Matrix.jpg",
+                                 SliderBackgroundImage = "wwwroot/img/content/Matrix-banner.jpg",
+                                 CurrentLanguage = "en",
+                                 Genres = new List<string>(){"Action"}
                              },
                              new MovieDetailModel
                              {
                                  Name = "Avatar",
                                  HtmlName = "Avatar",
                                  Description = "Avatar (also marketed as James Cameron's Avatar) is a 2009 American epic science fiction film directed, written, produced, and co-edited by James Cameron and starring Sam Worthington, Zoe Saldana, Stephen Lang, Michelle Rodriguez and Sigourney Weaver. It is set in the mid-22nd century when humans are colonizing Pandora, a lush habitable moon of a gas giant in the Alpha Centauri star system, in order to mine the valuable mineral unobtanium.",
-                                 Image = "../wwwroot/img/content/Avatar.jpg",
-                                 BannerImage = "../wwwroot/img/content/Avatar-banner.jpg",
+                                 Image = "wwwroot/img/content/Avatar.jpg",
+                                 BannerImage = "wwwroot/img/content/Avatar-banner.jpg",
                                  Cast = "Teste",
                                  Copyright = "Teste",
                                  Director = "Teste",
@@ -848,17 +857,18 @@ namespace GeneratePagoFromBlazor.Services
                                  Rating = "Teste",
                                  Duration = "2h 2mins",
                                  CompanyName = "WIG",
-                                 SliderImage = "../wwwroot/img/content/Avatar.jpg",
-                                 SliderBackgroundImage = "../wwwroot/img/content/Avatar-banner.jpg",
-                                 CurrentLanguage = "en"
+                                 SliderImage = "wwwroot/img/content/Avatar.jpg",
+                                 SliderBackgroundImage = "wwwroot/img/content/Avatar-banner.jpg",
+                                 CurrentLanguage = "en",
+                                 Genres = new List<string>(){"Action"}
                              },
                              new MovieDetailModel
                              {
                                  Name = "Hulk",
                                  HtmlName = "Hulk",
                                  Description = "Hulk (also known as The Hulk) is a 2003 American superhero film based on the Marvel Comics character of the same name, created by Stan Lee and Jack Kirby. Directed by Ang Lee and written by James Schamus, Michael France, and John Turman from a story by Schamus, it stars Eric Bana as Bruce Banner/Hulk, alongside Jennifer Connelly, Sam Elliott, Josh Lucas, and Nick Nolte.",
-                                 Image = "../wwwroot/img/content/Hulk.jpg",
-                                 BannerImage = "../wwwroot/img/content/Hulk-banner.jpg",
+                                 Image = "wwwroot/img/content/Hulk.jpg",
+                                 BannerImage = "wwwroot/img/content/Hulk-banner.jpg",
                                  Cast = "Teste",
                                  Copyright = "Teste",
                                  Director = "Teste",
@@ -880,9 +890,10 @@ namespace GeneratePagoFromBlazor.Services
                                  Rating = "Teste",
                                  Duration = "2h 2mins",
                                  CompanyName = "WIG",
-                                 SliderImage = "../wwwroot/img/content/Hulk.jpg",
-                                 SliderBackgroundImage = "../wwwroot/img/content/Hulk-banner.jpg",
-                                 CurrentLanguage = "en"
+                                 SliderImage = "wwwroot/img/content/Hulk.jpg",
+                                 SliderBackgroundImage = "wwwroot/img/content/Hulk-banner.jpg",
+                                 CurrentLanguage = "en",
+                                 Genres = new List<string>(){"Action"}
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -891,8 +902,8 @@ namespace GeneratePagoFromBlazor.Services
                             {
                                 Name = "Adele 21",
                                 Description = "Adele Laurie Blue Adkins MBE (born 5 May 1988) is an English singer and songwriter. After graduating in arts from the BRIT School in 2006, Adele signed a record deal with XL Recordings.",
-                                Image = "../wwwroot/img/content/Adele21.jpg",
-                                BannerImage = "../wwwroot/img/content/Adele21-banner.jpg",
+                                Image = "wwwroot/img/content/Adele21.jpg",
+                                BannerImage = "wwwroot/img/content/Adele21-banner.jpg",
                                 Year = 2022 ,
                                 ContentType = ContentType.Audio,
                                 ImdbRating = "8.5",
@@ -919,16 +930,16 @@ namespace GeneratePagoFromBlazor.Services
                                  Resources = resourceEN,
                                 Modal = modalEN,
                                  CompanyName = "WIG",
-                                 SliderImage = "../wwwroot/img/content/Adele21.jpg",
-                                 SliderBackgroundImage = "../wwwroot/img/content/Adele21-banner.jpg",
+                                 SliderImage = "wwwroot/img/content/Adele21.jpg",
+                                 SliderBackgroundImage = "wwwroot/img/content/Adele21-banner.jpg",
                                  CurrentLanguage = "en"
                             },
                             new AudioDetailModel
                             {
                                 Name = "Linkin Park",
                                 Description = "Linkin Park is an American rock band from Agoura Hills, California. The band's current lineup comprises vocalist/rhythm guitarist/keyboardist Mike Shinoda, lead guitarist Brad Delson, bassist Dave Farrell, DJ/turntablist Joe Hahn and drummer Rob Bourdon, all of whom are founding members.",
-                                Image = "../wwwroot/img/content/LinkinPark.jpg",
-                                BannerImage = "../wwwroot/img/content/LinkinPark-banner.jpg",
+                                Image = "wwwroot/img/content/LinkinPark.jpg",
+                                BannerImage = "wwwroot/img/content/LinkinPark-banner.jpg",
                                 Year = 2022 ,
                                 ContentType = ContentType.Audio,
                                 ImdbRating = "8.5",
@@ -956,8 +967,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Resources = resourceEN,
                                 Modal = modalEN,
                                  CompanyName = "WIG",
-                                 SliderImage = "../wwwroot/img/content/LinkinPark.jpg",
-                                 SliderBackgroundImage = "../wwwroot/img/content/LinkinPark-banner.jpg",
+                                 SliderImage = "wwwroot/img/content/LinkinPark.jpg",
+                                 SliderBackgroundImage = "wwwroot/img/content/LinkinPark-banner.jpg",
                                  CurrentLanguage = "en"
                             }
                         },
@@ -970,8 +981,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Description = "All American is an American sports drama television series, created by April Blair that premiered on The CW on October 10, 2018. The series is inspired by the life of professional American football player Spencer Paysinger, with Daniel Ezra in the lead role. In January 2020, The CW renewed the series for a third season which premiered on January 18, 2021.",
                                  ImdbRating= "9.2",
                                  Year = 2019,
-                                 Image = "../wwwroot/img/content/AllAmericanS1.jpg",
-                                 BannerImage = "../wwwroot/img/content/AllAmericanS1-banner.jpg",
+                                 Image = "wwwroot/img/content/AllAmericanS1.jpg",
+                                 BannerImage = "wwwroot/img/content/AllAmericanS1-banner.jpg",
                                  Cast = "Teste",
                                  Copyright = "Teste",
                                  Director = "Teste",
@@ -1000,9 +1011,10 @@ namespace GeneratePagoFromBlazor.Services
                                  Rating = "Teste",
                                  Duration = "2h 2mins",
                                  CompanyName = "WIG",
-                                 SliderImage = "../wwwroot/img/content/AllAmericanS1.jpg",
-                                 SliderBackgroundImage = "../wwwroot/img/content/AllAmericanS1-banner.jpg",
-                                 CurrentLanguage = "en"
+                                 SliderImage = "wwwroot/img/content/AllAmericanS1.jpg",
+                                 SliderBackgroundImage = "wwwroot/img/content/AllAmericanS1-banner.jpg",
+                                 CurrentLanguage = "en",
+                                 Genres = new List<string>(){"Action"}
                             },
                             new TvDetailModel
                             {
@@ -1011,8 +1023,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Description = "The Big Bang Theory is an American television sitcom created by Chuck Lorre and Bill Prady, both of whom served as executive producers on the series, along with Steven Molaro, all of whom also served as head writers. It premiered on CBS on September 24, 2007, and concluded on May 16, 2019, having broadcast 279 episodes over 12 seasons.",
                                  ImdbRating= "8.2",
                                  Year = 2007,
-                                 Image = "../wwwroot/img/content/TheBigBangTheoryS1.jpg",
-                                 BannerImage = "../wwwroot/img/content/TheBigBangTheoryS1-banner.jpg",
+                                 Image = "wwwroot/img/content/TheBigBangTheoryS1.jpg",
+                                 BannerImage = "wwwroot/img/content/TheBigBangTheoryS1-banner.jpg",
                                  Cast = "Teste",
                                  Copyright = "Teste",
                                  Director = "Teste",
@@ -1042,9 +1054,10 @@ namespace GeneratePagoFromBlazor.Services
                                  Rating = "Teste",
                                  Duration = "2h 2mins",
                                  CompanyName = "WIG",
-                                 SliderImage = "../wwwroot/img/content/TheBigBangTheoryS1.jpg",
-                                 SliderBackgroundImage = "../wwwroot/img/content/TheBigBangTheoryS1-banner.jpg",
-                                 CurrentLanguage = "en"
+                                 SliderImage = "wwwroot/img/content/TheBigBangTheoryS1.jpg",
+                                 SliderBackgroundImage = "wwwroot/img/content/TheBigBangTheoryS1-banner.jpg",
+                                 CurrentLanguage = "en",
+                                 Genres = new List<string>(){"Action"}
                             },
                             new TvDetailModel
                             {
@@ -1053,8 +1066,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Description = "How to Get Away with Murder is an American legal thriller television series that premiered on ABC on September 25, 2014, and concluded on May 14, 2020. The series was created by Peter Nowalk, and produced by Shonda Rhimes and ABC Studios. ",
                                  ImdbRating= "8.2",
                                  Year = 2014,
-                                 Image = "../wwwroot/img/content/htgawmS1.jpg",
-                                 BannerImage = "../wwwroot/img/content/htgawmS1-banner.jpg",
+                                 Image = "wwwroot/img/content/htgawmS1.jpg",
+                                 BannerImage = "wwwroot/img/content/htgawmS1-banner.jpg",
                                  Cast = "Teste",
                                  Copyright = "Teste",
                                  Director = "Teste",
@@ -1083,9 +1096,10 @@ namespace GeneratePagoFromBlazor.Services
                                  Rating = "Teste",
                                  Duration = "2h 2mins",
                                  CompanyName = "WIG",
-                                 SliderImage = "../wwwroot/img/content/htgawmS1.jpg",
-                                 SliderBackgroundImage = "../wwwroot/img/content/htgawmS1-banner.jpg",
-                                 CurrentLanguage = "en"
+                                 SliderImage = "wwwroot/img/content/htgawmS1.jpg",
+                                 SliderBackgroundImage = "wwwroot/img/content/htgawmS1-banner.jpg",
+                                 CurrentLanguage = "en",
+                                 Genres = new List<string>(){"Action"}
                             },
                             new TvDetailModel
                             {
@@ -1094,8 +1108,8 @@ namespace GeneratePagoFromBlazor.Services
                                  Description = "The Simpsons is an American animated sitcom created by Matt Groening for the Fox Broadcasting Company. The series is a satirical depiction of American life, epitomized by the Simpson family, which consists of Homer, Marge, Bart, Lisa, and Maggie. The show is set in the fictional town of Springfield and parodies American culture and society, television, and the human condition.",
                                  ImdbRating= "8.7",
                                  Year = 1989,
-                                 Image = "../wwwroot/img/content/TheSimpsonsS1.jpg",
-                                 BannerImage = "../wwwroot/img/content/TheSimpsonsS1-banner.jpg",
+                                 Image = "wwwroot/img/content/TheSimpsonsS1.jpg",
+                                 BannerImage = "wwwroot/img/content/TheSimpsonsS1-banner.jpg",
                                  Cast = "Teste",
                                  Copyright = "Teste",
                                  Director = "Teste",
@@ -1124,9 +1138,10 @@ namespace GeneratePagoFromBlazor.Services
                                  Rating = "Teste",
                                  Duration = "2h 2mins",
                                  CompanyName = "WIG",
-                                 SliderImage = "../wwwroot/img/content/TheSimpsonsS1.jpg",
-                                 SliderBackgroundImage = "../wwwroot/img/content/TheSimpsonsS1-banner.jpg",
-                                 CurrentLanguage = "en"
+                                 SliderImage = "wwwroot/img/content/TheSimpsonsS1.jpg",
+                                 SliderBackgroundImage = "wwwroot/img/content/TheSimpsonsS1-banner.jpg",
+                                 CurrentLanguage = "en",
+                                 Genres = new List<string>(){"Action"}
                             }
                         },
                         Categories = new List<Item>
@@ -1185,15 +1200,15 @@ namespace GeneratePagoFromBlazor.Services
                         Modal = modalEN,
                         SiteLanguages = languages,
                         Title = "Index EN",
-                        Name= "Index",
+                        Name = "Index",
+                        HtmlName = "Index",
                         MetaDescription = "Index Page EN",
                         OgTitle = "Página Index EN",
                         Robots = "Index EN",
-                        FAQs = new List<FAQsViewModel>()
-                        {
-                            new FAQsViewModel()
+                        FAQ = new FAQsViewModel()
                             {
                                 Name = "FAQs",
+                                HtmlName = "FAQs",
                                 Title = "FAQs EN",
                                 Description = "FAQs EN",
                                 MetaDescription = "Página FAQs EN",
@@ -1218,14 +1233,13 @@ namespace GeneratePagoFromBlazor.Services
                                 Modal = modalEN,
                                  CompanyName = "WIG",
                                  CurrentLanguage = "en"
-                            }
                         },
                         MainPage = true,
                         Resources = resourceEN,
                         CompanyName = "WIG",
                         CurrentLanguage = "en"
                     }},
-                    {"es", new IndexViewModel
+                    new LanguageItem() {Order = 3, Language = "es", IndexView = new IndexViewModel
                     {
                         Movies = new List<MovieDetailModel>
                         {
@@ -1259,7 +1273,8 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Titanic.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Titanic-banner.jpg",
-                                 CurrentLanguage = "es"
+                                 CurrentLanguage = "es",
+                                 Genres = new List<string>(){"Action"}
                              },
                              new MovieDetailModel
                              {
@@ -1291,7 +1306,8 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Matrix.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Matrix-banner.jpg",
-                                 CurrentLanguage = "es"
+                                 CurrentLanguage = "es",
+                                 Genres = new List<string>(){"Action"}
                              },
                              new MovieDetailModel
                              {
@@ -1323,7 +1339,8 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Avatar.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Avatar-banner.jpg",
-                                 CurrentLanguage = "es"
+                                 CurrentLanguage = "es",
+                                 Genres = new List<string>(){"Action"}
                              },
                              new MovieDetailModel
                              {
@@ -1355,7 +1372,8 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/Hulk.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/Hulk-banner.jpg",
-                                 CurrentLanguage = "es"
+                                 CurrentLanguage = "es",
+                                 Genres = new List<string>(){"Action"}
                              }
                         },
                         Audios = new List<AudioDetailModel>
@@ -1475,7 +1493,8 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/AllAmericanS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/AllAmericanS1-banner.jpg",
-                                 CurrentLanguage = "es"
+                                 CurrentLanguage = "es",
+                                 Genres = new List<string>(){"Action"}
                             },
                             new TvDetailModel
                             {
@@ -1517,7 +1536,8 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/TheBigBangTheoryS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/TheBigBangTheoryS1-banner.jpg",
-                                 CurrentLanguage = "es"
+                                 CurrentLanguage = "es",
+                                 Genres = new List<string>(){"Action"}
                             },
                             new TvDetailModel
                             {
@@ -1558,7 +1578,8 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/htgawmS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/htgawmS1-banner.jpg",
-                                 CurrentLanguage = "es"
+                                 CurrentLanguage = "es",
+                                 Genres = new List<string>(){"Action"}
                             },
                             new TvDetailModel
                             {
@@ -1599,7 +1620,8 @@ namespace GeneratePagoFromBlazor.Services
                                  CompanyName = "WIG",
                                  SliderImage = "../wwwroot/img/content/TheSimpsonsS1.jpg",
                                  SliderBackgroundImage = "../wwwroot/img/content/TheSimpsonsS1-banner.jpg",
-                                 CurrentLanguage = "es"
+                                 CurrentLanguage = "es",
+                                 Genres = new List<string>(){"Action"}
                             }
                         },
                         Categories = new List<Item>
@@ -1653,15 +1675,15 @@ namespace GeneratePagoFromBlazor.Services
                         SiteLanguages = languages,
                         Title = "Index ES",
                         Name= "Index",
+                        HtmlName= "Index",
                         MetaDescription = "Página Index ES",
                         OgTitle = "Página Index ES",
                         Robots = "Index ES",
                         MainPage = true,
-                        FAQs = new List<FAQsViewModel>()
-                        {
-                            new FAQsViewModel()
+                        FAQ = new FAQsViewModel()
                             {
                                 Name = "FAQs",
+                                HtmlName = "FAQs",
                                 Title = "FAQs ES",
                                 Description = "FAQs ES",
                                 MetaDescription = "Página FAQs ES",
@@ -1686,7 +1708,6 @@ namespace GeneratePagoFromBlazor.Services
                                 Modal = modalES,
                                 CompanyName = "WIG",
                                 CurrentLanguage = "es"
-                            }
                         },
                         Resources = resourceES,
                         CompanyName = "WIG",

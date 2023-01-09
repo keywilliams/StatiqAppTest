@@ -6,7 +6,7 @@
         @{
             if (string.IsNullOrWhiteSpace(@Model.BannerImage))
             {
-                <img src="../wwwroot/img/content/banner-placeholder.png" />
+                <img src="@{@Model.ResourcePath}wwwroot/img/content/banner-placeholder.png" />
             }
             else
             {
@@ -27,7 +27,7 @@
                         {
                             <p class="item-type mb-2">
                                 <svg class="all fill-primary">
-                                    <use xlink:href="../wwwroot/all.svg#icon-movie"></use>
+                                    <use xlink:href="@{@Model.ResourcePath}wwwroot/all.svg#icon-movie"></use>
                                 </svg>
                                 @Model.Resources.TextMovie
                             </p>
@@ -37,7 +37,7 @@
                         {
                             <p class="item-type mb-2">
                                 <svg class="all fill-primary">
-                                    <use xlink:href="../wwwroot/all.svg#icon-tv"></use>
+                                    <use xlink:href="@{@Model.ResourcePath}wwwroot/all.svg#icon-tv"></use>
                                 </svg>
                                 @Model.Resources.TextTV
                             </p>
@@ -47,7 +47,7 @@
                         {
                             <p class="item-type mb-2">
                                 <svg class="all fill-primary">
-                                    <use xlink:href="../wwwroot/all.svg#icon-audio"></use>
+                                    <use xlink:href="@{@Model.ResourcePath}wwwroot/all.svg#icon-audio"></use>
                                 </svg>
                                 @Model.Resources.TextAudio
                             </p>
@@ -61,7 +61,7 @@
                 <div class="text-rating d-flex justify-content-between pt-4">
                     <h5>@Model.ImdbRating</h5>
                     <a href="https://www.imdb.com/title/@{@Model.ImdbId}" target="_blank">
-						<img src="../wwwroot/img/content/imdb.png" />
+						<img src="@{@Model.ResourcePath}wwwroot/img/content/imdb.png" />
 					</a>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                         <button type="button" class="btn btn-primary" onclick="window.open('@{@Model.DefaultTrailerUrl}', '_blank')">
                             @Model.Resources.ButtonTrailer
                             <svg class="all fill-white">
-                                <use xlink:href="../wwwroot/all.svg#icon-play"></use>
+                                <use xlink:href="@{@Model.ResourcePath}wwwroot/all.svg#icon-play"></use>
                             </svg>
                         </button>
                     </div>
